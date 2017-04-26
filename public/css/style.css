@@ -1,0 +1,17 @@
+/*NOTE this file may be temporary if SASS is used and/or a framework*/
+
+#username-display, #logout {
+	float: right;
+	clear: right;
+	margin: 0 auto;
+}
+
+#school-search-form {
+	position: absolute;
+	left: 40%;
+	top: 30%;
+}
+
+p {
+	margin: 0 auto;
+}
