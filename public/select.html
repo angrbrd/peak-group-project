@@ -8,29 +8,41 @@
 	
 </head>
 <body>
-<p id="username-display">Kathleen McPeak</p>
+<p id="usernameDisplay">Kathleen McPeak</p>
 <p id="logout">LOGOUT</p>
 
 
-<form id="school-search-form">
-  <p>SCHOOL SEARCH</p>
-  <input type="search" id="school-search" name="school-search"><button id="add-school-init">+school</button>
+<form id="schoolSearchForm">
+  <label id="schoolNameLabel">SCHOOL NAME</label>
+  <input type="search" id="schoolSearch" name="school-search"><button id="addSchoolInit">+school</button>
+
+
+  <!-- FOR DYNAMIC CODE -->
+
+  <ul id="listOfSchools">
+  	<li class="school">East Cary Middle</li>
+  	<li class="school">West Cary Middle</li>
+  	<li class="school">AV Baucom Elementary</li>
+  </ul>
 </form>
 
 <!-- will be using REACT in order to create the search results and then further limit the results upon searching -->
 
-<container id="selected-school">
-<!-- below content to be used for server-side reference when dynamically creating info -->
-	<h1 id="school-header">School Name</h1>
-	<p>------------------------------------<button id="add-student">+student</button>-----------------</p>
+<container id="selectedSchool">
+
+<!-- FOR DYNAMIC CODE -->
+
+	<h1 id="schoolHeader">Selected School Name</h1>
+	<button id="add-student">+student</button><br><br>
 	
-	<h2>Student name 1</h2><button class="student-info">info</button>
-	<h2>Student name 2</h2><button class="student-info">info</button>
+	<img class="studentIcon" src="http://placehold.it/50x50"><h2 class="studentName">Student name 1</h2><button class="studentInfo">info</button><br>
+	
+	<img class="studentIcon" src="http://placehold.it/50x50"><h2 class="studentName">Student name 2</h2><button class="studentInfo">info</button>
 </container>
 
 <!-- add school modal -->
 <!-- NOTE:  alternatively instead of modal below.. could type school in school search and just hit the add school button and immediately have that school added! -->
-<div id="add-school-modal" class="modal">
+<div id="addSchoolModal" class="modal">
 	<div class="modal-content">
 		<span class="close">&times;</span>
 		 <form id="add-school-form">

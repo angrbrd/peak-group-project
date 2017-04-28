@@ -1,12 +1,12 @@
 /*NOTE this file may be temporary if SASS is used and/or a framework*/
 
-#username-display, #logout {
+#usernameDisplay, #logout {
 	float: right;
 	clear: right;
 	margin: 0 auto;
 }
 
-#school-search-form {
+#schoolSearchForm {
 	position: absolute;
 	left: 40%;
 	top: 30%;
@@ -16,18 +16,49 @@ p {
 	margin: 0 auto;
 }
 
-#add-school-modal {
+#addSchoolModal {
 	visibility: hidden;
 }
 
-#add-school-init {
-	margin-left: 30px;
+#addSchoolInit {
+	position: absolute;
+	left: 130%;
 }
 
+#listOfSchools {
+	list-style: none;
+	margin-top: 35px;
+}
 
-#selected-school {
+.school {
+	border: solid 1px gray;
+	padding: 5px;
+}
+
+#schoolNameLabel {
+	position: absolute;
+	left: 22%;
+	top: -10%;
+}
+
+#schoolSearch {
+	position: absolute;
+	left: 20%;
+	top: 4%;
+	width: 165px;
+	height: 28px;
+	
+}
+
+#selectedSchool {
 	position: absolute;
 	top: 50%;
 	left: 33%;
 	text-align: center;
 }
+
+.studentName {
+	margin: 0 auto;
+	float: right;
+}
+
