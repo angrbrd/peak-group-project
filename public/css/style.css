@@ -6,11 +6,11 @@
 	margin: 0 auto;
 }
 
-#schoolSearchForm {
+/*#schoolSearchForm {
 	position: absolute;
 	left: 40%;
 	top: 30%;
-}
+}*/
 
 p {
 	margin: 0 auto;
@@ -41,14 +41,16 @@ p {
 	top: -10%;
 }
 
-#schoolSearch {
+
+/*#schoolSearch {
+>>>>>>> master
 	position: absolute;
 	left: 20%;
 	top: 4%;
 	width: 165px;
 	height: 28px;
 	
-}
+}*/
 
 #selectedSchool {
 	position: absolute;
@@ -61,4 +63,3 @@ p {
 	margin: 0 auto;
 	float: right;
 }
-
