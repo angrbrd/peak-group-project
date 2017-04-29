@@ -1,6 +1,6 @@
 //this is the file for the express routes
 
-
+var path=require("path");
 
 var Article = require("../models/article");
 
@@ -8,8 +8,12 @@ module.exports = function(app) {
 
 
 // Main "/" Route. This will redirect the user to our rendered React application
+// app.get("/", function(req, res) {
+//   res.sendFile("../public/index.html");
+// });
+//changed for test
 app.get("/", function(req, res) {
-  res.sendFile("../public/index.html");
+  res.sendFile("./public/index.html");
 });
 
 // This is the route we will send GET requests to retrieve our saved articles.

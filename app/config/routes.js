@@ -12,6 +12,10 @@ var Route = router.Route;
 var Router = router.Router;
 // Include the hashHistory prop to handle routing client side without a server
 // https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md#hashhistory
+
+
+
+
 var hashHistory = router.hashHistory;
 
 // Include the IndexRoute (catch-all route)

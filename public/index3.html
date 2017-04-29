@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PEAK login</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<h1 id="welcome">WELCOME</h1>
+<!-- login form -->
+<form id="login" action="/altlogin">
+	<!-- Name -->
+    	<input type="text" id="username" placeholder="username">
+   	<br>
+ 	<!-- Password -->
+        <input type="password" id="password" placeholder="password">
+    <br>
+    <button type="submit" class="btn btn-login">login</button><br>
+    <a href="mailto:cscorrigan@icloud.com">Request an account.</a>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // $(".btn-login").on("click", function(){
+    //     location.href = "/altlogin";
+    // });
+
+});
+
+</script>
+	
+</body>
+
+</html>
