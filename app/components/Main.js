@@ -7,6 +7,7 @@ var React = require("react");
 // Here we include all of the sub-components
 var UserLogin = require("./children/UserLogin");
 var Schools = require("./children/Schools");
+var Student = require("./children/Student");
 
 // Creating the Main component
 var Main = React.createClass({
