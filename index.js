@@ -10,8 +10,11 @@ render((
 
 <Router history={hashHistory}>
 	{/*these are our routes*/}
-	<Route path="/" component={App}/>
-	<Route path="/select" component={Select}/>
+<Route path="/schools" component={SchoolContainer}/>
+<Route path="/:schoolName/students" component={StudentContainer}/>
+<Route path="/:schoolName/:studentId" component={GoalContainer}/>
+<Route path="/:schoolName/updateStudent" component={UpdateStudent}/>
+<Route path="/:schoolName/:studentId/updateGoal" component={UpdateGoal}/>
 	
 
 </Router>
