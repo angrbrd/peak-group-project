@@ -17,7 +17,7 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-			<h1>Add Goal</h1>
+			<h1>manage goal</h1>
 			<h2>Students name here</h2>
 			<p>icon and form to add goal will be here</p>
 

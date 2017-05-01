@@ -15,11 +15,11 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-		  	<h1>Add student</h1>
+		  	<h1>manage student</h1>
 			<p>icon and form to add student will be here</p>
 
 			<form id="studentForm">
-				<button id="addStudentGoal"><Link to='/schoolName/studentId/updateGoal'>Add Goal</Link></button>
+				<button id="addStudentGoal"><Link to='/schoolName/studentId/manageGoal'>Add Goal</Link></button>
 				<button id="saveStudent"><Link to='/schoolName/studentId'>Save</Link></button>
 				<button id="cancelStudent"><Link to='/schoolName/students'>Cancel</Link></button>
 			</form>

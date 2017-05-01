@@ -3,8 +3,11 @@ import { render } from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
 //files that will be our routes..
-import App from './modules/App'
-import Select from './modules/Select'
+import SchoolContainer from './modules/SchoolContainer'
+import StudentContainer from './modules/StudentContainer'
+import GoalContainer from './modules/GoalContainer'
+import StudentManager from './modules/StudentManager'
+import GoalManager from './modules/GoalManager'
 
 render((
 
@@ -13,8 +16,8 @@ render((
 <Route path="/schools" component={SchoolContainer}/>
 <Route path="/:schoolName/students" component={StudentContainer}/>
 <Route path="/:schoolName/:studentId" component={GoalContainer}/>
-<Route path="/:schoolName/updateStudent" component={UpdateStudent}/>
-<Route path="/:schoolName/:studentId/updateGoal" component={UpdateGoal}/>
+<Route path="/:schoolName/manageStudent" component={StudentManager}/>
+<Route path="/:schoolName/:studentId/manageGoal" component={GoalManager}/>
 	
 
 </Router>

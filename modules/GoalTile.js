@@ -22,7 +22,7 @@ export default React.createClass({
 
 			  			{/*Goals to be listed here (under title of Student name)*/}
  			<ul>
- 			  <li><Link to="/schoolName/studentId/updateGoal">Goal Type and Description (clickable to edit)</Link></li>
+ 			  <li><Link to="/schoolName/studentId/manageGoal">Goal Type and Description (clickable to edit)</Link></li>
  			</ul>
 
 		    <ul>
