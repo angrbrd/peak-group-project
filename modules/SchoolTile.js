@@ -16,12 +16,12 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-			 <h2>School list appended here..(child of School container)</h2>
 
 			  			{/*Schools to be listed here (under search bar)*/}
- 			  <ul>
- 			    <li><Link to="/schoolName/students">School icon and school name</Link></li>
+ 			  <ul id="listOfSchools">
+ 			    <li class="school"><Link to="/schoolName/students">School icon and school name</Link></li>
  			  </ul>
+ 			  
 			</div>
 		)
 	}

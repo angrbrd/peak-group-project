@@ -15,8 +15,10 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-			 <h2>Student List will go here (child of StudentContainer)</h2>
-			 <p>Html for student's name, an icon, and info icon..</p>
+				<container id="">
+					<img class="studentIcon" src="http://placehold.it/50x50"/><h2 class="studentName">Student name 1</h2><button class="studentInfo">info</button><br/>
+				
+			  </container>
 
 			  			{/*Students to be listed here (under title of School name)*/}
  			  <ul>

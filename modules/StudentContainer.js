@@ -13,6 +13,14 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
+
+		   	<container id="selectedSchool">
+
+	            <h1 id="schoolHeader">Selected School Name</h1>
+				<button id="add-student">+student</button><br/><br/>
+				
+			  </container>
+			  
 			<h1>Student data will be below (rendered from StudentTile.js)</h1>
 			<button id="addStudent"><Link to="/schoolName/studentId/manageStudent">+student</Link></button>
 
