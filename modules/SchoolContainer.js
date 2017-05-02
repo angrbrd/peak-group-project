@@ -13,12 +13,9 @@ export default React.createClass({
 		return (
 		  <div>
 
-			<h1>Html for school search bar and drop down list here.</h1>
-			<button id="addSchool">+school</button>
-
 			<form id="schoolSearchForm">
-  				<label id="schoolNameLabel">SCHOOL NAME</label>
-  				<input type="search" id="schoolSearch" name="school-search"/><button id="addSchoolInit">+school</button>
+  				<label htmlFor="schoolSearch" id="schoolNameLabel">SCHOOL NAME</label>
+  				<input type="search" id="schoolSearch" name="school-search"/><button id="addSchool">+school</button>
 			</form>
 
 		    {/*  SchoolTile child for list of schools to be clicked on.

@@ -17,12 +17,9 @@ export default React.createClass({
 		   	<container id="selectedSchool">
 
 	            <h1 id="schoolHeader">Selected School Name</h1>
-				<button id="add-student">+student</button><br/><br/>
+				<button id="addStudent"><Link to="/schoolName/studentId/manageStudent">+student</Link></button><br/><br/>
 				
 			  </container>
-			  
-			<h1>Student data will be below (rendered from StudentTile.js)</h1>
-			<button id="addStudent"><Link to="/schoolName/studentId/manageStudent">+student</Link></button>
 
 		    {/*  StudentTile child for list of students to be clicked on then taken to individual student page.  
 		    	**passing student info to these student tiles..  */}
