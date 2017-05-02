@@ -19,12 +19,11 @@ export default React.createClass({
 			 {/*Tasks will be here on the right side of objectives*/}
 		    <ul>
 		    	<li>Task here</li>
-		    <ul>
+		    </ul>
 
  			  {/*Tasks will show when objectives are tapped/clicked on
  			   		TaskTile is a grandchild of GoalContainer
  			   		*should be passed task info for objective*/}
- 			  <TaskTile />
 			</div>
 		)
 	}
