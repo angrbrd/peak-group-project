@@ -15,11 +15,11 @@ export default React.createClass({
 
 			<form id="schoolSearchForm">
   				<label htmlFor="schoolSearch" id="schoolNameLabel">SCHOOL NAME</label>
-  				<input type="search" id="schoolSearch" name="school-search"/><button id="addSchool">+school</button>
+  				<input type="search" id="schoolSearch" name="schoolSearch"/><button id="addSchool">+school</button>
 			</form>
 
 		    {/*  SchoolTile child for list of schools to be clicked on.
-		    	**Should be passing name and students/info to this child..   */}
+		    	**Should be passing schoolName as a parameter.. to be used as props in params   */}
 			<SchoolTile />
 		  </div>
 		)
