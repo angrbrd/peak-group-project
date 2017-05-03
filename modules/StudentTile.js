@@ -15,15 +15,13 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-				<container id="">
-					<img class="studentIcon" src="http://placehold.it/50x50"/><h2 class="studentName">Student name 1</h2><button class="studentInfo">info</button><br/>
-				
+				<container id="selectedSchool">
+				{/*Students to be listed here (under title of School name)*/}
+				  <ul>
+					<li><img className="studentIcon" src="http://placehold.it/50x50"/><Link to="/schoolName/studentId"><h2 className="studentName">Student name 1</h2></Link><button className="studentInfo">info</button><br/></li>
+				  </ul>
 			  </container>
 
-			  			{/*Students to be listed here (under title of School name)*/}
- 			  <ul>
- 			    <li><Link to="/schoolName/studentId">Student Name</Link></li>
- 			  </ul>
 			</div>
 		)
 	}

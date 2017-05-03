@@ -15,14 +15,13 @@ import { Link } from 'react-router'
 export default React.createClass({
 	render() {
 		return (
-			<div id="listOfSchools">
-
-			  			{/*Schools to be listed here (under search bar)*/}
- 			  <ul>
- 			    <li className="school"><Link to="/schoolName/students">School icon and school name</Link></li>
- 			  </ul>
+			<div>
+				{/*Login form*/}
+				<form id="loginForm">
+				<button id="login"><Link to="/schools">Login</Link></button>
+				</form>
 
 			</div>
-		);
+		)
 	}
-});
+})

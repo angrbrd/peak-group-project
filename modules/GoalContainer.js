@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoalTile } from './GoalTile'
+import GoalTile from './GoalTile'
 import { Link } from 'react-router'
 
 /* This component will:

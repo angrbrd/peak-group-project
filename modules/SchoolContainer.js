@@ -1,6 +1,5 @@
 import React from 'react'
-import { SchoolTile } from './SchoolTile'
-
+import SchoolTile from './SchoolTile'
 
 /* This component will:
 	*Make ajax call
@@ -20,20 +19,18 @@ export default React.createClass({
 		return (
 		  <div>
 
-
-			<button id="addSchool">+school</button>
-
 			<form id="schoolSearchForm">
-  				<label id="schoolNameLabel">SCHOOL NAME</label>
+  				<label htmlFor="schoolSearch" 
+  						id="schoolNameLabel">SCHOOL NAME</label>
   				<input type="search" 
   						id="schoolSearch" 
-  						name="school-search"
-  						/>
-  				<button id="addSchoolInit">+school</button>
+  						name="schoolSearch"/>
+  						<button id="addSchool">+school</button>
 			</form>
 
 		    {/*  SchoolTile child for list of schools to be clicked on.
-		    	**Should be passing schoolName to School  maybe not   */}
+		    	**Should be passing schoolName as a parameter.. to be used as props in params   */}
+
 			<SchoolTile />
 		  </div>
 		)
