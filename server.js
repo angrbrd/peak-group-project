@@ -3,11 +3,13 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+
 var path=require("path");
 
 //this is an example, to be replaced!
 // Require Article Schema
-var Article = require("./models/article");
+// var Article = require("./models/article");
+
 
 // Create Instance of Express
 var app = express();
@@ -45,10 +47,6 @@ db.on("error", function(err) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
-
-// -------------------------------------------------
-
-require("./routes/api-routes.js")(app);
 
 // -------------------------------------------------
 

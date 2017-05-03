@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PEAK School|Student</title>
+	<!-- link to style sheet -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body>
+<p id="usernameDisplay">Kathleen McPeak</p>
+<p id="logout">LOGOUT</p>
+
+
+<form id="schoolSearchForm">
+  <label id="schoolNameLabel">SCHOOL NAME</label>
+  <input type="search" id="schoolSearch" name="school-search"><button id="addSchoolInit">+school</button>
+
+
+  <!-- FOR DYNAMIC CODE -->
+
+  <ul id="listOfSchools">
+  	<li class="school">East Cary Middle</li>
+  	<li class="school">West Cary Middle</li>
+  	<li class="school">AV Baucom Elementary</li>
+  </ul>
+</form>
+
+<!-- will be using REACT in order to create the search results and then further limit the results upon searching -->
+
+<container id="selectedSchool">
+
+<!-- FOR DYNAMIC CODE -->
+
+	<h1 id="schoolHeader">Selected School Name</h1>
+	<button id="add-student">+student</button><br><br>
+	
+	<img class="studentIcon" src="http://placehold.it/50x50"><h2 class="studentName">Student name 1</h2><button class="studentInfo">info</button><br>
+	
+	<img class="studentIcon" src="http://placehold.it/50x50"><h2 class="studentName">Student name 2</h2><button class="studentInfo">info</button>
+</container>
+
+<!-- add school modal -->
+<!-- NOTE:  alternatively instead of modal below.. could type school in school search and just hit the add school button and immediately have that school added! -->
+<div id="addSchoolModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		 <form id="add-school-form">
+            <!-- Name -->
+            	<input type="text" class="form-control" id="school-name" placeholder="School Name">
+          <button type="submit" class="btn" id="add-school">add school</button>
+        </form>
+	</div>
+</div><!-- add school modal -->
+	
+</body>
+</html>
