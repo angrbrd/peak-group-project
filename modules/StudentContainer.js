@@ -1,5 +1,5 @@
 import React from 'react'
-import { StudentTile } from './StudentTile'
+import StudentTile from './StudentTile'
 import { Link } from 'react-router'
 
 /* This component will:

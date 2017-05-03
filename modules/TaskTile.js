@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { TaskTile } from './TaskTile'
 
 /*This child of GoalTile (gc of GoalContainer) will:
 	*Be representational ONLY (no ajax)

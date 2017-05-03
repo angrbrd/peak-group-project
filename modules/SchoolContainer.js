@@ -1,6 +1,5 @@
 import React from 'react'
-import { SchoolTile } from './SchoolTile'
-
+import SchoolTile from './SchoolTile'
 /* This component will:
 	*Make ajax call
 	*Receive school data
