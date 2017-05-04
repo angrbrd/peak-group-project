@@ -14,6 +14,7 @@ export default React.createClass({
 
   getInitialState: function() {
     return { 
+      school_name: "",	
       results: []
     };
   },
@@ -21,13 +22,14 @@ export default React.createClass({
   componentWillMount: function(){
   	//get the students at the school that has been selected by the user
     var schoolName = this.props.params.schoolName;
+    this.setState({school_name: schoolName});
     console.log(schoolName);
 
     helpers.getStudentNames(schoolName).then(function(data) {
     	console.log("after helpers.getStudentNames");
     	console.log(data.data);
         if (data.data !== this.state.results) {
-          this.setState({ results: data.data }); 
+          this.setState({ results: data.data}); 
       	}
       }.bind(this));
   },
@@ -47,7 +49,7 @@ export default React.createClass({
 		    {/*  StudentTile child for list of students to be clicked on then taken to individual student page.  
 		    	**passing student info to these student tiles..  */}
 		    <div>	
-			<StudentTile record={this.state.results} />
+			<StudentTile school_record={this.state.results} />
 			</div>
 		  </div>
 		)
