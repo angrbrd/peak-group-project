@@ -1,5 +1,6 @@
 import React from 'react'
 import SchoolTile from './SchoolTile'
+var helpers = require("../app/utils/helpers");
 
 /* This component will:
 	*Make ajax call
@@ -9,11 +10,31 @@ import SchoolTile from './SchoolTile'
 */
 
 export default React.createClass({
-	getInitialState: function(){
-		return {
-			// state variables here
-		};
-	},
+    getInitialState: function() {
+    return { 
+      results: []
+    };
+  },
+
+  componentWillMount: function(){
+
+    //!!!! You can uncomment this and add new schools by editing the api-route and running the app again and again
+    // helpers.addSchool().then(function(data){
+    //   console.log(data);
+    //});
+
+
+    // get all of the schools from the schools table
+
+    helpers.getSchoolNames().then(function(data) {
+        if (data.data !== this.state.results) {
+          this.setState({ results: data.data });              
+        }
+        // This code is necessary to bind the keyword "this" when we say this.setState
+        // to actually mean the component itself and not the runQuery function.
+      }.bind(this));
+
+  },
 
 	render() {
 		return (
@@ -27,11 +48,12 @@ export default React.createClass({
   						name="schoolSearch"/>
   						<button id="addSchool">+school</button>
 			</form>
+              {/*  SchoolTile child for list of schools to be clicked on.
+          **Should be passing schoolName as a parameter.. to be used as props in params   */}
+       <div>      
+          <SchoolTile results={this.state.results} />
+       </div>  
 
-		    {/*  SchoolTile child for list of schools to be clicked on.
-		    	**Should be passing schoolName as a parameter.. to be used as props in params   */}
-
-			<SchoolTile />
 		  </div>
 		)
 	}

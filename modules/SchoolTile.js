@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import NavLink from './NavLink'
 
 /*This child of SchoolContainer will:
 	*Be representational ONLY (no ajax)
@@ -12,16 +13,28 @@ import { Link } from 'react-router'
 	The current state of link tos below are for reference to where these parameters will go.*/
 
 
+
 export default React.createClass({
+	// componentWillMount: function(){
+ //    	console.log("mounting SchoolTile component");
+ //    	console.log(this.props.results);
+	// },
+
 	render() {
 		return (
 			<div id="listOfSchools">
 
-			  			{/*Schools to be listed here (under search bar)*/}
- 			  <ul>
- 			    <li className="school"><Link to="/schoolName/students">School icon and school name</Link></li>
- 			  </ul>
 
+			  {/*Schools to be listed here (under search bar)*/}
+ 			  <ul>
+ 			  	{this.props.results.map(function(search,i){
+ 			  		return (
+ 			  		
+ 			    	<li key={i} data_id={search._id} className="school"><Link to={search.name + "/students"}>{search.name}</Link></li>
+ 			  		);
+ 			  	})}
+ 			  </ul>
+ 			  	
 			</div>
 		);
 	}

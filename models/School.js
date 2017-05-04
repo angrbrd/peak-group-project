@@ -9,6 +9,9 @@ var SchoolSchema = new Schema({
 	school_id: {
 		type: String //I don't know how Wake County classifies their schools; this could change to int if they're numbers
 	},
+	name: {
+		type: String
+	},
 	address: {
 		type: String
 	},
@@ -21,10 +24,11 @@ var SchoolSchema = new Schema({
           message: '{VALUE} is not a valid phone number!'
         }
 	},
-	students:{
-		type: [],
+	students:[{
+		type: Schema.Types.ObjectId,
 		ref: "Student"
-	},
+	}],
+	
 	latitude:{
 		type: Number
 	},

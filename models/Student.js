@@ -6,7 +6,7 @@ var StudentSchema = new Schema({
 	student_id:{
 		type: String
 	},
-	name: {
+	student_name: {
 		type: String
 	},
 	birthdate:{
