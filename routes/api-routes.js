@@ -77,31 +77,46 @@ app.post("/api/school", function() {
   });
 });
 
-// // This is the route we will send POST requests to save each search.
-// app.post("/api", function(req, res) {
-  
-//   console.log("req.body");
-//   console.log(req.body.title);
-//   // Here we'll save the location based on the JSON input.
- 
-//  School.create({
-//     title: req.body.title,
-//     url: req.body.url,
-//     date: req.body.date
-//   }, function(err) {
-//     if (err) {
-//       console.log(err);
-//     }
-//     else {
 
-//       res.redirect("/api");
+  // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached
 
-      
-//     }
-//   });
-// });
+  // app.post("/note/:id", function(req, res) {
+  //   // Create a new note using the note text passed in during the ajax call
+  //   var newNote = new Note(req.body);
 
+  //   // And save the new note the db
+  //   newNote.save(function(error, doc) {
+  //     // Log any errors
+  //     if (error) {
+  //       console.log(error);
+  //     }
+  //     // Otherwise
+  //     else {
+  //       // Use the article id to find and update it's notes array using the _id of the note that you just added to the db
+  //       // That _id was just passed back to you after the save in doc._id
 
+  //       Article.findOneAndUpdate({ "_id": req.params.id }, { $push: {"notes": doc._id }}, {new: true}, function(err,doc){
+  //         // Log any errors
+  //         if (err) {
+  //           console.log("there was an error");
+  //           res.send(err);
+  //         }
+  //         else {
+
+  //           // Or send the document to the browser 
+  //           res.send(doc);  
+
+  //           //if I don't send anything back, the .done in the ajax call will not trigger
+  //           //for some reason, if I do not send anything back, the page refreshes anyway and dipslays the updated notes.
+  //         }
+          
+  //       });//end findOneAndUpdate
+        
+  //     } //end else
+     
+  //   }); //end newNote.save
+    
+  // }); //end app.post
 
 
 //   // delete an article from database
