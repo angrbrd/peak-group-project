@@ -3,6 +3,10 @@
 var path=require("path");
 var School = require("../models/School");
 var Student = require("../models/Student");
+var Goal = require("../models/Goal");
+var Objective = require("../models/Objective");
+var Student_Objective = require("../models/Student_Objective");
+var Task = require("../models/Task");
 
 module.exports = function(app) {
 
@@ -30,13 +34,10 @@ app.get("/api/schoolnames", function(req, res) {
   });
   });  
 
-app.get("/api/studentnames/:name", function(req, res) {
-  console.log("in api/studentnames");
-  console.log(req.params.name);
-
+app.get("/api/studentnames/:schoolname", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
-  School.find({'name': req.params.name})
+  School.find({'name': req.params.schoolname})
     .populate("students")
     .exec(function(err, doc) {
       console.log(doc);

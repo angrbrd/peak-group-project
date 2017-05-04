@@ -1,12 +1,14 @@
 use dbpeak
 
-db.schools.insert({"school_system":"Wake", "school_id":"1","name":"Enloe High School", "address":"", "latitude":0, "longitude":0})
+db.schools.insert({"school_system":"Wake", "school_id":"1","name":"Enloe High School", "address":"", "students":["student1"], "latitude":0, "longitude":0})
 
-db.schools.insert({"school_system":"Wake", "school_id":"2","name":"East Cary Middle School", "address":"", "latitude":1, "longitude":1})
+db.schools.insert({"school_system":"Wake", "school_id":"2","name":"East Cary Middle School", "address":"", "students":["student1"], "latitude":1, "longitude":1})
 
-db.schools.insert({"school_system":"Wake", "school_id":"3","name":"West Cary Middle School", "address":"", "latitude":2, "longitude":2})
+db.schools.insert({"school_system":"Wake", "school_id":"3","name":"West Cary Middle School", "address":"", "students":["student1"], "latitude":2, "longitude":2})
 
 db.students.insert({"student_id": "1", "student_name": "Robert W", "birthdate":"20050102", "active": true})
 db.students.insert({"student_id": "2", "student_name": "Joyce B", "birthdate":"20090325", "last_IEP_date": "20170415", "active": true})
+
+db.goals.insert({"code": "K.MS.1", "goal_type": "MS", "description": "description for K.MS.1", "objectives": ["objective id"]})
 
 
