@@ -51,6 +51,7 @@ export default React.createClass({
 		    <div>	
 			<StudentTile school_record={this.state.results} />
 			</div>
+			
 		  </div>
 		)
 	}

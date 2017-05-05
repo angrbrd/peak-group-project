@@ -51,6 +51,24 @@ app.get("/api/studentnames/:schoolname", function(req, res) {
   });  
 
 
+app.get("/api/student/:studentId", function(req, res) {
+
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  Student.find({'_id': req.params.studentId})
+    .populate("goals")
+    .exec(function(err, doc) {
+      console.log(doc);
+    if (err) {
+      console.log(err);
+    }
+    else {
+      console.log("app.get api/student");
+      res.send(doc);
+    }
+  });
+  }); 
+
+
 // You can create school documents by editing here - just uncode the call in SchoolContainer componentWillMount and
 // save and refresh to browser for each school you want to add
 app.post("/api/school", function() {

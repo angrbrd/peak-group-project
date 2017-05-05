@@ -8,7 +8,6 @@ var helpers = {
   getSchoolNames: function() {
     return axios.get("/api/schoolnames")
                 .then(function(res){
-                  console.log("inside get SchoolNames");
                   return res
                 })
   },
@@ -23,10 +22,19 @@ var helpers = {
   getStudentNames: function(name) {
     return axios.get("/api/studentnames/" + name)
                 .then(function(res){
-                  console.log("inside getStudentNames");
+
                   return res
                 })
   },
+
+  getStudent: function(studentId) {
+    return axios.get("/api/student/" + studentId)
+                .then(function(res){
+                  console.log("inside getStudent");
+                  console.log(res);
+                  return res;
+                })
+  }
 
   // // This function posts new searches to our database.
   // postSavedArticle: function(article) {
