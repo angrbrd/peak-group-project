@@ -30,7 +30,7 @@ export default React.createClass({
  			  	{this.props.results.map(function(search,i){
  			  		return (
  			  		
- 			    	<li key={i} data_id={search._id} className="school"><Link to={search.name + "/students"}>{search.name}</Link></li>
+ 			    	<li key={i} data_id={search._id} className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
  			  		);
  			  	})}
  			  </ul>

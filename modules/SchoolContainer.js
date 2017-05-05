@@ -53,6 +53,7 @@ export default React.createClass({
        <div>      
           <SchoolTile results={this.state.results} />
        </div>  
+       {this.props.children}
 
 		  </div>
 		)

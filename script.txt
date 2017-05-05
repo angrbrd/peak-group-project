@@ -17,4 +17,4 @@ db.student_objectives.insert({"student": "student _id", "objective": "objective 
 db.student_objectives.insert({"student": "student _id", "objective": "objective _id", "tasks": ["Task1 _id", "Task2 _id"] })
 
 
-db.tasks.insert({"student":"student _id", "description": "Task Description 1", "evaluations":[{"date":"20170301", "score":90, "comment":"Extra good work"}, {"date":"20170401", "score":95, "comment":"Noticable Improvment"}]})
+db.tasks.insert({"student":"student _id", "description": "Task Description 1", "evaluations":[{"date":"20170301", "score":1 PC 60%, "comment":"Extra good work"}, {"date":"20170401", "score":95, "comment":"Noticable Improvment"}]})
