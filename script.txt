@@ -1,0 +1,20 @@
+use dbpeak
+
+db.schools.insert({"school_system":"Wake", "school_id":"1","name":"Enloe High School", "address":"", "students":["student1"], "latitude":0, "longitude":0})
+
+db.schools.insert({"school_system":"Wake", "school_id":"2","name":"East Cary Middle School", "address":"", "students":["student1"], "latitude":1, "longitude":1})
+
+db.schools.insert({"school_system":"Wake", "school_id":"3","name":"West Cary Middle School", "address":"", "students":["student1"], "latitude":2, "longitude":2})
+
+db.students.insert({"student_id": "1", "student_name": "Robert W", "birthdate":"2005-01-02", "active": true})
+db.students.insert({"student_id": "2", "student_name": "April M", "birthdate":"2010-03-25", "last_IEP_date": "2017-03-15", "active": true})
+
+db.goals.insert({"code": "K.MS.2", "goal_type": "MS", "description": "description for K.MS.2", "objectives": ["objective id"]})
+db.goals.insert({"code": "K.MS.1", "goal_type": "MS", "description": "description for K.MS.1", "objectives": ["objective id"]})
+
+
+db.student_objectives.insert({"student": "student _id", "objective": "objective _id", "tasks": ["Task1 _id", "Task2 _id"] })
+db.student_objectives.insert({"student": "student _id", "objective": "objective _id", "tasks": ["Task1 _id", "Task2 _id"] })
+
+
+db.tasks.insert({"student":"student _id", "description": "Task Description 1", "evaluations":[{"date":"2017-03-01", "score":90, "comment":"Extra good work"}, {"date":"2017-04-01", "score":95, "comment":"Noticable Improvment"}]})

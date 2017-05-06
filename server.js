@@ -5,9 +5,13 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 
+
+var path=require("path");
+
 //this is an example, to be replaced!
 // Require Article Schema
-var Article = require("./models/article");
+var School = require("./models/School");
+
 
 // Create Instance of Express
 var app = express();
@@ -50,7 +54,9 @@ db.once("open", function() {
 
 require("./routes/api-routes.js")(app);
 
+
 // -------------------------------------------------
+
 
 // Listener
 app.listen(PORT, function() {

@@ -35,13 +35,15 @@ p {
 	padding: 5px;
 }
 
-#schoolNameLabel {
+/*#schoolNameLabel {
 	position: absolute;
 	left: 22%;
 	top: -10%;
-}
+}*/
+
 
 /*#schoolSearch {
+>>>>>>> master
 	position: absolute;
 	left: 20%;
 	top: 4%;

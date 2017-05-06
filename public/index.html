@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
 	<title>PEAK</title>
 
 	<!-- Here we include bootstrap. This will be made available to all of the generated HTML/JS that React generates-->
@@ -10,12 +11,33 @@
 </head>
 
 <body>
+	<!-- hide this initially before login? -->
+	<!-- usernameDisplay to be dynamically appended to (for js to define user's name) -->
+	<p id="usernameDisplay"></p>
+    <p id="logout">Place Holder for Logout</p>
 	
 	<!-- This is where React will deploy the contents it generates -->
 	<div id="app"></div>
 
 	<!-- All of our JS code will be transpiled into this bundle.js file -->
-	<script src="bundle.js"></script>
+	<script src="js/bundle.js"></script>
+
+
+<!-- *********************************************************************************************** -->
+<!-- LEAVE HERE FOR NOW -->
+<!-- ************************************************************************************************ -->
+<!-- <h1 id="welcome">WELCOME</h1> -->
+<!-- login form -->
+<!-- <form id="login"> -->
+	<!-- Name -->
+<!--     	<input type="text" id="username" placeholder="username">
+   	<br> -->
+ 	<!-- Password -->
+<!--         <input type="password" id="password" placeholder="password">
+    <br>
+    <button type="submit" class="btn btn-login">login</button><br>
+    <a href="mailto:cscorrigan@icloud.com">Request an account.</a>
+</form> -->
 	
 </body>
 </html>
