@@ -21,10 +21,10 @@ var SchoolSchema = new Schema({
           message: '{VALUE} is not a valid phone number!'
         }
 	},
-	students:{
-		type: [],
-		ref: "Student"
-	},
+	students:{[
+			type: Schema.Types.ObjectId,
+			ref: "Student"
+		]},
 	latitude:{
 		type: Number
 	},
