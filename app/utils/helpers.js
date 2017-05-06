@@ -12,12 +12,6 @@ var helpers = {
                 })
   },
 
-  addSchool: function(){
-    return axios.post("/api/school")
-    .then(function(res){
-      console.log(res);
-    });
-  },
 
   getStudentNames: function(name) {
     return axios.get("/api/studentnames/" + name)
@@ -28,20 +22,19 @@ var helpers = {
   },
 
   getStudent: function(studentId) {
-    console.log("beginning of getStudent");
-    console.log(studentId);
+
     return axios.get("/api/student/" + studentId)
                 .then(function(res){
-                  console.log("inside getStudent");
-                  console.log(res);
                   return res;
                 })
-  }
+  },
 
-  // // This function posts new searches to our database.
-  // postSavedArticle: function(article) {
-  //   return axios.post("/api", article);
-  // },
+  // This function posts new searches to our database.
+  addSchool: function(school) {
+    return axios.post("/api/school", school).then(function(res){
+        return res;
+    });
+  }
 
   //   // This function posts new searches to our database.
   // deleteArticle: function(article) {

@@ -1,5 +1,6 @@
 import React from 'react'
 import SchoolTile from './SchoolTile'
+import { Link } from 'react-router'
 var helpers = require("../app/utils/helpers");
 
 /* This component will:
@@ -46,7 +47,7 @@ export default React.createClass({
   				<input type="search" 
   						id="schoolSearch" 
   						name="schoolSearch"/>
-  						<button id="addSchool">+school</button>
+  						<button id="addSchool"><Link to='/manageSchool'>+school</Link></button>
 			</form>
               {/*  SchoolTile child for list of schools to be clicked on.
           **Should be passing schoolName as a parameter.. to be used as props in params   */}

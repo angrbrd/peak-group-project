@@ -62,28 +62,20 @@ app.get("/api/student/:studentId", function(req, res) {
 });
 
 
-// You can create school documents by editing here - just uncode the call in SchoolContainer componentWillMount and
-// save and refresh to browser for each school you want to add
-app.post("/api/school", function() {
-   
- School.create({
-    name: "Enloe High School",
-    school_system: "Wake",
-    school_id: "5",
-    address: "",
+app.post("/api/school", function(req,res) {
 
-    latitude: 5,
-    longitude: 5
-  }, function(err) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      console.log("added");
-      // res.redirect("/api");
-    }
-  });
-});
+  //   // Create a new note using the note text passed in during the ajax call
+  var newSchool = new School(req.body);
+
+  //   // And save the new school the db
+   newSchool.save(function(error, doc) {
+  //     // Log any errors
+      if (error) {
+        console.log(error);
+      }
+        res.send(doc);
+    });
+  });      
 
 
   // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached

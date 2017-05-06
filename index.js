@@ -9,6 +9,7 @@ import StudentContainer from './modules/StudentContainer'
 import GoalContainer from './modules/GoalContainer'
 import StudentManager from './modules/StudentManager'
 import GoalManager from './modules/GoalManager'
+import SchoolManager from './modules/SchoolManager'
 import LogIn from './modules/LogIn'
 
 render((
@@ -22,6 +23,7 @@ render((
 		<Route path="/:schoolName/:studentId/:studentName" component={GoalContainer}/>
 		<Route path="/:schoolName/manageStudent" component={StudentManager}/>
 		<Route path="/:schoolName/:studentId/manageGoal" component={GoalManager}/>
+		<Route path="/manageSchool" component={SchoolManager}/>
 	
 	</Router>
 ), document.getElementById('app'));

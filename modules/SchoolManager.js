@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import {hashHistory} from 'react-router';
 var helpers = require("../app/utils/helpers");
 
 /* This component will:
@@ -40,7 +41,9 @@ export default React.createClass({
     console.log(school_record);
 
     helpers.addSchool(school_record).then(function(data){
-    	console.log("done with helpers.addSchool");
+    	console.log("after helpers.addSchool");
+    	console.log(data);
+    	hashHistory.push('/schools');
     }.bind(this));
 
   },
