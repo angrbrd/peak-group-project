@@ -28,9 +28,8 @@ export default React.createClass({
 			  {/*Schools to be listed here (under search bar)*/}
  			  <ul>
  			  	{this.props.results.map(function(search,i){
- 			  	 			  		return (
- 			  	 			  		
- 			  	 			    	<li key={i} data_id={search._id} className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
+ 			  	 	return (	  		
+ 			  	 		<li key={i} data_id={search._id} className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
  			  		);
  			  	})}
  			  </ul>

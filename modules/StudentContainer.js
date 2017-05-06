@@ -13,7 +13,9 @@ var helpers = require("../app/utils/helpers");
 export default React.createClass({
 
   getInitialState: function() {
+    console.log("initial state inside studentcontainer");
     return { 
+
       school_name: "",	
       results: []
     };
@@ -55,4 +57,4 @@ export default React.createClass({
 		  </div>
 		)
 	}
-})
+});

@@ -48,10 +48,7 @@ export default React.createClass({
  			  		);
  			  	})}		
 
- 			  
-
-	{/*}	Chloe - I have some work to do here making the Link work with data, but click a student anyway!
-			 */}
+ 			 
 
 			  </div>
 
