@@ -19,7 +19,7 @@ render((
 		<Route path="/schools" component={SchoolContainer}>
 			<Route path="/schools/:schoolName" component={StudentContainer}/>
 		</Route>	
-		<Route path="/:schoolName/:studentId" component={GoalContainer}/>
+		<Route path="/:schoolName/:studentId/:studentName" component={GoalContainer}/>
 		<Route path="/:schoolName/manageStudent" component={StudentManager}/>
 		<Route path="/:schoolName/:studentId/manageGoal" component={GoalManager}/>
 	

@@ -12,8 +12,6 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-			<h2>Each individual goal will go under the students name here</h2>
-			<p>Will have objectives that can be clicked on and these will show info in TaskTile.js for that objective</p>
 
 			 {/*Tasks will be here on the right side of objectives*/}
 		    <ul>

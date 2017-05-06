@@ -15,7 +15,8 @@ export default React.createClass({
   getInitialState: function() {
     return { 
       school_name: "",
-      student_id: "",	
+      student_id: "",
+      student_name: "",	
       results: []
     };
   },
@@ -24,9 +25,11 @@ export default React.createClass({
   	//get the students at the school that has been selected by the user
     var schoolName = this.props.params.schoolName;
     var studentId =  this.props.params.studentId;
+    var studentName = this.props.params.studentName;
 
     this.setState({school_name: schoolName});
     this.setState({student_id: studentId});
+    this.setState({student_name: studentName});
 
     console.log(studentId);
 
@@ -35,6 +38,8 @@ export default React.createClass({
     	console.log(data.data);
         if (data.data !== this.state.results) {
           this.setState({ results: data.data}); 
+          console.log("results in Goal Tile");
+          console.log(this.state.results);
       	}
       }.bind(this));
   },
@@ -45,15 +50,18 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-			<h1>Student Name</h1>
-			<p>Goal data will be below (rendered from GoalTile.js)</p>
-			<button id="addGoal"><Link to="/:schoolName/:studentId/manageGoal">+goal</Link></button>
+			
+				<h1 >{this.state.student_name}</h1>
+
+						<button id="addGoal"><Link to="/:schoolName/:studentId/manageGoal">+goal</Link></button>
 
 		    {/*  GoalTile child for list of students to be clicked on then taken to the add-goal page to edit that goal.  Alternatively, user can click on the objective of the goal to display tasks of the objectives.  
 		    	**passing any stored goals and their objs and tasks to these tiles..  */}
 
-			<GoalTile />
-		  </div>
+
+						<GoalTile student={this.state.results}/>
+
+		  	</div>	
 		)
 	}
 })

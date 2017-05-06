@@ -1,5 +1,4 @@
 //this is the file for the express routes
-
 var path=require("path");
 var School = require("../models/School");
 var Student = require("../models/Student");
@@ -10,16 +9,12 @@ var Task = require("../models/Task");
 
 module.exports = function(app) {
 
-// Main "/" Route. This will redirect the user to our rendered React application
-
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
 
 app.get("/api/schoolnames", function(req, res) {
-
-  // We will find all the records, sort it in descending order, then limit the records to 5
   School.find({})
     .sort([["name", 1]])
     .select('name _id')
@@ -32,11 +27,9 @@ app.get("/api/schoolnames", function(req, res) {
       res.send(doc);
     }
   });
-  });  
+});  
 
 app.get("/api/studentnames/:schoolname", function(req, res) {
-
-  // We will find all the records, sort it in descending order, then limit the records to 5
   School.find({'name': req.params.schoolname})
     .populate("students")
     .exec(function(err, doc) {
@@ -48,25 +41,25 @@ app.get("/api/studentnames/:schoolname", function(req, res) {
       res.send(doc);
     }
   });
-  });  
+});  
 
 
 app.get("/api/student/:studentId", function(req, res) {
-
   // We will find all the records, sort it in descending order, then limit the records to 5
   Student.find({'_id': req.params.studentId})
-    .populate("goals")
+    .populate( "goals.goal")
+    .populate( "goals.student_objectives")
+    .deepPopulate( 'goals.student_objectives.objective goals.student_objectives.tasks')
     .exec(function(err, doc) {
-      console.log(doc);
     if (err) {
       console.log(err);
     }
     else {
-      console.log("app.get api/student");
+      console.log(doc);
       res.send(doc);
     }
-  });
   }); 
+});
 
 
 // You can create school documents by editing here - just uncode the call in SchoolContainer componentWillMount and
@@ -87,10 +80,7 @@ app.post("/api/school", function() {
     }
     else {
       console.log("added");
-
       // res.redirect("/api");
-
-      
     }
   });
 });

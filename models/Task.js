@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var TaskSchema = new Schema({
@@ -15,7 +15,7 @@ var TaskSchema = new Schema({
 				type: Date
 			},
 			score: {
-				type: Number
+				type: String
 			},
 			comment: {//in case the teacher wants to add a comment in addition to just giving a score
 				type: String
@@ -23,6 +23,7 @@ var TaskSchema = new Schema({
 		}]
 });
 
+TaskSchema.plugin(deepPopulate);
 var Task = mongoose.model("Task", TaskSchema);
 
 module.exports = Task;

@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var ObjectiveSchema = new Schema({
@@ -14,7 +14,7 @@ var ObjectiveSchema = new Schema({
 		type: String
 	}
 });
-
+ObjectiveSchema.plugin(deepPopulate);
 var Objective = mongoose.model("Objective", ObjectiveSchema);
 
 module.exports = Objective;

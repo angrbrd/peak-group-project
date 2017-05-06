@@ -28,6 +28,8 @@ var helpers = {
   },
 
   getStudent: function(studentId) {
+    console.log("beginning of getStudent");
+    console.log(studentId);
     return axios.get("/api/student/" + studentId)
                 .then(function(res){
                   console.log("inside getStudent");
