@@ -13,10 +13,9 @@ export default React.createClass({
 
   getInitialState: function() {
     return { 
-      name: "",
-      school_system: "",
-      address: "",
-      phone:"",
+      code: "",
+      goal_type: "",
+      description: "",
     };
   },
 
@@ -31,19 +30,16 @@ export default React.createClass({
     // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
     // clicking the button
     event.preventDefault();
-    var school_record = {
-    	name: this.state.name,
-    	school_system: this.state.school_system,
-    	address: this.state.address,
-    	phone: this.state.phone
+    var goal_record = {
+    	code: this.state.code,
+    	goal_type: this.state.goal_type,
+    	description: this.state.description
     }
-    console.log("school_record before addSchool");
-    console.log(school_record);
 
-    helpers.addSchool(school_record).then(function(data){
-    	console.log("after helpers.addSchool");
+
+    helpers.addPEAKGoal(goal_record).then(function(data){;
     	console.log(data);
-    	hashHistory.push('/schools');
+    	hashHistory.push('/goals');
     }.bind(this));
 
   },
@@ -54,62 +50,51 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-		  	<h1>Add School</h1>
-			<form id="schoolForm" onSubmit={this.handleSubmit}>
+		  	<h1>Add Goal</h1>
+			<form id="" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>School Name:</strong></h4>
+	                 		<h4><strong>Goal Code: e.g. K.MS.1</strong></h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
 	                      		className="form-control text-left"
-	                      		id="name"
+	                      		id="code"
 	                      		required
 	                    	/>
 	               		</div> 
 	               	</div>
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>School System:</strong></h4>
+	                 		<h4><strong>Goal Type: e.g. MS, MC, HF, PR</strong></h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
 	                      		className="form-control text-left"
-	                      		id="school_system"
+	                      		id="goal_type"
 	                    	/>
 	               		</div> 
 	               	</div>
 	               	<div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Address</strong></h4>
+	                		<h4 className=""><strong>Description</strong></h4>
 	                		<input
 	                  			// value={this.state.end}
 	                  			onChange={this.handleChange}
 	                  			type="text"
 	                  			className="form-control text-left"
-	                  			id="address"
+	                  			id="description"
 	                		/>  
 	                	</div> 
 	                </div>
-	                <div className="row">	
-	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Phone</strong></h4>
-	                		<input
-	                  		// value={this.state.end}
-	                  			onChange={this.handleChange}
-	                  			type="text"
-	                  			className="form-control text-left"
-	                  			id="phone"
-	                		/>  
-	                	</div>
-	                </div>	 
-	              </div>  
+
 	              <br />
 	            
-				<button type="submit" id="saveSchool">Save</button>
-				<button type="cancel" id="cancelSchool"><Link to='/schools'>Cancel</Link></button>
+				<button type="submit" id="saveGoal">Save</button>
+				<button type="cancel" id="cancelGoal"><Link to='/goals'>Cancel</Link></button>
+			</div>	
 			</form>
 		  </div>
 		)

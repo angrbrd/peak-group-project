@@ -11,6 +11,10 @@ import StudentManager from './modules/StudentManager'
 import GoalManager from './modules/GoalManager'
 import SchoolManager from './modules/SchoolManager'
 import LogIn from './modules/LogIn'
+import PEAKGoalContainer from './modules/PEAKGoalContainer'
+import PEAKObjectiveContainer from './modules/PEAKObjectiveContainer'
+import PEAKGoalManager from './modules/PEAKGoalManager'
+import PEAKObjectiveManager from './modules/PEAKObjectiveManager'
 
 render((
 
@@ -24,6 +28,10 @@ render((
 		<Route path="/:schoolName/manageStudent" component={StudentManager}/>
 		<Route path="/:schoolName/:studentId/manageGoal" component={GoalManager}/>
 		<Route path="/manageSchool" component={SchoolManager}/>
-	
+		<Route path="/goals" component={PEAKGoalContainer}>
+			<Route path="/goals/:goalId" component={PEAKObjectiveContainer} />
+		</Route>
+		<Route path="/managePEAKGoal" component={PEAKGoalManager} />
+		<Route path="/:goal_id/managePEAKObjectives" component={PEAKObjectiveManager} />
 	</Router>
 ), document.getElementById('app'));

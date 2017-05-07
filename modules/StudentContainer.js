@@ -14,6 +14,7 @@ export default React.createClass({
 
   getInitialState: function() {
     return {
+      	
       school_name: "",	
       results: []
     };
@@ -24,6 +25,7 @@ export default React.createClass({
     var sName = this.props.params.schoolName;
     console.log("this.props.params.schoolName " + sName);
     this.setState({school_name: sName});
+  
 
     helpers.getStudentNames(sName).then(function(data) {
     	// console.log("after helpers.getStudentNames");
@@ -58,11 +60,10 @@ export default React.createClass({
 		return (
 		  <div>
 
-		   	<container id="selectedSchool">
+		
 
-				<button id="addStudent"><Link to="/schoolName/studentId/manageStudent">+student</Link></button><br/><br/>
-				
-			</container>
+				<button id="addStudent"><Link to={"/"+ this.state.school_name +"/manageStudent"}>+student</Link></button><br/><br/>
+
 
 		    {/*  StudentTile child for list of students to be clicked on then taken to individual student page.  
 		    	**passing student info to these student tiles..  */}
