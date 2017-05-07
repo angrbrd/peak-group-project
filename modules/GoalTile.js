@@ -17,22 +17,59 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-			<h2>Each individual goal will go under the students name here</h2>
-			<p>Will have objectives that can be clicked on and these will show info in TaskTile.js for that objective</p>
 
-			  			{/*Goals to be listed here (under title of Student name)*/}
- 			<ul>
- 			  <li><Link to="/schoolName/studentId/manageGoal">Goal Type and Description (clickable to edit)</Link></li>
- 			</ul>
+ 			  	{this.props.student.map(function(stdnt,i){
+ 			  		return (
+ 			  			<div key={i}>
+ 			 
+ 			  			<ul >
+ 			  			{stdnt.goals.map(function(goals,j){
+ 			  				return (
 
-		    <ul>
-		    	<li>Objective here>will show task to right when tapped/clicked</li>
-		    </ul>
-
- 			  {/*Tasks will show when objectives are tapped/clicked on
+ 			  					<li key={j}>
+ 			  						<p>Goal: {goals.goal.code} {goals.goal.description}</p>
+ 			  						<ul>
+ 			  							{goals.student_objectives.map(function(s_obj,k){
+ 			  							return (
+ 			  								<li key={k}>
+ 			  									<p>Objective: {s_obj.objective.code } - {s_obj.objective.description}</p>
+ 			  		 			  {/*Tasks will show when objectives are tapped/clicked on
  			   		TaskTile is a grandchild of GoalContainer
  			   		*should be passed task info for objective*/}
- 			  <TaskTile />
+ 			  									<TaskTile tasks={s_obj.tasks}/>							
+
+ 			  								</li>
+ 			  								);
+ 			  							})}
+
+ 			  						</ul>
+
+
+ 			  					</li>
+
+ 			  				);
+ 			  			})}
+ 			  			</ul>
+ 			  			</div>
+ 			  		);
+ 			  	})}		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 		)
 	}

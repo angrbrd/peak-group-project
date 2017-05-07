@@ -8,30 +8,33 @@ var helpers = {
   getSchoolNames: function() {
     return axios.get("/api/schoolnames")
                 .then(function(res){
-                  console.log("inside get SchoolNames");
                   return res
                 })
   },
 
-  addSchool: function(){
-    return axios.post("/api/school")
-    .then(function(res){
-      console.log(res);
-    });
-  },
 
   getStudentNames: function(name) {
     return axios.get("/api/studentnames/" + name)
                 .then(function(res){
-                  console.log("inside getStudentNames");
+
                   return res
                 })
   },
 
-  // // This function posts new searches to our database.
-  // postSavedArticle: function(article) {
-  //   return axios.post("/api", article);
-  // },
+  getStudent: function(studentId) {
+
+    return axios.get("/api/student/" + studentId)
+                .then(function(res){
+                  return res;
+                })
+  },
+
+  // This function posts new searches to our database.
+  addSchool: function(school) {
+    return axios.post("/api/school", school).then(function(res){
+        return res;
+    });
+  }
 
   //   // This function posts new searches to our database.
   // deleteArticle: function(article) {

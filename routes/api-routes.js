@@ -1,5 +1,4 @@
 //this is the file for the express routes
-
 var path=require("path");
 var School = require("../models/School");
 var Student = require("../models/Student");
@@ -10,16 +9,12 @@ var Task = require("../models/Task");
 
 module.exports = function(app) {
 
-// Main "/" Route. This will redirect the user to our rendered React application
-
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
 
 app.get("/api/schoolnames", function(req, res) {
-
-  // We will find all the records, sort it in descending order, then limit the records to 5
   School.find({})
     .sort([["name", 1]])
     .select('name _id')
@@ -32,11 +27,9 @@ app.get("/api/schoolnames", function(req, res) {
       res.send(doc);
     }
   });
-  });  
+});  
 
 app.get("/api/studentnames/:schoolname", function(req, res) {
-
-  // We will find all the records, sort it in descending order, then limit the records to 5
   School.find({'name': req.params.schoolname})
     .populate("students")
     .exec(function(err, doc) {
@@ -48,34 +41,41 @@ app.get("/api/studentnames/:schoolname", function(req, res) {
       res.send(doc);
     }
   });
-  });  
+});  
 
 
-// You can create school documents by editing here - just uncode the call in SchoolContainer componentWillMount and
-// save and refresh to browser for each school you want to add
-app.post("/api/school", function() {
-   
- School.create({
-    name: "Enloe High School",
-    school_system: "Wake",
-    school_id: "5",
-    address: "",
-
-    latitude: 5,
-    longitude: 5
-  }, function(err) {
+app.get("/api/student/:studentId", function(req, res) {
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  Student.find({'_id': req.params.studentId})
+    .populate( "goals.goal")
+    .populate( "goals.student_objectives")
+    .deepPopulate( 'goals.student_objectives.objective goals.student_objectives.tasks')
+    .exec(function(err, doc) {
     if (err) {
       console.log(err);
     }
     else {
-      console.log("added");
-
-      // res.redirect("/api");
-
-      
+      console.log(doc);
+      res.send(doc);
     }
-  });
+  }); 
 });
+
+
+app.post("/api/school", function(req,res) {
+
+  //   // Create a new note using the note text passed in during the ajax call
+  var newSchool = new School(req.body);
+
+  //   // And save the new school the db
+   newSchool.save(function(error, doc) {
+  //     // Log any errors
+      if (error) {
+        console.log(error);
+      }
+        res.send(doc);
+    });
+  });      
 
 
   // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached

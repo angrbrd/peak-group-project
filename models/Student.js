@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
 var Schema = mongoose.Schema;
 
 var StudentSchema = new Schema({
@@ -23,7 +23,7 @@ var StudentSchema = new Schema({
 			type: Schema.Types.ObjectId,
 			ref: "Goal"
 			},
-		objectives:[{
+		student_objectives:[{
 			type: Schema.Types.ObjectId,
 			ref: "Student_Objective"
 		}]
@@ -42,5 +42,6 @@ var StudentSchema = new Schema({
 	},
 
 });
+StudentSchema.plugin(deepPopulate);
 var Student = mongoose.model("Student", StudentSchema);
 module.exports = Student;

@@ -15,10 +15,10 @@ import NavLink from './NavLink'
 
 
 export default React.createClass({
-	// componentWillMount: function(){
- //    	console.log("mounting SchoolTile component");
- //    	console.log(this.props.results);
-	// },
+	componentWillMount: function(){
+    	console.log("mounting SchoolTile component");
+    	console.log(this.props.results);
+	},
 
 	render() {
 		return (
@@ -28,9 +28,11 @@ export default React.createClass({
 			  {/*Schools to be listed here (under search bar)*/}
  			  <ul>
  			  	{this.props.results.map(function(search,i){
- 			  		return (
- 			  		
- 			    	<li key={i} data_id={search._id} className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
+
+ 			  	 	return (
+ 			  	 		<div key={i}>	  		
+ 			  	 			<li className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
+ 			  	 		</div>
  			  		);
  			  	})}
  			  </ul>

@@ -35,7 +35,7 @@ export default React.createClass({
  			  					<li key={j}><img 	className="studentIcon"
  			  										src="http://placehold.it/50x50"/>
  			  										{/*<Link to="/schoolName/studentId">*/}
- 			  										<Link to={schl.name + "/" + stds._id}>
+ 			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
  			  										<h2 className="studentName">{stds.student_name}</h2>
  			  										</Link>
  			  										<button className="studentInfo">info</button>
@@ -48,10 +48,7 @@ export default React.createClass({
  			  		);
  			  	})}		
 
- 			  
-
-	{/*}	Chloe - I have some work to do here making the Link work with data, but click a student anyway!
-			 */}
+ 			 
 
 			  </div>
 
