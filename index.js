@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 
 //files that will be our routes..
 import SchoolContainer from './modules/SchoolContainer'

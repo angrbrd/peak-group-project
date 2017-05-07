@@ -13,9 +13,7 @@ var helpers = require("../app/utils/helpers");
 export default React.createClass({
 
   getInitialState: function() {
-    console.log("initial state inside studentcontainer");
-    return { 
-
+    return {
       school_name: "",	
       results: []
     };
@@ -23,19 +21,37 @@ export default React.createClass({
 
   componentWillMount: function(){
   	//get the students at the school that has been selected by the user
-    var schoolName = this.props.params.schoolName;
-    this.setState({school_name: schoolName});
-    console.log(schoolName);
+    var sName = this.props.params.schoolName;
+    console.log("this.props.params.schoolName " + sName);
+    this.setState({school_name: sName});
 
-    helpers.getStudentNames(schoolName).then(function(data) {
-    	console.log("after helpers.getStudentNames");
-    	console.log(data.data);
-        if (data.data !== this.state.results) {
+    helpers.getStudentNames(sName).then(function(data) {
+    	// console.log("after helpers.getStudentNames");
+    	// console.log(data.data);
+     //    if (data.data !== this.state.results) {
           this.setState({ results: data.data}); 
-      	}
+      	// }
       }.bind(this));
   },
 
+  componentWillReceiveProps: function(nextProps){
+  	
+  	console.log("nextProps");
+  	console.log(nextProps);
+  	var sName = nextProps.params.schoolName;
+    console.log("nextProps.params.schoolName " + sName);
+    this.setState({school_name: sName});
+
+    helpers.getStudentNames(sName).then(function(data) {
+    	// console.log("after helpers.getStudentNames");
+    	// console.log(data.data);
+     //    if (data.data !== this.state.results) {
+          this.setState({ results: data.data}); 
+      	// }
+      }.bind(this));
+	
+
+  },
 
 
 	render() {

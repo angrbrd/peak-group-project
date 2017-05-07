@@ -52,7 +52,7 @@ export default React.createClass({
               {/*  SchoolTile child for list of schools to be clicked on.
           **Should be passing schoolName as a parameter.. to be used as props in params   */}
        <div>      
-          <SchoolTile results={this.state.results} />
+           <SchoolTile results={this.state.results} />
        </div>  
           {this.props.children}
 		  </div>
