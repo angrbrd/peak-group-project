@@ -29,9 +29,38 @@ app.get("/api/schoolnames", function(req, res) {
   });
 });  
 
+app.get("/api/goals", function(req, res) {
+  Goal.find({})
+    .sort([["code", 1]])
+    .exec(function(err, doc) {
+      console.log(doc);
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});  
+
 app.get("/api/studentnames/:schoolname", function(req, res) {
   School.find({'name': req.params.schoolname})
     .populate("students")
+    .exec(function(err, doc) {
+      console.log(doc);
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});  
+
+
+app.get("/api/objectives/:goalId", function(req, res) {
+  Goal.find({'_id': req.params.goalId})
+    .populate("objectives")
     .exec(function(err, doc) {
       console.log(doc);
     if (err) {
@@ -62,6 +91,20 @@ app.get("/api/student/:studentId", function(req, res) {
 });
 
 
+app.get("/api/goal/:goalId", function(req, res) {
+  // We will find all the records, sort it in descending order, then limit the records to 5
+  Goal.find({'_id': req.params.goalId})
+    .exec(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      console.log(doc);
+      res.send(doc);
+    }
+  }); 
+});
+
 app.post("/api/school", function(req,res) {
 
   //   // Create a new note using the note text passed in during the ajax call
@@ -77,6 +120,21 @@ app.post("/api/school", function(req,res) {
     });
   });      
 
+
+app.post("/api/goal", function(req,res) {
+
+  //   // Create a new note using the note text passed in during the ajax call
+  var newGoal = new Goal(req.body);
+
+  //   // And save the new school the db
+   newGoal.save(function(error, doc) {
+  //     // Log any errors
+      if (error) {
+        console.log(error);
+      }
+        res.send(doc);
+    });
+  });    
 
   // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached
 
@@ -111,6 +169,42 @@ app.post("/api/school", function(req,res) {
     }); //end newStudnet.save  
   }); //end app.post
 //-------------------  End app.post "/api/student/:school" ----------------------------
+
+
+  app.post("/api/objective/:goal", function(req, res) {
+    // Create a new Student using the student object passed in during the axios call
+    var newObjective = new Objective(req.body);
+
+    // And save the new student the db
+    newObjective.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+        console.log(error);
+      }
+      // Otherwise
+      else {
+        // Use the school name to find and update it's students array using the _id of the student that you just added to the db
+        // That _id was just passed back to you after the save in doc._id
+
+        Goal.findOneAndUpdate({ "_id": req.params.goal }, { $push: {"objectives": doc._id }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error");
+            res.send(err);
+          }
+          else {
+
+            // Or send the document to the helper function
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+      } //end else  
+    }); //end newStudnet.save  
+  }); //end app.post
+//----
+
+
+
 
 //   // delete an article from database
 //   app.post('/api/delete', function(req, res){

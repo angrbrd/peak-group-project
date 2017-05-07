@@ -12,9 +12,23 @@ var helpers = {
                 })
   },
 
+  getGoals: function() {
+    return axios.get("/api/goals")
+                .then(function(res){
+                  return res
+                })
+  },
 
   getStudentNames: function(name) {
     return axios.get("/api/studentnames/" + name)
+                .then(function(res){
+
+                  return res
+                })
+  },
+
+  getObjectives: function(goalId) {
+    return axios.get("/api/objectives/" + goalId)
                 .then(function(res){
 
                   return res
@@ -29,9 +43,26 @@ var helpers = {
                 })
   },
 
+  getGoal: function(goalId) {
+    console.log("inside getGoal");
+    console.log(goalId);
+
+    return axios.get("/api/goal/" + goalId)
+                .then(function(res){
+                  return res;
+                })
+  },
+
   // This function posts new searches to our database.
   addSchool: function(school) {
     return axios.post("/api/school", school).then(function(res){
+        return res;
+    });
+  },
+
+    // This function posts new searches to our database.
+  addPEAKGoal: function(goal) {
+    return axios.post("/api/goal", goal).then(function(res){
         return res;
     });
   },
@@ -41,7 +72,15 @@ var helpers = {
     return axios.post("/api/student/" + school, student).then(function(res){
         return res;
     });
+  },
+      // This function posts new searches to our database.
+  addPEAKObjective: function(objective,goal_id) {
+    return axios.post("/api/objective/" + goal_id, objective).then(function(res){
+        return res;
+    });
   }
+
+
 
   //   // This function posts new searches to our database.
   // deleteArticle: function(article) {
