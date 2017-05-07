@@ -58,58 +58,56 @@ export default React.createClass({
 			<form id="schoolForm" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
-	              <h4>
-	                <strong>School name:</strong>
-	              </h4>
-	              <input
-	                type="text"
-	                onChange={this.handleChange}
-	                className="form-control text-left"
-	                id="name"
-	                required
-	              />
-	            <div className="row">
-	              <div className="col-md-12">
-	                 <h4>
-	                      <strong>School System:</strong>
-	                    </h4>
-	                    <input
-	                      // value={this.state.begin}
-	                      onChange={this.handleChange}
-	                      type="text"
-	                      className="form-control text-left"
-	                      id="school_system"
-	                      
-	                    />
-	               </div> 
-	               <div className="col-md-12">     
-	                <h4 className="">
-	                  <strong>Address</strong>
-	                </h4>
-	                <input
-	                  // value={this.state.end}
-	                  onChange={this.handleChange}
-	                  type="text"
-	                  className="form-control text-left"
-	                  id="address"
-	                />  
-	                </div> 
-
-	               <div className="col-md-12">     
-	                <h4 className="">
-	                  <strong>Phone</strong>
-	                </h4>
-	                <input
-	                  // value={this.state.end}
-	                  onChange={this.handleChange}
-	                  type="text"
-	                  className="form-control text-left"
-	                  id="phone"
-	                />  
-	                </div> 
+	            	<div className="row">
+	              		<div className="col-md-6">
+	                 		<h4><strong>School Name:</strong></h4>
+	                    	<input
+	                      		onChange={this.handleChange}
+	                      		type="text"
+	                      		className="form-control text-left"
+	                      		id="name"
+	                      		required
+	                    	/>
+	               		</div> 
+	               	</div>
+	            	<div className="row">
+	              		<div className="col-md-6">
+	                 		<h4><strong>School System:</strong></h4>
+	                    	<input
+	                      		onChange={this.handleChange}
+	                      		type="text"
+	                      		className="form-control text-left"
+	                      		id="school_system"
+	                    	/>
+	               		</div> 
+	               	</div>
+	               	<div className="row">	
+	               		<div className="col-md-6">     
+	                		<h4 className=""><strong>Address</strong></h4>
+	                		<input
+	                  			// value={this.state.end}
+	                  			onChange={this.handleChange}
+	                  			type="text"
+	                  			className="form-control text-left"
+	                  			id="address"
+	                		/>  
+	                	</div> 
+	                </div>
+	                <div className="row">	
+	               		<div className="col-md-6">     
+	                		<h4 className=""><strong>Phone</strong></h4>
+	                		<input
+	                  		// value={this.state.end}
+	                  			onChange={this.handleChange}
+	                  			type="text"
+	                  			className="form-control text-left"
+	                  			id="phone"
+	                		/>  
+	                	</div>
+	                </div>	 
 	              </div>  
 	              <br />
-	            </div>
+	            
 				<button type="submit" id="saveSchool">Save</button>
 				<button type="cancel" id="cancelSchool"><Link to='/schools'>Cancel</Link></button>
 			</form>

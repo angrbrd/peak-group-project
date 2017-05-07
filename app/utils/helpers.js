@@ -34,6 +34,13 @@ var helpers = {
     return axios.post("/api/school", school).then(function(res){
         return res;
     });
+  },
+
+    // This function posts new searches to our database.
+  addStudent: function(student,school) {
+    return axios.post("/api/student/" + school, student).then(function(res){
+        return res;
+    });
   }
 
   //   // This function posts new searches to our database.

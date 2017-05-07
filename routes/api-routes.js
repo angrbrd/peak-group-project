@@ -80,44 +80,37 @@ app.post("/api/school", function(req,res) {
 
   // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached
 
-  // app.post("/note/:id", function(req, res) {
-  //   // Create a new note using the note text passed in during the ajax call
-  //   var newNote = new Note(req.body);
+  app.post("/api/student/:school", function(req, res) {
+    // Create a new Student using the student object passed in during the axios call
+    var newStudent = new Student(req.body);
 
-  //   // And save the new note the db
-  //   newNote.save(function(error, doc) {
-  //     // Log any errors
-  //     if (error) {
-  //       console.log(error);
-  //     }
-  //     // Otherwise
-  //     else {
-  //       // Use the article id to find and update it's notes array using the _id of the note that you just added to the db
-  //       // That _id was just passed back to you after the save in doc._id
+    // And save the new student the db
+    newStudent.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+        console.log(error);
+      }
+      // Otherwise
+      else {
+        // Use the school name to find and update it's students array using the _id of the student that you just added to the db
+        // That _id was just passed back to you after the save in doc._id
 
-  //       Article.findOneAndUpdate({ "_id": req.params.id }, { $push: {"notes": doc._id }}, {new: true}, function(err,doc){
-  //         // Log any errors
-  //         if (err) {
-  //           console.log("there was an error");
-  //           res.send(err);
-  //         }
-  //         else {
+        School.findOneAndUpdate({ "name": req.params.school }, { $push: {"students": doc._id }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error");
+            res.send(err);
+          }
+          else {
 
-  //           // Or send the document to the browser 
-  //           res.send(doc);  
-
-  //           //if I don't send anything back, the .done in the ajax call will not trigger
-  //           //for some reason, if I do not send anything back, the page refreshes anyway and dipslays the updated notes.
-  //         }
-          
-  //       });//end findOneAndUpdate
-        
-  //     } //end else
-     
-  //   }); //end newNote.save
-    
-  // }); //end app.post
-
+            // Or send the document to the helper function
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+      } //end else  
+    }); //end newStudnet.save  
+  }); //end app.post
+//-------------------  End app.post "/api/student/:school" ----------------------------
 
 //   // delete an article from database
 //   app.post('/api/delete', function(req, res){
