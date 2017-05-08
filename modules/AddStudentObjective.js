@@ -9,8 +9,8 @@ export default React.createClass({
   getInitialState: function() {
     return { 
       goal_results: [],
+      objectives: [],
       student_id: this.props.params.studentId,
-      school_name: this.props.params.schoolName,
       student_name: this.props.params.studentName,
       value: ""
     };
@@ -18,15 +18,18 @@ export default React.createClass({
 
   componentWillMount: function(){
     // get all of the schools from the schools table
-    console.log("inside Goal Manager componentWillMount");
+    console.log("inside addStudentObjectives componentWillMount");
+    console.log(this.props.params.goalId);
 
+    helpers.getObjectives(this.props.params.goalId).then(function(data) {
 
-    helpers.getGoals().then(function(data) {
+        console.log(data.data);
 
-        if (data.data !== this.state.results) {
+        // if (data.data !== this.state.results) {
           this.setState({ goal_results: data.data });
-          this.setState({value: data.data[0]._id});                
-        }
+          this.setState({objectives: data.data[0].objectives});
+          this.setState({value: data.data[0].objectives[0]._id});                
+        
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.
       }.bind(this));  
@@ -50,14 +53,15 @@ export default React.createClass({
     console.log(this.state.student_id);
 
 
-	   console.log(this.state.value);
+     console.log(this.state.value);
 
      var addObject = {
       studentId: this.state.student_id,
-      goalId: this.state.value
+      goalId: this.props.params.goalId,
+      objectiveId: this.state.value
      };
 
-    helpers.addStudentGoal(addObject).then(function(data) {
+    helpers.addStudentObjective(addObject).then(function(data) {
         hashHistory.goBack();
     }.bind(this));
 
@@ -65,37 +69,35 @@ export default React.createClass({
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.
       
-
-
   },
 
 
 
-	render() {
-		return (
-		  <div>
-			<h1>Add Goals for {this.state.student_name} at {this.state.school_name}</h1>
+  render() {
+    return (
+      <div>
+      <h1>Add Objectives for {this.state.student_name}</h1>
 
-      <h2>Select a Goal</h2>
-			<form id="studentForm" onSubmit={this.handleSubmit}>
-				<select value={this.state.value} onChange={this.handleChange} >
-	 			  	{this.state.goal_results.map(function(goal,i){
-	 			  	 	return (	 			  	 		  		
-	 			  	 		<option key={i} value={goal._id}>{goal.code} - {goal.description}</option> 			  	 		
-	 			  		);
-	 			  	})}
- 			  	</select>
- 			  	<br></br>
- 			  	<br></br>
- 			  	<br></br>
+      <h2>Select an Objective</h2>
+      <form id="studentForm" onSubmit={this.handleSubmit}>
+        <select value={this.state.value} onChange={this.handleChange} >
+          {this.state.objectives.map(function(obj,i){
+            return (               
+                <option key={i} value={obj._id}>{obj.code} - {obj.description}</option>              
+            );
+          })}
+        </select>
+        <br></br>
+        <br></br>
+        <br></br>
 
- 			  <button type="submit" id="saveGoal">Save</button>
+        <button type="submit" id="saveGoal">Save</button>
         <button onClick={hashHistory.goBack}>Cancel</button>
 
-			</form>
+      </form>
 
-		
-		  </div>
-		)
-	}
+    
+      </div>
+    )
+  }
 })

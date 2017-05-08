@@ -27,7 +27,9 @@ export default React.createClass({
  			  				return (
 
  			  					<li key={j}>
- 			  						<p>Goal: {goals.goal.code} {goals.goal.description}</p>
+ 			  						<p><Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id}>+objective</Link>
+
+ 			  						 &nbsp;&nbsp;Goal: {goals.goal.code} {goals.goal.description}</p>
  			  						<ul>
  			  							{goals.student_objectives.map(function(s_obj,k){
  			  							return (
