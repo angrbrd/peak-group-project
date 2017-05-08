@@ -32,6 +32,7 @@ app.get("/api/schoolnames", function(req, res) {
 app.get("/api/goals", function(req, res) {
   Goal.find({})
     .sort([["code", 1]])
+    .populate("objectives")
     .exec(function(err, doc) {
       console.log(doc);
     if (err) {
@@ -204,7 +205,26 @@ app.post("/api/goal", function(req,res) {
 //----
 
 
+  app.post("/api/studentgoal", function(req, res) {
+    // Create a new Student using the student object passed in during the axios call
+      var goalObject = {
+        goal: req.body.goalId
+      }
+    // And save the new student the db
 
+        Student.findOneAndUpdate({ "_id": req.body.studentId }, { $push: {"goals": goalObject }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error");
+            res.send(err);
+          }
+          else {
+
+            // Or send the document to the helper function
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+  }); //end app.post
 
 //   // delete an article from database
 //   app.post('/api/delete', function(req, res){

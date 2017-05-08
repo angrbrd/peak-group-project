@@ -12,7 +12,7 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-				<div id="selectedSchool">
+				<div id="">
  			  
  			  	{this.props.tasks.map(function(task,i){
  			  		return (

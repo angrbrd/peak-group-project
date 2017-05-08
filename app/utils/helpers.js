@@ -73,6 +73,14 @@ var helpers = {
         return res;
     });
   },
+
+  addStudentGoal: function(stuff) {
+    return axios.post("/api/studentgoal", stuff).then(function(res){
+        return res;
+    });
+  },
+
+
       // This function posts new searches to our database.
   addPEAKObjective: function(objective,goal_id) {
     return axios.post("/api/objective/" + goal_id, objective).then(function(res){
