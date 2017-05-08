@@ -1,7 +1,138 @@
-/*NOTE this file may be temporary if SASS is used and/or a framework*/
+@import url('https://fonts.googleapis.com/css?family=Londrina+Sketch');
+
 
 #usernameDisplay, #logout {
-	float: right;
-	clear: right;
+	position: absolute;
+	right: 3%;
 	margin: 0 auto;
+	padding: 0px;
+}
+
+#manageTemp {
+	position: absolute;
+	left: 10%;
+	border: #888 solid 1px;
+	background: none;
+	color: #777;
+}
+
+#schoolSearchForm {
+	margin-top: 25%;
+}
+
+#schoolNameLabel {
+	font-size: 30px;
+	color: #888;
+	letter-spacing: 0.1em;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	font-family: "Londrina Sketch";
+	font-weight: bold;
+}
+
+#schoolSearch {
+	width: 100%;
+	border: #333 solid 1px;
+	height: 50px;
+	font-size: 20px;
+}
+
+#addSchool {
+	background-color: transparent;
+	border: none;
+	background: url("../images/school.png") no-repeat;
+	background-size: 40px;
+	background-position: right;
+	text-align: left;
+	margin-top: 35%;
+	font-size: 25px;
+	width: 50px;
+}
+
+a {
+	color: #000;
+}
+
+/*for developmental purposes*/
+/*----------------------------*/
+a:hover {
+	text-decoration: none;
+	color: #444;
+}
+
+a:focus {
+	text-decoration: none;
+	color: #ff4d4d;
+}
+
+a:active {
+	text-decoration: none;
+	color: #000;
+}
+/*----------------------------*/
+
+li {
+	list-style: none;
+}
+
+ul {
+	margin: 0 auto;
+	padding: 0px;
+}
+
+.school {
+	padding: 15px;
+	padding-left: 55px;
+	border: 1px #333 solid;
+	width: 100%;
+	background: url("../images/school.png") no-repeat;
+	background-size: 45px;
+	background-position: left;
+	font-size: 24px;
+
+}
+
+/*development purposes (will not effect ipad)*/
+/*-------------------------------------*/
+.school:hover {
+	text-decoration: none;
+	background-color: #e8e8ee;
+}
+/*------------------------------------*/
+
+#schoolList {
+	overflow: auto;
+	height: 200px;
+}
+
+
+#selectedSchool {
+text-align: center;
+padding-top: 30px;
+}
+
+#addStudent {
+	background-color: white;
+	border: none;
+	border: solid 1px #888;
+	border-radius: 50%;
+	background: url("../images/student.png") no-repeat;
+	background-size: 25px;
+	background-position: center;
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	padding-top: 12px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 40%;
+}
+
+#addStudentLink {
+	color: white;
+}
+
+#studentList {
+	overflow: auto;
 }

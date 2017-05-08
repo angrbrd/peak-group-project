@@ -58,12 +58,7 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
-
-		
-
-				<button id="addStudent"><Link to={"/"+ this.state.school_name +"/manageStudent"}>+student</Link></button><br/><br/>
-
+		  <div className="row">
 
 		    {/*  StudentTile child for list of students to be clicked on then taken to individual student page.  
 		    	**passing student info to these student tiles..  */}

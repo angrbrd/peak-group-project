@@ -18,7 +18,7 @@ export default React.createClass({
 			<div>
 				{/*Login form*/}
 				<form id="loginForm">
-				<button id="login"><Link to="/schools">Login</Link></button>
+				<Link to="/schools"><button id="login">Login</button></Link>
 				</form>
 
 			</div>

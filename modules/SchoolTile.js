@@ -22,20 +22,26 @@ export default React.createClass({
 
 	render() {
 		return (
-			<div id="listOfSchools">
+			<div className="row" id="listOfSchools">
+			  <div className="col-sm-4"></div>
+			  <div className="col-sm-4">
 
+				  {/*Schools to be listed here (under search bar)*/}
+				  <div id="schoolList">
+		 			  <ul>
+		 			  	{this.props.results.map(function(search,i){
 
-			  {/*Schools to be listed here (under search bar)*/}
- 			  <ul>
- 			  	{this.props.results.map(function(search,i){
-
- 			  	 	return (
- 			  	 		<div key={i}>	  		
- 			  	 			<li className="school"><Link to={"/schools/" + search.name}>{search.name}</Link></li>
- 			  	 		</div>
- 			  		);
- 			  	})}
- 			  </ul>
+		 			  	 	return (
+		 			  	 		<div key={i}>	  		
+		 			  	 			<Link to={"/schools/" + search.name}><li className="school">{search.name}</li></Link>
+		 			  	 		</div>
+		 			  		);
+		 			  	})}
+		 			  </ul>
+	 			  </div>
+	 			  
+ 			  </div>
+ 			  <div className="col-sm-4"></div>
  			  	
 			</div>
 		);

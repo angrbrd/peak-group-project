@@ -40,16 +40,28 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-      <button><Link to="/goals">Manage PEAK Goals</Link></button>
 
-			<form id="schoolSearchForm">
-  				<label htmlFor="schoolSearch" 
-  						id="schoolNameLabel">SCHOOL NAME</label>
-  				<input type="search" 
-  						id="schoolSearch" 
-  						name="schoolSearch"/>
-  						<button id="addSchool"><Link to='/manageSchool'>+school</Link></button>
-			</form>
+      <div className="row">
+        <div className="col-sm-4">
+          <Link to="/goals"><button id="manageTemp">Manage goals(temp)</button></Link>
+        </div>
+
+        <div className="col-sm-4">
+
+    			<form id="schoolSearchForm">
+      				<label htmlFor="schoolSearch" 
+      						id="schoolNameLabel">SCHOOL NAME</label>
+      				<input type="search" 
+      						id="schoolSearch" 
+      						name="schoolSearch"/>
+    			</form>
+          </div> {/*end col*/}
+     
+        <div className="col-sm-4" id="addSchoolCol">
+          <button id="addSchool"><Link to='/manageSchool'>+</Link></button>
+        </div>
+      </div> {/*end row*/}
+
               {/*  SchoolTile child for list of schools to be clicked on.
           **Should be passing schoolName as a parameter.. to be used as props in params   */}
        <div>      
