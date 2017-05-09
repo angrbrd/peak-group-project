@@ -84,6 +84,13 @@ app.post("/api/school", function() {
     }
   });
 });
+//login
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/schoolnames',
+  failureRedirect: '/login'
+}));
+
+
 
 
   // // Create a new note and a reference to that note in the article - the id in req.params.id is the id of the article to which the note is attached
