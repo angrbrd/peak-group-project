@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Londrina+Sketch');
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Londrina+Outline|Londrina+Shadow|Londrina+Sketch|Londrina+Solid');
 
 
 #usernameDisplay, #logout {
@@ -33,7 +33,7 @@
 
 #schoolSearch {
 	width: 100%;
-	border: #333 solid 1px;
+	border: #606060 solid 1px;
 	height: 50px;
 	font-size: 20px;
 }
@@ -63,7 +63,7 @@ a:hover {
 
 a:focus {
 	text-decoration: none;
-	color: #ff4d4d;
+	color: #7d83ee;
 }
 
 a:active {
@@ -84,7 +84,7 @@ ul {
 .school {
 	padding: 15px;
 	padding-left: 55px;
-	border: 1px #333 solid;
+	border: 1px #606060 solid;
 	width: 100%;
 	background: url("../images/school.png") no-repeat;
 	background-size: 45px;
@@ -101,6 +101,15 @@ ul {
 }
 /*------------------------------------*/
 
+
+.school:active {
+	border: 2px #606060 solid;
+}
+
+.active {
+	color: #7d83ee;
+}
+
 #schoolList {
 	overflow: auto;
 	height: 200px;
@@ -109,30 +118,63 @@ ul {
 
 #selectedSchool {
 text-align: center;
-padding-top: 30px;
+padding-top: 10px;
 }
 
 #addStudent {
 	background-color: white;
 	border: none;
-	border: solid 1px #888;
+	border: solid 2.5px #484848;
 	border-radius: 50%;
-	background: url("../images/student.png") no-repeat;
-	background-size: 25px;
-	background-position: center;
+	background: url("../images/addstudent.svg") no-repeat;
+	background-size: 48px;
+	background-position: top;
 	text-align: center;
-	height: 40px;
-	width: 40px;
-	padding-top: 12px;
+	height: 45px;
+	width: 45px;
 	font-size: 20px;
 	font-weight: bold;
 	margin-left: 40%;
+	
 }
 
-#addStudentLink {
-	color: white;
+.schoolNameTitle {
+	font-family: "Londrina Shadow";
+	font-size: 65px;
+	font-weight: bold;
+	color: #484848;
+	margin-bottom: 0px;
 }
+
 
 #studentList {
 	overflow: auto;
+	font-family: "Gruppo";
+	margin-top: 0px;
+	border: 1px dashed red;
+	height: 400px;
+	margin-bottom: 15px;
+	width: 50%;
+}
+
+.studentIcon {
+	margin: 0 auto;
+	width: 100px;
+}
+
+.studentInfo {
+	width: 30px;
+	height: 30px;
+	margin-top: 65px;
+	margin-right: 20px;
+}
+
+.studentInfo:hover {
+	cursor: pointer;
+}
+
+.studentName {
+	display: inline;
+	font-size: 45px;
+	margin-left: 10px;
 }

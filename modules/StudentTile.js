@@ -27,19 +27,19 @@ export default React.createClass({
 	 			  	{this.props.school_record.map(function(schl,i){
 	 			  		return (
 	 			  			<div key={i}>
-	 			  			<h2 >{schl.name}</h2>
-	 			  			<Link to={"/"+ schl.name +"/manageStudent"} id="addStudentLink"><button id="addStudent">+</button></Link><br/><br/>
+	 			  			<h2 className="schoolNameTitle" >{schl.name}</h2>
+	 			  			<Link to={"/"+ schl.name +"/manageStudent"}><button id="addStudent"></button></Link><br/><br/>
 	 			  			<ul id="studentList">
 	 			  			{schl.students.map(function(stds,j){
 	 			  				return (
 
-	 			  					<li key={j}><img 	className="studentIcon"
-	 			  										src="http://placehold.it/50x50"/>
+	 			  					<li key={j}><span><img 	className="studentIcon"
+	 			  										src="/images/student.png"/>
+	 			  										<img className="studentInfo" src="/images/info.svg"/>
 	 			  										{/*<Link to="/schoolName/studentId">*/}
 	 			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
 	 			  										<h2 className="studentName">{stds.student_name}</h2>
-	 			  										</Link>
-	 			  										<button className="studentInfo">info</button>
+	 			  										</Link></span>
 	 			  										<br/>
 	 			  										</li>
 	 			  				);

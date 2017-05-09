@@ -33,7 +33,7 @@ export default React.createClass({
 
 		 			  	 	return (
 		 			  	 		<div key={i}>	  		
-		 			  	 			<Link to={"/schools/" + search.name}><li className="school">{search.name}</li></Link>
+		 			  	 			<NavLink to={"/schools/" + search.name}><li className="school">{search.name}</li></NavLink>
 		 			  	 		</div>
 		 			  		);
 		 			  	})}
