@@ -205,6 +205,8 @@ app.post("/api/goal", function(req,res) {
   }); //end app.post
 //----
 
+//-------------------  End app.post "/api/objective/:goal" ----------------------------
+
 
   app.post("/api/studentgoal", function(req, res) {
     // Create a new Student using the student object passed in during the axios call
@@ -212,6 +214,10 @@ app.post("/api/goal", function(req,res) {
         goal: req.body.goalId
       }
     // And save the new student the db
+
+
+    //need to check here to keep user from adding same goal twice
+    // or peferably alter the drop down so that the user cannot pick the same goal more than once
 
         Student.findOneAndUpdate({ "_id": req.body.studentId }, { $push: {"goals": goalObject }}, {new: true}, function(err,doc){
           // Log any errors
@@ -227,6 +233,8 @@ app.post("/api/goal", function(req,res) {
         });//end findOneAndUpdate       
   }); //end app.post
 
+  //-------------------  End app.post "/api/studentgoal" ----------------------------
+
     app.post("/api/studentobjective", function(req, res) {
       //this routine adds a record to the Student_Objective table. We then get the _id of the record that was
       //created in Student_Objectives. That id will then be pushed into the student_objectives array in the Student Record.
@@ -237,6 +245,13 @@ app.post("/api/goal", function(req,res) {
         student: req.body.studentId,
         objective: req.body.objectiveId
       }
+
+      //note - check here first if the student already has this objective - if so don't add it
+      // or,  preferably alter the drop down so that the user cannot pick the same objective more than once
+
+
+
+
     var newStudent_Objective = new Student_Objective(studentObjective);
     // And save the new student objective to the db
     newStudent_Objective.save(function(error, doc) {
@@ -277,6 +292,56 @@ app.post("/api/goal", function(req,res) {
       }); //end Student.findOne
      }//end else 
   }); //end newStudent_Objective.save 
+  }); //end app.post
+
+
+//-------------------  End app.post "/api/studentobjective" ----------------------------
+
+
+
+
+
+    app.post("/api/studenttask", function(req, res) {
+
+      var task = {
+        student: req.body.studentId,
+        description: req.body.description
+      }
+
+
+    var newTask = new Task(task);
+    // And save the new student objective to the db
+    newTask.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+        console.log(error);
+      }
+      else {
+        //we're going to go get the Student document for the specified student. We will grab the goals array, add to it appropriately,
+        //and then update the document to reflect the added student_objective
+        var task_id = doc._id;
+
+        console.log("studentObjectiveId");
+        console.log(req.body.studentObjectiveId);
+        console.log("task_id");
+        console.log(task_id);
+
+        Student_Objective.findOneAndUpdate({ "_id": req.body.studentObjectiveId }, { $push: {"tasks": task_id }}, {new: true}, function(err,sodoc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error");
+            res.send(err);
+          }
+          else {
+
+            // Or send the document to the helper function
+            res.send(sodoc);  
+          }         
+        });
+
+
+     }//end else 
+  }); //end newTask.save 
   }); //end app.post
 
 //   // delete an article from database

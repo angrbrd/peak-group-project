@@ -20,10 +20,10 @@ p {
 	visibility: hidden;
 }
 
-#addSchoolInit {
+/*#addSchoolInit {
 	position: absolute;
 	left: 130%;
-}
+}*/
 
 #listOfSchools {
 	list-style: none;
@@ -51,15 +51,15 @@ p {
 	height: 28px;
 	
 }*/
-
+/*
 #selectedSchool {
 	position: absolute;
 	top: 50%;
 	left: 33%;
 	text-align: center;
-}
+}*/
 
 .studentName {
 	margin: 0 auto;
-	float: right;
+	float: left;
 }

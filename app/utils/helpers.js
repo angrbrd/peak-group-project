@@ -92,6 +92,12 @@ var helpers = {
     });
   },
 
+  addStudentTask: function(task) {
+    return axios.post("/api/studenttask", task).then(function(res){
+        return res;
+    });
+  },
+
       // This function posts new searches to our database.
   addPEAKObjective: function(objective,goal_id) {
     return axios.post("/api/objective/" + goal_id, objective).then(function(res){

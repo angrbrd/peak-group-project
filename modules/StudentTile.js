@@ -18,7 +18,7 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-				<div id="selectedSchool">
+				<div id="">
 				{/*Students to be listed here (under title of School name)*/}
 				{/*Note: there will only be one school here, so i=0 always. We use
 				.map to gain access to the object in the array, then nest another .map
@@ -34,7 +34,6 @@ export default React.createClass({
 
  			  					<li key={j}><img 	className="studentIcon"
  			  										src="http://placehold.it/50x50"/>
- 			  										{/*<Link to="/schoolName/studentId">*/}
  			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
  			  										<h2 className="studentName">{stds.student_name}</h2>
  			  										</Link>

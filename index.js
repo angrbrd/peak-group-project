@@ -10,6 +10,7 @@ import GoalContainer from './modules/GoalContainer'
 import StudentManager from './modules/StudentManager'
 import AddStudentGoal from './modules/AddStudentGoal'
 import AddStudentObjective from './modules/AddStudentObjective'
+import AddStudentTask from './modules/AddStudentTask'
 
 // import GoalManager from './modules/GoalManager'
 
@@ -24,6 +25,7 @@ render((
 
 	<Router history={hashHistory}>
 
+		<Route path="/studentTask/:studentId/:studentName/:studentObjectiveId" component={AddStudentTask} />
 		<Route path="/studentGoal/:schoolName/:studentId/:studentName" component={AddStudentGoal}/>
 		<Route path="/studentObjective/:studentId/:studentName/:goalId" component={AddStudentObjective}/>
 		<Route path="/" component={LogIn}/>
