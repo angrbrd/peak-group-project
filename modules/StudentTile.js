@@ -17,8 +17,10 @@ export default React.createClass({
 
 	render() {
 		return (
+
 			<div className="row">
 				<div className="col-sm-12">
+
 				{/*Students to be listed here (under title of School name)*/}
 				{/*Note: there will only be one school here, so i=0 always. We use
 				.map to gain access to the object in the array, then nest another .map

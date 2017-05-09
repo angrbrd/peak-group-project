@@ -60,29 +60,55 @@ var helpers = {
     });
   },
 
-    // This function posts new searches to our database.
   addPEAKGoal: function(goal) {
     return axios.post("/api/goal", goal).then(function(res){
         return res;
     });
   },
 
-    // This function posts new searches to our database.
+
   addStudent: function(student,school) {
     return axios.post("/api/student/" + school, student).then(function(res){
         return res;
     });
   },
-      // This function posts new searches to our database.
+
+  addStudentGoal: function(stuff) {
+    return axios.post("/api/studentgoal", stuff).then(function(res){
+        return res;
+    });
+  },
+
+    addStudentObjective: function(stuff) {
+    return axios.post("/api/studentobjective", stuff).then(function(res){
+        return res;
+    });
+  },
+
+  addStudentObjective: function(stuff) {
+    return axios.post("/api/studentobjective", stuff).then(function(res){
+        return res;
+    });
+  },
+
+  addStudentTask: function(task) {
+    return axios.post("/api/studenttask", task).then(function(res){
+        return res;
+    });
+  },
+
   addPEAKObjective: function(objective,goal_id) {
     return axios.post("/api/objective/" + goal_id, objective).then(function(res){
         return res;
     });
+  },
+
+  addStudentEvaluation: function(evaluation,task_id) {
+    return axios.post("/api/studentevaluation/" + task_id, evaluation).then(function(res){
+        return res;
+    });
   }
 
-
-
-  //   // This function posts new searches to our database.
   // deleteArticle: function(article) {
   //   return axios.post("/api/delete", article);
   // }

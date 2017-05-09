@@ -46,6 +46,7 @@ a:active {
   border: 1px solid #888;
 }
 
+
 #manageTemp {
 	position: absolute;
 	left: 10%;
@@ -123,7 +124,6 @@ ul {
 }
 /*------------------------------------*/
 
-
 .school:active {
 	border: 2px #606060 solid;
 }
@@ -136,38 +136,6 @@ ul {
 	overflow: auto;
 	height: 200px;
 }
-
-
-#selectedSchool {
-text-align: center;
-padding-top: 10px;
-}
-
-.schoolNameTitle {
-	font-family: "Londrina Shadow";
-	font-size: 80px;
-	font-weight: bold;
-	color: #484848;
-	margin-bottom: 0px;
-}
-
-#addStudent {
-	background-color: white;
-	border: none;
-	border: solid 2.5px #484848;
-	border-radius: 50%;
-	background: url("../images/addstudent.svg") no-repeat;
-	background-size: 48px;
-	background-position: top;
-	text-align: center;
-	height: 45px;
-	width: 45px;
-	font-size: 20px;
-	font-weight: bold;
-	margin-left: 43%;
-	
-}
-
 
 #studentList {
 	overflow: auto;

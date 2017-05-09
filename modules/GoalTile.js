@@ -27,15 +27,20 @@ export default React.createClass({
  			  				return (
 
  			  					<li key={j}>
- 			  						<p>Goal: {goals.goal.code} {goals.goal.description}</p>
+
+ 			  						{/*Link to add a new objective to a goal - each goal gets one of these links*/}
+ 			  						<p><Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id}>+objective</Link>
+
+ 			  						 &nbsp;&nbsp;Goal: {goals.goal.code} {goals.goal.description}</p>
  			  						<ul>
  			  							{goals.student_objectives.map(function(s_obj,k){
  			  							return (
  			  								<li key={k}>
- 			  									<p>Objective: {s_obj.objective.code } - {s_obj.objective.description}</p>
- 			  		 			  {/*Tasks will show when objectives are tapped/clicked on
- 			   		TaskTile is a grandchild of GoalContainer
- 			   		*should be passed task info for objective*/}
+ 			  									{/*Link to add a new task to an objective - each objective gets one of these links */}
+ 			  									<p><Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id}>+task</Link>
+
+ 			  									&nbsp;&nbsp;Objective: {s_obj.objective.code } - {s_obj.objective.description}</p>
+
  			  									<TaskTile tasks={s_obj.tasks}/>							
 
  			  								</li>

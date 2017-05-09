@@ -32,6 +32,7 @@ app.get("/api/schoolnames", function(req, res) {
 app.get("/api/goals", function(req, res) {
   Goal.find({})
     .sort([["code", 1]])
+    .populate("objectives")
     .exec(function(err, doc) {
       console.log(doc);
     if (err) {
@@ -84,11 +85,13 @@ app.get("/api/student/:studentId", function(req, res) {
       console.log(err);
     }
     else {
+      console.log("successful /api/student/:studentID");
       console.log(doc);
       res.send(doc);
     }
   }); 
 });
+
 
 
 app.get("/api/goal/:goalId", function(req, res) {
@@ -156,7 +159,7 @@ app.post("/api/goal", function(req,res) {
         School.findOneAndUpdate({ "name": req.params.school }, { $push: {"students": doc._id }}, {new: true}, function(err,doc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/student/:school");
             res.send(err);
           }
           else {
@@ -189,7 +192,7 @@ app.post("/api/goal", function(req,res) {
         Goal.findOneAndUpdate({ "_id": req.params.goal }, { $push: {"objectives": doc._id }}, {new: true}, function(err,doc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/objective/:goal");
             res.send(err);
           }
           else {
@@ -201,7 +204,168 @@ app.post("/api/goal", function(req,res) {
       } //end else  
     }); //end newStudnet.save  
   }); //end app.post
-//----
+
+
+//-------------------  End app.post "/api/objective/:goal" ----------------------------
+
+
+  app.post("/api/studentgoal", function(req, res) {
+    // Create a new Student using the student object passed in during the axios call
+      var goalObject = {
+        goal: req.body.goalId
+      }
+    // And save the new student the db
+
+
+    //need to check here to keep user from adding same goal twice
+    // or peferably alter the drop down so that the user cannot pick the same goal more than once
+
+        Student.findOneAndUpdate({ "_id": req.body.studentId }, { $push: {"goals": goalObject }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error in /api/studentgoal");
+            res.send(err);
+          }
+          else {
+
+            // Or send the document to the helper function
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+  }); //end app.post
+
+  //-------------------  End app.post "/api/studentgoal" ----------------------------
+
+    app.post("/api/studentobjective", function(req, res) {
+      //this routine adds a record to the Student_Objective table. We then get the _id of the record that was
+      //created in Student_Objectives. That id will then be pushed into the student_objectives array in the Student Record.
+      console.log("req.body.goalId");
+      console.log(req.body.goalId);
+
+      var studentObjective = {
+        student: req.body.studentId,
+        objective: req.body.objectiveId
+      }
+
+      //note - check here first if the student already has this objective - if so don't add it
+      // or,  preferably alter the drop down so that the user cannot pick the same objective more than once
+
+
+
+
+    var newStudent_Objective = new Student_Objective(studentObjective);
+    // And save the new student objective to the db
+    newStudent_Objective.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+        console.log(error);
+      }
+      else {
+        //we're going to go get the Student document for the specified student. We will grab the goals array, add to it appropriately,
+        //and then update the document to reflect the added student_objective
+        var so_id = doc._id;
+        Student.findOne({ "_id": req.body.studentId }).exec(function(err,studentDoc){
+          if (err) {
+            console.log("there was an error in api/studentobjective");
+            res.send(err);
+          }
+          else {
+            console.log(studentDoc);
+            for (var i=0; i< studentDoc.goals.length; i++){
+              if(req.body.goalId == studentDoc.goals[i].goal){
+                console.log("we have a match");
+                studentDoc.goals[i].student_objectives.push(so_id);
+
+                Student.findOneAndUpdate({ "_id": req.body.studentId }, {"goals": studentDoc.goals}, {new: true}, function(err,updateddoc){
+                  if (err) {
+                    console.log("findOneAndUpdate on goals failed");
+                  }
+                  else {
+                    res.send(updateddoc);
+                  }
+                });
+              }
+              else {
+                console.log("we did not find a match!");
+              }
+            }//end for         
+        }//end else   
+      }); //end Student.findOne
+     }//end else 
+  }); //end newStudent_Objective.save 
+  }); //end app.post
+
+
+//-------------------  End app.post "/api/studentobjective" ----------------------------
+
+
+
+
+
+    app.post("/api/studenttask", function(req, res) {
+
+
+
+      var task = {
+        student: req.body.studentId,
+        description: req.body.description
+      }
+
+
+
+
+    var newTask = new Task(task);
+    // And save the new student objective to the db
+    newTask.save(function(error, doc) {
+      // Log any errors
+      if (error) {
+
+        console.log(error);
+      }
+      else {
+        console.log("we saved the task");
+        //we're going to go get the Student document for the specified student. We will grab the goals array, add to it appropriately,
+        //and then update the document to reflect the added student_objective
+        var task_id = doc._id;
+
+
+
+        Student_Objective.findOneAndUpdate({ "_id": req.body.studentObjectiveId }, { $push: {"tasks": task_id }}, {new: true}, function(err,sodoc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error in api/studenttask");
+            res.send(err);
+          }
+          else {
+
+            // Or send the document to the helper function
+            res.send(sodoc);  
+          }         
+        });
+
+
+     }//end else 
+  }); //end newTask.save 
+  }); //end app.post
+
+
+  app.post("/api/studentevaluation/:task_id", function(req, res) {
+
+    Task.findOneAndUpdate({ "_id": req.params.task_id }, { $push: {"evaluations": req.body }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error in api/studentevaluation");
+            res.send(err);
+          }
+          else {
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+
+  }); //end app.post
+
+
+//-------------------  End app.post "/api/objective/:goal" ----------------------------
 
 
 
