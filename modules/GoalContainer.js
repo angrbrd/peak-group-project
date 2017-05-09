@@ -50,16 +50,22 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-			
-				<h1 >{this.state.student_name}</h1>
 
-						<button id="addGoal"><Link to="/:schoolName/:studentId/manageGoal">+goal</Link></button>
+        {/*Student's name & info/add goal buttons are here*/}
+  			<div className="row">
+          <div id="studentHeader" className="col-sm-12">
+    				<h1 id="studentNameTitle">{this.state.student_name}</h1>
+
+    						<button id="addGoal"><Link to="/:schoolName/:studentId/manageGoal">+goal</Link></button>
+                <button id="studentInfo">sI</button>
+          </div>
+        </div>
 
 		    {/*  GoalTile child for list of students to be clicked on then taken to the add-goal page to edit that goal.  Alternatively, user can click on the objective of the goal to display tasks of the objectives.  
 		    	**passing any stored goals and their objs and tasks to these tiles..  */}
 
 
-						<GoalTile student={this.state.results}/>
+						<GoalTile student={this.state.results} school={this.state.school_name}/>
 
 		  	</div>	
 		)

@@ -207,3 +207,21 @@ padding-top: 10px;
 	left: 0px;
 	color: #444;
 }
+
+/*student page*/
+/*aka GoalContainer*/
+
+#backToSchool {
+	width: 50px;
+}
+
+
+#studentHeader {
+	text-align: center;
+}
+
+#studentNameTitle {
+	font-family: "Londrina Shadow";
+	color: #606060;
+	font-size: 85px;
+}

@@ -50,25 +50,18 @@ export default React.createClass({
  			  				);
  			  			})}
  			  			</ul>
+
  			  			</div>
+
  			  		);
  			  	})}		
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 			  	{/*return to schools page*/}
+			    <div className="row">
+			        <div className="col-sm-2">
+			          <Link to={"/schools/" + this.props.school}><img id="backToSchool" src="/images/school.png"/></Link>
+			        </div>
+			    </div>
 
 			</div>
 		)
