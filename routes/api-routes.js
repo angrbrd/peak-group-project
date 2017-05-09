@@ -85,6 +85,7 @@ app.get("/api/student/:studentId", function(req, res) {
       console.log(err);
     }
     else {
+      console.log("successful /api/student/:studentID");
       console.log(doc);
       res.send(doc);
     }
@@ -158,7 +159,7 @@ app.post("/api/goal", function(req,res) {
         School.findOneAndUpdate({ "name": req.params.school }, { $push: {"students": doc._id }}, {new: true}, function(err,doc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/student/:school");
             res.send(err);
           }
           else {
@@ -191,7 +192,7 @@ app.post("/api/goal", function(req,res) {
         Goal.findOneAndUpdate({ "_id": req.params.goal }, { $push: {"objectives": doc._id }}, {new: true}, function(err,doc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/objective/:goal");
             res.send(err);
           }
           else {
@@ -203,7 +204,7 @@ app.post("/api/goal", function(req,res) {
       } //end else  
     }); //end newStudnet.save  
   }); //end app.post
-//----
+
 
 //-------------------  End app.post "/api/objective/:goal" ----------------------------
 
@@ -222,7 +223,7 @@ app.post("/api/goal", function(req,res) {
         Student.findOneAndUpdate({ "_id": req.body.studentId }, { $push: {"goals": goalObject }}, {new: true}, function(err,doc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in /api/studentgoal");
             res.send(err);
           }
           else {
@@ -265,7 +266,7 @@ app.post("/api/goal", function(req,res) {
         var so_id = doc._id;
         Student.findOne({ "_id": req.body.studentId }).exec(function(err,studentDoc){
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/studentobjective");
             res.send(err);
           }
           else {
@@ -303,10 +304,14 @@ app.post("/api/goal", function(req,res) {
 
     app.post("/api/studenttask", function(req, res) {
 
+
+
       var task = {
         student: req.body.studentId,
         description: req.body.description
       }
+
+
 
 
     var newTask = new Task(task);
@@ -314,22 +319,21 @@ app.post("/api/goal", function(req,res) {
     newTask.save(function(error, doc) {
       // Log any errors
       if (error) {
+
         console.log(error);
       }
       else {
+        console.log("we saved the task");
         //we're going to go get the Student document for the specified student. We will grab the goals array, add to it appropriately,
         //and then update the document to reflect the added student_objective
         var task_id = doc._id;
 
-        console.log("studentObjectiveId");
-        console.log(req.body.studentObjectiveId);
-        console.log("task_id");
-        console.log(task_id);
+
 
         Student_Objective.findOneAndUpdate({ "_id": req.body.studentObjectiveId }, { $push: {"tasks": task_id }}, {new: true}, function(err,sodoc){
           // Log any errors
           if (err) {
-            console.log("there was an error");
+            console.log("there was an error in api/studenttask");
             res.send(err);
           }
           else {
@@ -343,6 +347,28 @@ app.post("/api/goal", function(req,res) {
      }//end else 
   }); //end newTask.save 
   }); //end app.post
+
+
+  app.post("/api/studentevaluation/:task_id", function(req, res) {
+
+    Task.findOneAndUpdate({ "_id": req.params.task_id }, { $push: {"evaluations": req.body }}, {new: true}, function(err,doc){
+          // Log any errors
+          if (err) {
+            console.log("there was an error in api/studentevaluation");
+            res.send(err);
+          }
+          else {
+            res.send(doc);  
+          }         
+        });//end findOneAndUpdate       
+
+  }); //end app.post
+
+
+//-------------------  End app.post "/api/objective/:goal" ----------------------------
+
+
+
 
 //   // delete an article from database
 //   app.post('/api/delete', function(req, res){

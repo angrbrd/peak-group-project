@@ -17,7 +17,9 @@ export default React.createClass({
  			  	{this.props.tasks.map(function(task,i){
  			  		return (
  			  			<div key={i}>
- 			  			<p>{task.description}</p>
+
+ 			  			{/*Link to add a new evaluation to a task- each task gets one of these links*/}
+ 			  				<p><Link to={"/studentEvaluation/" + task._id}>+evaluation</Link>&nbsp;&nbsp;{task.description}</p>
  			  			<ul >
  			  			{task.evaluations.map(function(evals,j){
  			  				return (

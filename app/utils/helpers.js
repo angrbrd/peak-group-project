@@ -60,14 +60,13 @@ var helpers = {
     });
   },
 
-    // This function posts new searches to our database.
   addPEAKGoal: function(goal) {
     return axios.post("/api/goal", goal).then(function(res){
         return res;
     });
   },
 
-    // This function posts new searches to our database.
+
   addStudent: function(student,school) {
     return axios.post("/api/student/" + school, student).then(function(res){
         return res;
@@ -98,16 +97,18 @@ var helpers = {
     });
   },
 
-      // This function posts new searches to our database.
   addPEAKObjective: function(objective,goal_id) {
     return axios.post("/api/objective/" + goal_id, objective).then(function(res){
         return res;
     });
+  },
+
+  addStudentEvaluation: function(evaluation,task_id) {
+    return axios.post("/api/studentevaluation/" + task_id, evaluation).then(function(res){
+        return res;
+    });
   }
 
-
-
-  //   // This function posts new searches to our database.
   // deleteArticle: function(article) {
   //   return axios.post("/api/delete", article);
   // }
