@@ -58,7 +58,7 @@ export default React.createClass({
           </div> {/*end col*/}
      
         <div className="col-sm-4" id="addSchoolCol">
-          <button id="addSchool"><Link to='/manageSchool'>+</Link></button>
+          <button id="addSchool"><Link to='/manageSchool' id="addSchoolLink">+</Link></button>
         </div>
       </div> {/*end row*/}
 
