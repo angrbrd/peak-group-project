@@ -28,9 +28,11 @@ export default React.createClass({
  			  				 <div className="row">
  			  					<li key={j}>
 
- 			  						<div className='col-sm-4'>
- 			  						 <h2>{goals.goal.code}</h2> 
- 			  						 <h3>{goals.goal.description}</h3>
+ 			  						<div className='col-sm-4' id="studentGoalCol">
+ 			  						 <div id="goalContainer">
+	 			  						 <h2 id="goalTitle">{goals.goal.code}</h2> 
+	 			  						 <h3 id="goalDesc">{goals.goal.description}</h3>
+ 			  						 </div>
  			  						</div>
 
  			  						
@@ -39,18 +41,23 @@ export default React.createClass({
  			  							return (
  			  								<li key={k}>
 
- 			  								<div className='col-sm-4'>
+ 			  								<div className='col-sm-4' id="studentObjCol">
+ 			  								  <div id="objContainer">
  			  									{/*Link to add a new task to an objective - each objective gets one of these links */}
- 			  									<h3>{s_obj.objective.code } - {s_obj.objective.description}</h3>
+ 			  									<h3 id="studentObjective">{s_obj.objective.code } - {s_obj.objective.description}</h3>
+ 			  									<br/>
 
 			 			  						{/*Link to add a new objective to a goal - each goal gets one of these links*/}
-			 			  						<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id}>+objective</Link>
+			 			  						<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id} className="addObjective">Add Objective</Link>
+			 			  					   </div>
 			 			  					</div>
 
-			 			  					<div className='col-sm-4'>
+			 			  					<div className='col-sm-4' id="studentTaskCol">
+			 			  					  <div id="taskContainer">
  			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id}>+task</Link>
 
  			  									<TaskTile tasks={s_obj.tasks}/>	
+ 			  								  </div>
  			  								</div>						
  			  								</li>
  			  								);
