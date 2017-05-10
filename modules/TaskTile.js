@@ -19,14 +19,15 @@ export default React.createClass({
  			  			<div key={i}>
 
  			  			{/*Link to add a new evaluation to a task- each task gets one of these links*/}
- 			  				<p><Link to={"/studentEvaluation/" + task._id}>+evaluation</Link>&nbsp;&nbsp;{task.description}</p>
+ 			  				<p>{task.description}</p>
+ 			  				<Link to={"/studentEvaluation/" + task._id}>+evaluation</Link>
  			  			<ul >
  			  			{task.evaluations.map(function(evals,j){
  			  				return (
 
  			  					<li key={j}>
 
- 			  					<p>{evals.date} {evals.comment} {evals.score}</p>
+ 			  					<p>{evals.date}<br/> {evals.comment}<br/> {evals.score}</p>
  			  										{/*
  			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
  			  										<h2 className="studentName">{stds.student_name}</h2>

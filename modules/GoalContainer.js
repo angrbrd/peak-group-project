@@ -53,9 +53,9 @@ export default React.createClass({
           <div id="studentHeader" className="col-sm-12">
     				<h1 id="studentNameTitle">{this.state.student_name}</h1>
 
-    						<Link to={"/studentGoal/" + this.state.school_name + "/" + this.state.student_id+ "/" + this.state.student_name}>+goal</Link>
+               <img id="studentInfo" src="/images/info2.svg"/>
 
-                <button id="studentInfo">sI</button>
+    						<Link to={"/studentGoal/" + this.state.school_name + "/" + this.state.student_id+ "/" + this.state.student_name} id="addGoalPlus">+<img id="addGoal" src="/images/goal.png"/></Link>
           </div>
         </div>
 

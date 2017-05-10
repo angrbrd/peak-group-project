@@ -25,33 +25,41 @@ export default React.createClass({
  			  			<ul >
  			  			{stdnt.goals.map(function(goals,j){
  			  				return (
-
+ 			  				 <div className="row">
  			  					<li key={j}>
 
- 			  						{/*Link to add a new objective to a goal - each goal gets one of these links*/}
- 			  						<p><Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id}>+objective</Link>
+ 			  						<div className='col-sm-4'>
+ 			  						 <h2>{goals.goal.code}</h2> 
+ 			  						 <h3>{goals.goal.description}</h3>
+ 			  						</div>
 
- 			  						 &nbsp;&nbsp;Goal: {goals.goal.code} {goals.goal.description}</p>
+ 			  						
  			  						<ul>
  			  							{goals.student_objectives.map(function(s_obj,k){
  			  							return (
  			  								<li key={k}>
+
+ 			  								<div className='col-sm-4'>
  			  									{/*Link to add a new task to an objective - each objective gets one of these links */}
- 			  									<p><Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id}>+task</Link>
+ 			  									<h3>{s_obj.objective.code } - {s_obj.objective.description}</h3>
 
- 			  									&nbsp;&nbsp;Objective: {s_obj.objective.code } - {s_obj.objective.description}</p>
+			 			  						{/*Link to add a new objective to a goal - each goal gets one of these links*/}
+			 			  						<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id}>+objective</Link>
+			 			  					</div>
 
- 			  									<TaskTile tasks={s_obj.tasks}/>							
+			 			  					<div className='col-sm-4'>
+ 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id}>+task</Link>
 
+ 			  									<TaskTile tasks={s_obj.tasks}/>	
+ 			  								</div>						
  			  								</li>
  			  								);
  			  							})}
 
  			  						</ul>
 
-
  			  					</li>
-
+ 			  				</div>
  			  				);
  			  			})}
  			  			</ul>
