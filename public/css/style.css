@@ -33,18 +33,18 @@ a:active {
 /*----------------------------*/
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 200px; }
+  width: 4px;
+}
 
 ::-webkit-scrollbar-thumb {
   background: #888; 
-  border-radius: 20%;
+  border-radius: 10%;
 }
 
 ::-webkit-scrollbar-track {
   background: #fff; 
-  border: 1px solid #888;
 }
+
 
 #manageTemp {
 	position: absolute;
@@ -257,7 +257,7 @@ padding-top: 10px;
 }
 
 #goalContainer {
-	width: 250px;
+	width: 230px;
 	height: 100%;
 	margin-left: 30px;
 }
@@ -278,7 +278,7 @@ padding-top: 10px;
 }
 
 #objContainer {
-	width: 300px;
+	width: 250px;
 	height: 100%;
 	margin-right: 15px;
 }
@@ -290,19 +290,84 @@ padding-top: 10px;
 }
 
 .addObjective {
-	border: 2px solid #888;
+	background-color: #e8e8ee;
 	color: #606060;
 	font-family: "Londrina Outline";
 	font-size: 30px;
 	padding: 10px;
 	font-weight: bold;
-	padding-left: 70px;
-	padding-right: 70px;
+	padding-left: 40px;
+	padding-right: 40px;
 }
 
 #taskContainer {
-	width: 250px;
-	border: dashed red 1px;
+	width: 240px;
 	height: 100%;
 	margin-right: 30px;
+	overflow-y: auto;
+}
+
+#addTask {
+	position: relative;
+	font-family: "Londrina Sketch";
+	background-color: #e8e8ee;
+	color: #606060;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+	top: 10px;
+	margin-right: 20px;
+}
+
+#tasks {
+	position: relative;
+	top: 30px;
+	margin-right: 20px;
+}
+
+#individualTasks {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: dashed 2px #4dd7fa;
+}
+
+#evaluation {
+	border: dotted 1px #999;
+	margin-bottom: 10px;
+}
+
+#addEval {
+	font-family: "Gruppo";
+	background-color: #e8e8ee;
+	color: #222;
+	font-size: 14px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+#taskDesc {
+	font-family: "Londrina Solid";
+	color: #606060;
+	font-size: 24px;
+}
+
+#evalDate {
+	font-family: "Gruppo";
+	color: #ed4337;
+	margin: 0 auto;
+}
+
+#evalComment {
+	font-family: "Gruppo";
+	color: #222;
+	font-size: 15px;
+	font-weight: bolder;
+	margin: 0 auto;
+}
+
+#evalScore {
+	background: #555;
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 0px;
 }

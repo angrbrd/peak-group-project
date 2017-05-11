@@ -54,9 +54,9 @@ export default React.createClass({
 
 			 			  					<div className='col-sm-4' id="studentTaskCol">
 			 			  					  <div id="taskContainer">
- 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id}>+task</Link>
+ 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id} id="addTask">Add Task</Link>
 
- 			  									<TaskTile tasks={s_obj.tasks}/>	
+ 			  									<TaskTile tasks={s_obj.tasks} studentId={stdnt._id} studentName={stdnt.student_name} sObjId={s_obj._id}/>	
  			  								  </div>
  			  								</div>						
  			  								</li>

@@ -12,34 +12,39 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-				<div id="">
+				<div id="tasks">
+
+
  			  
  			  	{this.props.tasks.map(function(task,i){
  			  		return (
- 			  			<div key={i}>
+ 			  			<div key={i} id="individualTasks">
 
  			  			{/*Link to add a new evaluation to a task- each task gets one of these links*/}
- 			  				<p>{task.description}</p>
- 			  				<Link to={"/studentEvaluation/" + task._id}>+evaluation</Link>
- 			  			<ul >
- 			  			{task.evaluations.map(function(evals,j){
- 			  				return (
+ 			  				<p id="taskDesc">{task.description}</p>
+		 			  			<ul >
+		 			  			{task.evaluations.map(function(evals,j){
+		 			  				return (
 
- 			  					<li key={j}>
+		 			  					<li key={j} id="evaluation">
 
- 			  					<p>{evals.date}<br/> {evals.comment}<br/> {evals.score}</p>
- 			  										{/*
- 			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
- 			  										<h2 className="studentName">{stds.student_name}</h2>
- 			  										</Link>
- 			  										<button className="studentInfo">info</button>
- 			  										<br/>
- 			  									*/}
- 			  					</li>
- 			  				);
- 			  			})}
- 			  			</ul>
+		 			  					<p id="evalDate">{evals.date}</p> 
+		 			  					<p id="evalComment"> {evals.comment}</p>
+		 			  					 <p id="evalScore">{evals.score}</p>
+		 			  										{/*
+		 			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
+		 			  										<h2 className="studentName">{stds.student_name}</h2>
+		 			  										</Link>
+		 			  										<button className="studentInfo">info</button>
+		 			  										<br/>
+		 			  									*/}
+		 			  					</li>
+		 			  				);
+		 			  			})}
+		 			  			</ul>
+		 			  			<Link to={"/studentEvaluation/" + task._id} id="addEval">add evaluation</Link>
  			  			</div>
+
  			  		);
  			  	})}		
 
