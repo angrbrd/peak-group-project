@@ -40,13 +40,18 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
-
-      <div className="row">
-        <div className="col-sm-4">
+      <div className="row" id="userNav">
+          <div className="col-sm-4 col-sm-offset-8">
+          <p id="usernameDisplay">Kathleen McPeak</p>
+          <Link to="/" id="logout">logout</Link>
+          </div>
+      </div>
+      <div className="row" id="schoolSearchRow">
+        <div className="col-sm-2">
           <Link to="/goals"><button id="manageTemp">Manage goals(temp)</button></Link>
         </div>
 
-        <div className="col-sm-4">
+        <div className="col-sm-8">
 
     			<form id="schoolSearchForm">
       				<label htmlFor="schoolSearch" 
@@ -57,7 +62,7 @@ export default React.createClass({
     			</form>
           </div> {/*end col*/}
      
-        <div className="col-sm-4" id="addSchoolCol">
+        <div className="col-sm-2" id="addSchoolCol">
           <Link to='/manageSchool' id="addSchoolLink"><button id="addSchool">+</button></Link>
         </div>
       </div> {/*end row*/}

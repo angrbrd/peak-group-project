@@ -23,11 +23,11 @@ export default React.createClass({
 	render() {
 		return (
 			<div className="row" id="listOfSchools">
-			  <div className="col-sm-4"></div>
-			  <div className="col-sm-4">
+			
+			  <div className="col-sm-8 col-sm-offset-2" id="schoolList">
 
 				  {/*Schools to be listed here (under search bar)*/}
-				  <div id="schoolList">
+				 
 		 			  <ul>
 		 			  	{this.props.results.map(function(search,i){
 
@@ -38,12 +38,12 @@ export default React.createClass({
 		 			  		);
 		 			  	})}
 		 			  </ul>
-	 			  </div>
+	 			 
 	 			  
  			  </div>
- 			  <div className="col-sm-4"></div>
- 			  	
-			</div>
+ 			  <div className="col-sm-2">&nbsp;</div>
+ 			  </div>
+ 			  
 		);
 	}
 });

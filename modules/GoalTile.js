@@ -37,31 +37,45 @@ export default React.createClass({
 
  			  						
  			  						<ul>
- 			  							{goals.student_objectives.map(function(s_obj,k){
- 			  							return (
- 			  								<li key={k}>
 
  			  								<div className='col-sm-4' id="studentObjCol">
+
  			  								  <div id="objContainer">
  			  									{/*Link to add a new task to an objective - each objective gets one of these links */}
- 			  									<h3 id="studentObjective">{s_obj.objective.code } - {s_obj.objective.description}</h3>
- 			  									<br/>
+ 			  									<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id} className="addObjective">Add Objective</Link>
+ 			  									
+ 			  									{goals.student_objectives.map(function(s_obj,k){
+ 			  										return (
+ 			  										<div>
+ 			  											<li key={k}>
+ 			  													<h3 id="studentObjective">{s_obj.objective.code } - {s_obj.objective.description}</h3>
+ 			  											</li>
+ 			  								
+ 			  										</div>
+ 			  									);
+ 			  									})}
+ 			  					
 
-			 			  						{/*Link to add a new objective to a goal - each goal gets one of these links*/}
-			 			  						<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id} className="addObjective">Add Objective</Link>
 			 			  					   </div>
 			 			  					</div>
 
+
 			 			  					<div className='col-sm-4' id="studentTaskCol">
 			 			  					  <div id="taskContainer">
- 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id} id="addTask">Add Task</Link>
+ 			  									{goals.student_objectives.map(function(s_obj,k){
+ 			  										return (
+ 			  										  <div>			 			  					   
+		 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id} id="addTask">Add Task</Link>
 
- 			  									<TaskTile tasks={s_obj.tasks} studentId={stdnt._id} studentName={stdnt.student_name} sObjId={s_obj._id}/>	
+		 			  									<TaskTile tasks={s_obj.tasks} studentId={stdnt._id} studentName={stdnt.student_name} sObjId={s_obj._id}/>	
+
+ 			  										</div>
+ 			  									);
+ 			  									})}
+
  			  								  </div>
  			  								</div>						
- 			  								</li>
- 			  								);
- 			  							})}
+ 			  								
 
  			  						</ul>
 

@@ -64,6 +64,7 @@ export default React.createClass({
 	render() {
 		return (
 		  <div>
+
 		  	<h1>Add Student at {this.state.school_name} </h1>
 
 			<form id="schoolForm" onSubmit={this.handleSubmit}>

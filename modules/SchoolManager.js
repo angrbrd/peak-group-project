@@ -53,14 +53,14 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
-		  	<h1>Add School</h1>
+		<div id="addSchoolCont">
+		  	<h1 id="addSchoolTitle">Add School</h1>
 			<form id="schoolForm" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>School Name:</strong></h4>
+	                 		<h4>School Name</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -107,9 +107,10 @@ export default React.createClass({
 	                </div>	 
 	              </div>  
 	              <br />
-	            
+	          <div id="addSchoolBtns">
 				<button type="submit" id="saveSchool">Save</button>
 				<button type="cancel" id="cancelSchool"><Link to='/schools'>Cancel</Link></button>
+			  </div>
 			</form>
 		  </div>
 		)

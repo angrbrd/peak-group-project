@@ -3,11 +3,24 @@
 body {
 	overflow-x: hidden;
 }
+
+#userNav {
+	text-align: right;
+	margin-right: 5px;
+	margin-bottom: 0px;
+}
+
 #usernameDisplay, #logout {
-	position: absolute;
-	right: 3%;
 	margin: 0 auto;
 	padding: 0px;
+	font-family: "Gruppo";
+	font-size: 24px;
+	font-weight: bold;
+	color: #888;
+}
+
+#logout {
+	color: #606060;
 }
 
 a {
@@ -23,7 +36,7 @@ a:hover {
 
 a:focus {
 	text-decoration: none;
-	color: #7d83ee;
+	color: #ff7f2a;
 }
 
 a:active {
@@ -33,7 +46,7 @@ a:active {
 /*----------------------------*/
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -52,10 +65,19 @@ a:active {
 	border: #888 solid 1px;
 	background: none;
 	color: #777;
+	margin: 0 auto;
+}
+
+#schoolSearchRow {
+	height: 170px;
 }
 
 #schoolSearchForm {
-	margin-top: 25%;
+	margin-top: 15%;
+}
+
+#listOfSchools {
+	height: 200px;
 }
 
 #schoolNameLabel {
@@ -83,7 +105,7 @@ a:active {
 	background-size: 45px;
 	background-position: right;
 	text-align: left;
-	margin-top: 40%;
+	margin-top: 110%;
 	font-size: 25px;
 	width: 55px;
 }
@@ -129,10 +151,11 @@ ul {
 }
 
 .active {
-	color: #7d83ee;
+	color: #ff7f2a;
 }
 
 #schoolList {
+	margin-top: 0px;
 	overflow: auto;
 	height: 200px;
 }
@@ -168,22 +191,28 @@ padding-top: 10px;
 	
 }
 
+#addStudent:focus {
+	background: url("../images/addstudentFocus.svg") no-repeat;
+}
+
 
 #studentList {
+	position: relative;
 	overflow: auto;
 	font-family: "Gruppo";
 	margin-top: 0px;
-	border: 1px dashed red;
 	height: 450px;
 	margin-bottom: 15px;
-	width: 50%;
+	width: 80%;
+	text-align: left;
+	left: 100px;
 }
 
 .studentIcon {
 	margin: 0 auto;
 	width: 100px;
 	position: relative;
-	right: 30px;
+	left: 70px;
 }
 
 .studentInfo {
@@ -191,7 +220,7 @@ padding-top: 10px;
 	height: 40px;
 	margin-top: 65px;
 	position: relative;
-	right: 30px;
+	right: 60px;
 }
 
 .studentInfo:hover {
@@ -200,19 +229,22 @@ padding-top: 10px;
 
 .studentName {
 	display: inline;
-	font-size: 45px;
+	font-size: 30px;
 	font-weight: bold;
 	position: relative;
 	top: 35px;
-	left: 0px;
+	left: 20px;
 	color: #444;
 }
+
 
 /*student page*/
 /*aka GoalContainer*/
 
 #backToSchool {
 	width: 50px;
+	margin-bottom: 10px;
+	margin-top: 20px;
 }
 
 
@@ -253,11 +285,11 @@ padding-top: 10px;
 }
 
 #studentGoalCol {
-	overflow-y: hidden;
+	overflow-y: auto;
 }
 
 #goalContainer {
-	width: 230px;
+	width: 220px;
 	height: 100%;
 	margin-left: 30px;
 }
@@ -265,7 +297,7 @@ padding-top: 10px;
 #goalTitle {
 	
 	font-family: "Londrina Solid";
-	font-size: 55px;
+	font-size: 50px;
 	color: #444;
 }
 
@@ -278,14 +310,16 @@ padding-top: 10px;
 }
 
 #objContainer {
-	width: 250px;
+	width: 240px;
 	height: 100%;
-	margin-right: 15px;
+	margin-right: 5px;
+	margin-left: 0px;
+	margin-top: 10px;
 }
 
 #studentObjective {
 	font-family: "Londrina Solid";
-	margin-top: 50px;
+	margin-top: 20px;
 	border: 2px solid #888;
 }
 
@@ -293,11 +327,13 @@ padding-top: 10px;
 	background-color: #e8e8ee;
 	color: #606060;
 	font-family: "Londrina Outline";
-	font-size: 30px;
+	font-size: 20px;
 	padding: 10px;
 	font-weight: bold;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+
 }
 
 #taskContainer {
@@ -353,8 +389,9 @@ padding-top: 10px;
 
 #evalDate {
 	font-family: "Gruppo";
-	color: #ed4337;
+	color: #ff7f2a;
 	margin: 0 auto;
+	font-weight: bold;
 }
 
 #evalComment {
@@ -370,4 +407,23 @@ padding-top: 10px;
 	color: #fff;
 	margin-top: 10px;
 	margin-bottom: 0px;
+}
+
+/*add school form*/
+#addSchoolCont {
+	text-align: center;
+}
+
+#schoolForm {
+	text-align: left;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#addSchoolTitle {
+	font-family: "Londrina Shadow";
+}
+
+#addSchoolBtns {
+	text-align: right;
 }
