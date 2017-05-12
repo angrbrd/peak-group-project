@@ -8,9 +8,6 @@ var mongoose = require("mongoose");
 
 var path=require("path");
 
-//this is an example, to be replaced!
-// Require Article Schema
-var School = require("./models/School");
 
 
 // Create Instance of Express
@@ -31,7 +28,9 @@ app.use(express.static("./public"));
 
 // var dbProduction= "heroku url goes here";
 var dbDev = 'mongodb://localhost/dbpeak'
+
 var dbProduction = 'mongodb://heroku_6vnrcjp2:m83sarcldfgtchij05klbq89e@ds139791.mlab.com:39791/heroku_6vnrcjp2'
+
 mongoose.connect(dbProduction, function(err){
   if (err){
     console.log("ERROR: Did not connect to MongoDB.");
