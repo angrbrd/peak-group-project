@@ -30,7 +30,7 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // var dbProduction= "heroku url goes here";
-var dbDev = 'mongodb://localhost/dbpeak'
+var dbDev = 'mongodb://localhost/peakdb'
 
 mongoose.connect(dbDev, function(err){
   if (err){

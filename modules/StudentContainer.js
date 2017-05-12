@@ -29,7 +29,7 @@ export default React.createClass({
 
     helpers.getStudentNames(sName).then(function(data) {
     	// console.log("after helpers.getStudentNames");
-    	// console.log(data.data);
+    	console.log(data.data);
      //    if (data.data !== this.state.results) {
           this.setState({ results: data.data}); 
       	// }
@@ -49,6 +49,8 @@ export default React.createClass({
     	// console.log(data.data);
      //    if (data.data !== this.state.results) {
           this.setState({ results: data.data}); 
+          console.log("testing with Anya");
+          console.log(data.data);
       	// }
       }.bind(this));
 	

@@ -9,6 +9,7 @@ export default React.createClass({
   getInitialState: function() {
     return { 
       goal_results: [],
+      student_results: [],
       student_id: this.props.params.studentId,
       school_name: this.props.params.schoolName,
       student_name: this.props.params.studentName,
@@ -16,23 +17,75 @@ export default React.createClass({
     };
   },
 
-  componentWillMount: function(){
+  componentDidMount: function(){
     // get all of the schools from the schools table
     console.log("inside Goal Manager componentWillMount");
 
 
-    helpers.getGoals().then(function(data) {
-
-        if (data.data !== this.state.results) {
-          this.setState({ goal_results: data.data });
-          this.setState({value: data.data[0]._id});                
+    helpers.getStudent(this.state.student_id).then(function(data) {
+      console.log("after helpers.getStudent");
+      console.log(data.data);
+        if (data.data !== this.state.student_results) {
+          this.setState({ student_results: data.data}); 
+          console.log("student_results in AddStudentGoal");
+          console.log(this.state.student_results);
         }
+   
+
+
+        helpers.getGoals().then(function(data) {
+
+        if (data.data !== this.state.goal_results) {
+          this.setState({ goal_results: data.data });
+          console.log("goal_results in helpers.getGoals ")
+          this.setState({value: data.data[0]._id})
+        }
+
+
+        console.log("after we got the goals");
+        // console.log(this.state.student_results[0].goals[0].goal.description);
+        // console.log(this.state.goal_results[0].description);
+        // console.log(this.state.goal_results.length);
+
+        // console.log(this.state.student_results[0].goals.length);
+            
+          for (var i=0;i<this.state.student_results[0].goals.length;i++){
+            var tempGoalArr = this.state.goal_results;
+
+            for (var j=0;j<tempGoalArr.length;j++){
+              if (this.state.student_results[0].goals[i].goal.description == tempGoalArr[j].description){
+                console.log(this.state.student_results[0].goals[i].goal.description);
+                console.log(tempGoalArr[j].description);
+
+                tempGoalArr.splice(j,1);
+                break;
+                
+              }
+
+            }
+            this.setState({goal_results: tempGoalArr});
+          }
+  
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.
       }.bind(this));  
 
+       }.bind(this));
+
+        // console.log("after we got the goals");
+        // console.log(this.state.student_results[0].goals[0].goal.description);
+        // console.log(this.state.goal_results[0].description);
+        // console.log(this.state.goal_results.length);
+
+        // console.log(this.state.student_results[0].goals.length);
 
   },
+
+  // componentDidMount: function(){
+
+
+
+  // },
 
     handleChange: function(event){
 
@@ -90,7 +143,8 @@ export default React.createClass({
  			  	<br></br>
 
  			  <button type="submit" id="saveGoal">Save</button>
-        <button onClick={hashHistory.goBack}>Cancel</button>
+        <button type="cancel" id="cancelGoal"><Link to={"/" + this.state.school_name +"/" + this.state.student_id + "/" + this.state.student_name}>Cancel</Link></button>
+
 
 			</form>
 

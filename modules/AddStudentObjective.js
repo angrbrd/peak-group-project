@@ -92,7 +92,8 @@ export default React.createClass({
         <br></br>
 
         <button type="submit" id="saveGoal">Save</button>
-        <button onClick={hashHistory.goBack}>Cancel</button>
+        <button type="cancel" id="cancelGoal"><Link to={"/" + this.state.school_name +"/" + this.state.student_id + "/" + this.state.student_name}>Cancel</Link></button>
+
 
       </form>
 
