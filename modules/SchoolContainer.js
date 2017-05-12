@@ -19,11 +19,6 @@ export default React.createClass({
 
   componentWillMount: function(){
 
-    //!!!! You can uncomment this and add new schools by editing the api-route and running the app again and again
-    // helpers.addSchool().then(function(data){
-    //   console.log(data);
-    //});
-
 
     // get all of the schools from the schools table
 

@@ -2,15 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import NavLink from './NavLink'
 
-/*This child of SchoolContainer will:
-	*Be representational ONLY (no ajax)
-	*Receive name as the parameter
-	*Each tile will be linked (as written below)
-*/
-
-/*BIG NOTE:
-	**ALL LINK TOS WILL BE MODIFIED TO INCLUDE PROPER IDs AND NAMES.
-	The current state of link tos below are for reference to where these parameters will go.*/
 
 
 
