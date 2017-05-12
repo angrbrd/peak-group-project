@@ -69,65 +69,20 @@ export default React.createClass({
 
                 }// end k loop looking for a match in all of the objectives in the array of objectives for the given goal
             this.setState({objectives: tempObjectiveArr});
-          } //end j loop for all of the objectives for the given goal already assigned to the student
-        } //end i loop for all of the goals assigned to the student
+            } //end j loop for all of the objectives for the given goal already assigned to the student
+          } //end i loop for all of the goals assigned to the student
   
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.
-      }.bind(this));  
+        }.bind(this));  
 
-       }.bind(this));
-
-        // console.log("after we got the goals");
-        // console.log(this.state.student_results[0].goals[0].goal.description);
-        // console.log(this.state.goal_results[0].description);
-        // console.log(this.state.goal_results.length);
-
-        // console.log(this.state.student_results[0].goals.length);
-
-  },
-
-
-
-
-
-
-
-
-
-
-
-  componentWillMount: function(){
-    // get all of the schools from the schools table
-    console.log("inside addStudentObjectives componentWillMount");
-    console.log(this.props.params.goalId);
-
-
-    //need to get the objectives for this goal that the student has already been assigned.
-    //once those have been retreived, we get all of the objectives for the goal and put them in
-    // an array. 
-    //then remove from the array the objectives that the student has already been assigned.
-
-
-
-
-    helpers.getObjectives(this.props.params.goalId).then(function(data) {
-
-        console.log(data.data);
-
-        // if (data.data !== this.state.results) {
-          this.setState({ goal_results: data.data });
-          this.setState({objectives: data.data[0].objectives});
-          this.setState({value: data.data[0].objectives[0]._id});                
-        
-        // This code is necessary to bind the keyword "this" when we say this.setState
-        // to actually mean the component itself and not the runQuery function.
-      }.bind(this));  
+      }.bind(this));
 
 
   },
 
-    handleChange: function(event){
+
+  handleChange: function(event){
 
     this.setState({value: event.target.value});
 
