@@ -31,7 +31,7 @@ var dbDev = 'mongodb://localhost/dbpeak'
 
 var dbProduction = 'mongodb://heroku_6vnrcjp2:m83sarcldfgtchij05klbq89e@ds139791.mlab.com:39791/heroku_6vnrcjp2'
 
-mongoose.connect(dbProduction, function(err){
+mongoose.connect(dbDev, function(err){
   if (err){
     console.log("ERROR: Did not connect to MongoDB.");
   } else {
