@@ -27,7 +27,7 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // var dbProduction= "heroku url goes here";
-var dbDev = 'mongodb://localhost/peakdb'
+var dbDev = 'mongodb://localhost/dbpeak'
 
 var dbProduction = 'mongodb://heroku_6vnrcjp2:m83sarcldfgtchij05klbq89e@ds139791.mlab.com:39791/heroku_6vnrcjp2'
 
