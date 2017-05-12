@@ -30,9 +30,12 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // var dbProduction= "heroku url goes here";
-var dbDev = 'mongodb://localhost/peakdb'
 
-mongoose.connect(dbDev, function(err){
+var dbDev = 'mongodb://localhost/dbpeak'
+var dbProduction = 'mongodb://heroku_nk54vbvd:p5cdesp0q918h063sh8mdfep51@ds139791.mlab.com:39791/heroku_nk54vbvd'
+mongoose.connect(dbProduction, function(err){
+
+
   if (err){
     console.log("ERROR: Did not connect to MongoDB.");
   } else {
