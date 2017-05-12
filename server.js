@@ -27,11 +27,11 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // var dbProduction= "heroku url goes here";
-var dbDev = 'mongodb://localhost/dbpeak'
+var dbDev = 'mongodb://localhost/peakdb'
 
 var dbProduction = 'mongodb://heroku_6vnrcjp2:m83sarcldfgtchij05klbq89e@ds139791.mlab.com:39791/heroku_6vnrcjp2'
 
-mongoose.connect(dbProduction, function(err){
+mongoose.connect(dbDev, function(err){
   if (err){
     console.log("ERROR: Did not connect to MongoDB.");
   } else {
@@ -56,9 +56,9 @@ require("./routes/api-routes.js")(app);
 
 // -------------------------------------------------
 
-app.get("/*", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
-});
+// app.get("/*", function(req, res) {
+//   res.sendFile(__dirname + "/public/index.html");
+// });
 
 
 // Listener
