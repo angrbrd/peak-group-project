@@ -3,12 +3,7 @@ import { Link } from 'react-router'
 import PEAKObjectiveTile from './PEAKObjectiveTile'
 var helpers = require("../app/utils/helpers");
 
-/* This component will:
-	*Make ajax call
-	*Retrieve list of students
-	*Render studenttile for each data response..
-	*...passing in studentName as a parameter.
-*/
+
 
 export default React.createClass({
 
