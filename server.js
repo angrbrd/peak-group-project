@@ -56,9 +56,9 @@ require("./routes/api-routes.js")(app);
 
 // -------------------------------------------------
 
-app.get("/*", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
-});
+// app.get("/*", function(req, res) {
+//   res.sendFile(__dirname + "/public/index.html");
+// });
 
 
 // Listener
