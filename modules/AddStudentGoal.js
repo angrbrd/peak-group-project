@@ -134,7 +134,7 @@ export default React.createClass({
         <select value={this.state.value} onChange={this.handleChange} >
             {this.state.goal_results.map(function(goal,i){
               return (                      
-                <option key={i} value={goal._id}>{goal.code} - {goal.description}</option>              
+                <option key={i} value={goal._id}>{goal.code} - {goal.goal_type} - {goal.description}</option>              
               );
             })}
           </select>
