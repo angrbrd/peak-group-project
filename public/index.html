@@ -2,20 +2,42 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
 	<title>PEAK</title>
 
 	<!-- Here we include bootstrap. This will be made available to all of the generated HTML/JS that React generates-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">	
 </head>
 
 <body>
+	<!-- hide this initially before login? -->
+	<!-- usernameDisplay to be dynamically appended to (for js to define user's name) -->
+<!-- 	<p id="usernameDisplay">User</p><br>
+    <a href="/" id="logout">Logout</a> -->
 	
 	<!-- This is where React will deploy the contents it generates -->
 	<div id="app"></div>
 
 	<!-- All of our JS code will be transpiled into this bundle.js file -->
-	<script src="bundle.js"></script>
+	<script src="js/bundle.js"></script>
+
+
+<!-- *********************************************************************************************** -->
+<!-- LEAVE HERE FOR NOW -->
+<!-- ************************************************************************************************ -->
+<!-- <h1 id="welcome">WELCOME</h1> -->
+<!-- login form -->
+<!-- <form id="login"> -->
+	<!-- Name -->
+<!--     	<input type="text" id="username" placeholder="username">
+   	<br> -->
+ 	<!-- Password -->
+<!--         <input type="password" id="password" placeholder="password">
+    <br>
+    <button type="submit" class="btn btn-login">login</button><br>
+    <a href="mailto:cscorrigan@icloud.com">Request an account.</a>
+</form> -->
 	
 </body>
 </html>

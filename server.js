@@ -5,9 +5,10 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 
-//this is an example, to be replaced!
-// Require Article Schema
-var Article = require("./models/article");
+
+var path=require("path");
+
+
 
 // Create Instance of Express
 var app = express();
@@ -28,7 +29,9 @@ app.use(express.static("./public"));
 // var dbProduction= "heroku url goes here";
 var dbDev = 'mongodb://localhost/dbpeak'
 
-mongoose.connect(dbDev, function(err){
+var dbProduction = 'mongodb://heroku_6vnrcjp2:m83sarcldfgtchij05klbq89e@ds139791.mlab.com:39791/heroku_6vnrcjp2'
+
+mongoose.connect(dbProduction, function(err){
   if (err){
     console.log("ERROR: Did not connect to MongoDB.");
   } else {
@@ -50,7 +53,13 @@ db.once("open", function() {
 
 require("./routes/api-routes.js")(app);
 
+
 // -------------------------------------------------
+
+// app.get("/*", function(req, res) {
+//   res.sendFile(__dirname + "/public/index.html");
+// });
+
 
 // Listener
 app.listen(PORT, function() {

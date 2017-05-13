@@ -1,63 +1,429 @@
-/*NOTE this file may be temporary if SASS is used and/or a framework*/
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Londrina+Outline|Londrina+Shadow|Londrina+Sketch|Londrina+Solid');
+
+body {
+	overflow-x: hidden;
+}
+
+#userNav {
+	text-align: right;
+	margin-right: 5px;
+	margin-bottom: 0px;
+}
 
 #usernameDisplay, #logout {
-	float: right;
-	clear: right;
+	margin: 0 auto;
+	padding: 0px;
+	font-family: "Gruppo";
+	font-size: 24px;
+	font-weight: bold;
+	color: #888;
+}
+
+#logout {
+	color: #606060;
+}
+
+a {
+	color: #000;
+}
+
+/*for developmental purposes*/
+/*----------------------------*/
+a:hover {
+	text-decoration: none;
+	color: #444;
+}
+
+a:focus {
+	text-decoration: none;
+	color: #ff7f2a;
+}
+
+a:active {
+	text-decoration: none;
+	color: #000;
+}
+/*----------------------------*/
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10%;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+
+#manageTemp {
+	position: absolute;
+	left: 10%;
+	border: #888 solid 1px;
+	background: none;
+	color: #777;
 	margin: 0 auto;
 }
 
-/*#schoolSearchForm {
-	position: absolute;
-	left: 40%;
-	top: 30%;
-}*/
-
-p {
-	margin: 0 auto;
+#schoolSearchRow {
+	height: 170px;
 }
 
-#addSchoolModal {
-	visibility: hidden;
-}
-
-#addSchoolInit {
-	position: absolute;
-	left: 130%;
+#schoolSearchForm {
+	margin-top: 15%;
 }
 
 #listOfSchools {
-	list-style: none;
-	margin-top: 35px;
-}
-
-.school {
-	border: solid 1px gray;
-	padding: 5px;
+	height: 200px;
 }
 
 #schoolNameLabel {
-	position: absolute;
-	left: 22%;
-	top: -10%;
+	font-size: 30px;
+	color: #888;
+	letter-spacing: 0.1em;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	font-family: "Londrina Sketch";
+	font-weight: bold;
 }
 
-/*#schoolSearch {
-	position: absolute;
-	left: 20%;
-	top: 4%;
-	width: 165px;
-	height: 28px;
-	
-}*/
+#schoolSearch {
+	width: 100%;
+	border: #606060 solid 1px;
+	height: 50px;
+	font-size: 20px;
+}
+
+#addSchool {
+	background-color: transparent;
+	border: none;
+	background: url("../images/addschool.png") no-repeat;
+	background-size: 45px;
+	background-position: right;
+	text-align: left;
+	margin-top: 110%;
+	font-size: 25px;
+	width: 55px;
+}
+
+#addSchoolLink {
+	color: #939393;
+}
+
+
+li {
+	list-style: none;
+}
+
+ul {
+	margin: 0 auto;
+	padding: 0px;
+}
+
+.school {
+	padding: 15px;
+	padding-left: 55px;
+	border: 1px #606060 solid;
+	border-top: none;
+	width: 100%;
+	background: url("../images/school.png") no-repeat;
+	background-size: 45px;
+	background-position: left;
+	font-size: 24px;
+
+}
+
+/*development purposes (will not effect ipad)*/
+/*-------------------------------------*/
+.school:hover {
+	text-decoration: none;
+	background-color: #e8e8ee;
+}
+/*------------------------------------*/
+
+
+.school:active {
+	border: 2px #606060 solid;
+}
+
+.active {
+	color: #ff7f2a;
+}
+
+#schoolList {
+	margin-top: 0px;
+	overflow: auto;
+	height: 200px;
+}
+
 
 #selectedSchool {
-	position: absolute;
-	top: 50%;
-	left: 33%;
+text-align: center;
+padding-top: 10px;
+}
+
+.schoolNameTitle {
+	font-family: "Londrina Shadow";
+	font-size: 80px;
+	font-weight: bold;
+	color: #484848;
+	margin-bottom: 0px;
+}
+
+#addStudent {
+	background-color: white;
+	border: none;
+	border: solid 2.5px #484848;
+	border-radius: 50%;
+	background: url("../images/addstudent.svg") no-repeat;
+	background-size: 48px;
+	background-position: top;
 	text-align: center;
+	height: 45px;
+	width: 45px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 43%;
+	
+}
+
+#addStudent:focus {
+	background: url("../images/addstudentFocus.svg") no-repeat;
+}
+
+
+#studentList {
+	position: relative;
+	overflow: auto;
+	font-family: "Gruppo";
+	margin-top: 0px;
+	height: 450px;
+	margin-bottom: 15px;
+	width: 80%;
+	text-align: left;
+	left: 100px;
+}
+
+.studentIcon {
+	margin: 0 auto;
+	width: 100px;
+	position: relative;
+	left: 70px;
+}
+
+.studentInfo {
+	width: 40px;
+	height: 40px;
+	margin-top: 65px;
+	position: relative;
+	right: 60px;
+}
+
+.studentInfo:hover {
+	cursor: pointer;
 }
 
 .studentName {
+	display: inline;
+	font-size: 30px;
+	font-weight: bold;
+	position: relative;
+	top: 35px;
+	left: 20px;
+	color: #444;
+}
+
+
+/*student page*/
+/*aka GoalContainer*/
+
+#backToSchool {
+	width: 50px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+
+#studentHeader {
+	text-align: center;
+}
+
+#studentNameTitle {
+	font-family: "Londrina Shadow";
+	color: #606060;
+	font-size: 85px;
+	margin-bottom: 0px;
+}
+
+#addGoal {
+	width: 40px;
+
+}
+
+#addGoalPlus {
+	font-size: 40px;
+	color: #4dd7fa;
+	margin-top: 0px;
+	margin-left: 360px;
+}
+
+#studentInfo {
+	width: 45px;
+	cursor: pointer;
+}
+
+#studentGoalCol, #studentObjCol, #studentTaskCol {
+	text-align: center;
+	height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: 30px;
+}
+
+#studentGoalCol {
+	overflow-y: auto;
+}
+
+#goalContainer {
+	width: 220px;
+	height: 100%;
+	margin-left: 30px;
+}
+
+#goalTitle {
+	
+	font-family: "Londrina Solid";
+	font-size: 50px;
+	color: #444;
+}
+
+#goalDesc {
+
+	font-family: "Gruppo";
+	font-size: 25px;
+	color: #444;
+
+}
+
+#objContainer {
+	width: 240px;
+	height: 100%;
+	margin-right: 5px;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+
+#studentObjective {
+	font-family: "Londrina Solid";
+	margin-top: 20px;
+	border: 2px solid #888;
+}
+
+.addObjective {
+	background-color: #e8e8ee;
+	color: #606060;
+	font-family: "Londrina Outline";
+	font-size: 20px;
+	padding: 10px;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+
+}
+
+#taskContainer {
+	width: 240px;
+	height: 100%;
+	margin-right: 30px;
+	overflow-y: auto;
+}
+
+#addTask {
+	position: relative;
+	font-family: "Londrina Sketch";
+	background-color: #e8e8ee;
+	color: #606060;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+	top: 10px;
+	margin-right: 20px;
+}
+
+#tasks {
+	position: relative;
+	top: 30px;
+	margin-right: 20px;
+}
+
+#individualTasks {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: dashed 2px #4dd7fa;
+}
+
+#evaluation {
+	border: dotted 1px #999;
+	margin-bottom: 10px;
+}
+
+#addEval {
+	font-family: "Gruppo";
+	background-color: #e8e8ee;
+	color: #222;
+	font-size: 14px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+#taskDesc {
+	font-family: "Londrina Solid";
+	color: #606060;
+	font-size: 24px;
+}
+
+#evalDate {
+	font-family: "Gruppo";
+	color: #ff7f2a;
 	margin: 0 auto;
-	float: right;
+	font-weight: bold;
+}
+
+#evalComment {
+	font-family: "Gruppo";
+	color: #222;
+	font-size: 15px;
+	font-weight: bolder;
+	margin: 0 auto;
+}
+
+#evalScore {
+	background: #555;
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+/*add school form*/
+#addSchoolCont {
+	text-align: center;
+}
+
+#schoolForm {
+	text-align: left;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#addSchoolTitle {
+	font-family: "Londrina Shadow";
+}
+
+#addSchoolBtns {
+	text-align: right;
 }
