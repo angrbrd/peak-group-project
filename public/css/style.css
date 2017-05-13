@@ -417,13 +417,289 @@ padding-top: 10px;
 #schoolForm {
 	text-align: left;
 	width: 80%;
-	margin-left: 10%;
+	margin-left: 3%;
 }
 
 #addSchoolTitle {
 	font-family: "Londrina Shadow";
+	font-size: 60px;
 }
 
 #addSchoolBtns {
 	text-align: right;
+}
+
+.addSchoolLabel {
+	font-family: "Londrina Sketch";
+	font-weight: bold;
+	color: #606060;
+	margin: 0 auto;
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+#saveSchool {
+	margin-left: 10px;
+	border: 1px solid #606060;
+	border-radius: 5%;
+	background-color: #c0d890;
+	color: #555;
+	font-family: "Londrina Solid";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+#cancelSchool {
+	border: 1px solid #606060;
+	border-radius: 5%;
+	background-color: #ed4337;
+	color: #555;
+	font-family: "Londrina Solid";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+#cancelLink {
+	color: #f3f3f3;
+}
+
+/*add student form*/
+
+#schoolNameHeader {
+	background: url("../images/addstudentForm.svg") no-repeat;
+	width: 50%;
+	height: 190px;
+	background-size: 180px;
+	background-position: left;
+	position: relative;
+	left: 25%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 113px;
+	padding-left: -50px;
+	font-family: "Londrina Outline";
+	font-size: 40px;
+	color: #999;
+	font-weight: bold;
+
+}
+
+#addStudentCont {
+	text-align: center;
+}
+
+#schoolForm {
+	width: 75%;
+	position: relative;
+	left: 12%;
+	margin-top: 4px;
+}
+
+#studentName, #DOB {
+	font-family: "Londrina Outline";
+	color: #444;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#student_name, #birthdate {
+	border-radius: 0%;
+}
+
+#parentEmail, #lastIEP, #settingH, #eligibilityH {
+	display: inline;
+	font-family: "Londrina Outline";
+	color: #444;
+	font-weight: bold;
+	font-size: 30px;
+
+}
+
+#parent_email, #last_IEP_date, #setting, #eligibility {
+	display: inline;
+	width: 40%;
+	border-radius: 0%;
+	margin-top: 30px;
+}
+
+#parent_email {
+	margin-left: 105px;
+}
+
+#last_IEP_date {
+	margin-left: 95px;
+}
+
+#setting {
+	margin-left: 165px;
+}
+
+#eligibility {
+	margin-left: 145px;
+}
+
+#addStudentBtns {
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+/*add goal form*/
+#addGoalCont {
+	text-align: center;
+}
+
+#manageGoalFor {
+	background: url("../images/manageGoal.png") no-repeat;
+	background-size: 90px;
+	background-position: center;
+	width: 100%;
+	height: 100px;
+	font-family: "Londrina Outline";
+	font-weight: bold;
+	color: #999;
+	padding-top: 20px;
+	font-size: 55px;
+}
+
+#selectGoal {
+	font-family: "Londrina Outline";
+	color: #999;
+	font-size: 35px;
+	font-weight: bold;
+	margin: 0px;
+	letter-spacing: 0.05em;
+}
+
+/*add objective form*/
+#addObjCont {
+	text-align: center;
+}
+
+#manageObjectivesFor {
+	background: url("../images/manageGoal.png") no-repeat;
+	background-size: 90px;
+	background-position: center;
+	width: 100%;
+	height: 100px;
+	font-family: "Londrina Outline";
+	font-weight: bold;
+	color: #999;
+	padding-top: 20px;
+	font-size: 55px;
+}
+
+#selectObj {
+	font-family: "Londrina Outline";
+	color: #999;
+	font-size: 35px;
+	font-weight: bold;
+	margin: 0px;
+	letter-spacing: 0.05em;
+}
+
+/*add task form */
+
+#addTaskCont {
+	text-align: center;
+}
+
+#manageTasksFor {
+	background: url("../images/manageGoal.png") no-repeat;
+	background-size: 90px;
+	background-position: center;
+	width: 100%;
+	height: 100px;
+	font-family: "Londrina Outline";
+	font-weight: bold;
+	color: #999;
+	padding-top: 20px;
+	font-size: 55px;
+}
+
+#taskDescription {
+	font-family: "Londrina Outline";
+	color: #999;
+	font-size: 35px;
+	font-weight: bold;
+	margin: 0px;
+	letter-spacing: 0.05em;
+}
+
+#description {
+	height: 100px;
+	width: 300px;
+	margin-left: 30%;
+}
+
+/*add evaluation form */
+
+#addEvalCont {
+	text-align: center;
+}
+
+#evalForm {
+	width: 30%;
+	margin-left: 35%;
+}
+
+#manageEval {
+	background: url("../images/manageGoal.png") no-repeat;
+	background-size: 90px;
+	background-position: center;
+	width: 100%;
+	height: 100px;
+	font-family: "Londrina Outline";
+	font-weight: bold;
+	color: #999;
+	padding-top: 20px;
+	font-size: 55px;
+}
+
+
+#addEvalDate, #addEvalComment, #addEvalScore {
+	font-family: "Londrina Outline";
+	color: #999;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0px;
+	letter-spacing: 0.05em;
+	margin-top: 20px;
+}
+
+
+#saveObjective, #saveGoal, #saveTask {
+	margin-left: 10px;
+	border: 1px solid #606060;
+	border-radius: 5%;
+	background-color: #c0d890;
+	color: #555;
+	font-family: "Londrina Solid";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+#cancelObjective, #cancelGoal, #cancelTask {
+	border: 1px solid #606060;
+	border-radius: 5%;
+	background-color: #ed4337;
+	color: #f3f3f3;
+	font-family: "Londrina Solid";
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+#cancelLink {
+	color: #f3f3f3;
 }

@@ -48,15 +48,15 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
-		 	<h1>Add an Evaluation </h1>  		
+		  <div id="addEvalCont">
+		 	<h1 id="manageEval"> Evaluation </h1>  		
  		
-			<form id="" onSubmit={this.handleSubmit}>
+			<form id="evalForm" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>Comment</strong></h4>
+	                 		<h4 id="addEvalComment">Comment</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -68,7 +68,7 @@ export default React.createClass({
 	               	</div>
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>Date:</strong></h4>
+	                 		<h4 id="addEvalDate">Date</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="date"
@@ -79,7 +79,7 @@ export default React.createClass({
 	               	</div>
 	               	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>Score:</strong></h4>
+	                 		<h4 id="addEvalScore">Score</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -92,8 +92,8 @@ export default React.createClass({
 	              </div>  
 	              <br />
 	            
-				<button type="submit" id="saveObjective">Save</button>
-				<button type="cancel" id="cancelObjective"><Link to='/goals'>Cancel</Link></button>
+				<button type="cancel" id="cancelObjective"><Link to='/goals' id="cancelLink">Cancel</Link></button>
+				<button type="submit" id="saveObjective">Save</button>		
 			</form>
 
 		  </div>

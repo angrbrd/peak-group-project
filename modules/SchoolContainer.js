@@ -47,11 +47,11 @@ export default React.createClass({
           </div>
       </div>
       <div className="row" id="schoolSearchRow">
-        <div className="col-sm-2">
+        {/*<div className="col-sm-2">
           <Link to="/goals"><button id="manageTemp">Manage goals(temp)</button></Link>
-        </div>
+        </div>*/}
 
-        <div className="col-sm-8">
+        <div className="col-sm-8 col-sm-offset-2">
 
     			<form id="schoolSearchForm">
       				<label htmlFor="schoolSearch" 

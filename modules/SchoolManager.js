@@ -60,7 +60,7 @@ export default React.createClass({
 	            <div className="form-group">
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4>School Name</h4>
+	                 		<h4 className="addSchoolLabel">School Name</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -72,7 +72,7 @@ export default React.createClass({
 	               	</div>
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>School System:</strong></h4>
+	                 		<h4 className="addSchoolLabel">School System</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -83,7 +83,7 @@ export default React.createClass({
 	               	</div>
 	               	<div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Address</strong></h4>
+	                		<h4 className="addSchoolLabel">Address</h4>
 	                		<input
 	                  			// value={this.state.end}
 	                  			onChange={this.handleChange}
@@ -95,7 +95,7 @@ export default React.createClass({
 	                </div>
 	                <div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Phone</strong></h4>
+	                		<h4 className="addSchoolLabel">Phone</h4>
 	                		<input
 	                  		// value={this.state.end}
 	                  			onChange={this.handleChange}
@@ -108,8 +108,10 @@ export default React.createClass({
 	              </div>  
 	              <br />
 	          <div id="addSchoolBtns">
+				
+				<button type="cancel" id="cancelSchool"><Link to='/schools' id="cancelLink">Cancel</Link></button>
 				<button type="submit" id="saveSchool">Save</button>
-				<button type="cancel" id="cancelSchool"><Link to='/schools'>Cancel</Link></button>
+
 			  </div>
 			</form>
 		  </div>

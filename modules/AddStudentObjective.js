@@ -75,10 +75,10 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-      <h1>Add Objectives for {this.state.student_name}</h1>
+      <div id="addObjCont">
+      <h1 id="manageObjectivesFor">{this.state.student_name}</h1>
 
-      <h2>Select an Objective</h2>
+      <h2 id="selectObj">Select Objective</h2>
       <form id="studentForm" onSubmit={this.handleSubmit}>
         <select value={this.state.value} onChange={this.handleChange} >
           {this.state.objectives.map(function(obj,i){
@@ -91,8 +91,9 @@ export default React.createClass({
         <br></br>
         <br></br>
 
+        
+        <button id="cancelGoal" onClick={hashHistory.goBack}>Cancel</button>
         <button type="submit" id="saveGoal">Save</button>
-        <button onClick={hashHistory.goBack}>Cancel</button>
 
       </form>
 

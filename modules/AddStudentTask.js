@@ -56,15 +56,15 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
-		  	<h2> Add a Task for {this.props.params.studentName}</h2>
+		  <div id="addTaskCont">
+		  	<h2 id="manageTasksFor">{this.props.params.studentName}</h2>
 
 			<form id="" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
 	            	<div className="row">
 	              		<div className="col-md-6">
-	                 		<h4><strong>Task Description</strong></h4>
+	                 		<h4 id="taskDescription">Task Description</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -79,9 +79,9 @@ export default React.createClass({
 	              </div>  
 	              <br />
 	            
-				<button type="submit" id="saveTask">Save</button>
 				{/*<button type="cancel" id="cancel"><Link to='/goals'>Cancel</Link></button>*/}
 				<button type="cancel" id="cancelTask">Cancel</button>
+				<button type="submit" id="saveTask">Save</button>
 			</form>
 
 		  </div>

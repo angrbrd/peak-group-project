@@ -73,10 +73,10 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
-			<h1>Add Goals for {this.state.student_name} at {this.state.school_name}</h1>
+		  <div id="addGoalCont">
+			<h1 id="manageGoalFor"> {this.state.student_name} {/*at {this.state.school_name}*/}</h1>
 
-      <h2>Select a Goal</h2>
+      <h2 id="selectGoal">Select Goal</h2>
 			<form id="studentForm" onSubmit={this.handleSubmit}>
 				<select value={this.state.value} onChange={this.handleChange} >
 	 			  	{this.state.goal_results.map(function(goal,i){
@@ -89,8 +89,9 @@ export default React.createClass({
  			  	<br></br>
  			  	<br></br>
 
- 			  <button type="submit" id="saveGoal">Save</button>
-        <button onClick={hashHistory.goBack}>Cancel</button>
+ 			  
+        <button id="cancelGoal" onClick={hashHistory.goBack}>Cancel</button>
+        <button type="submit" id="saveGoal">Save</button>
 
 			</form>
 

@@ -63,16 +63,16 @@ export default React.createClass({
 
 	render() {
 		return (
-		  <div>
+		  <div id="addStudentCont">
 
-		  	<h1>Add Student at {this.state.school_name} </h1>
+		  	<h2 id="schoolNameHeader">{this.state.school_name} </h2>
 
 			<form id="schoolForm" onSubmit={this.handleSubmit}>
 
 	            <div className="form-group">
 	            	<div className="row">
-	              		<div className="col-md-6">
-	                 		<h4><strong>Student Name:</strong></h4>
+	              		<div className="col-sm-5">
+	                 		<h4 id="studentName">Name</h4>
 	                    	<input
 	                      		onChange={this.handleChange}
 	                      		type="text"
@@ -80,11 +80,9 @@ export default React.createClass({
 	                      		id="student_name"
 	                      		required
 	                    	/>
-	               		</div> 
-	               	</div>
-	            	<div className="row">
-	              		<div className="col-md-6">
-	                 		<h4><strong>Birth Date:</strong></h4>
+	               		</div>
+	              		<div className="col-sm-5">
+	                 		<h4 id="DOB">DOB</h4>
 	                    	<input
 	                    		value={this.state.birthdate}
 	                      		onChange={this.handleChange}
@@ -94,9 +92,23 @@ export default React.createClass({
 	                    	/>
 	               		</div> 
 	               	</div>
+
+	                <div className="row">	
+	               		<div className="col-md-6">     
+	                		<h4 id="parentEmail">Parent Email</h4>
+	                		<input
+	                  			value={this.state.parent_email}
+	                  			onChange={this.handleChange}
+	                  			type="email"
+	                  			className="form-control text-left"
+	                  			id="parent_email"
+	                		/>  
+	                	</div>
+	                </div>	
+
 	               	<div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Last IEP Date</strong></h4>
+	                		<h4 id="lastIEP">Last IEP Date</h4>
 	                		<input
 	                  			value={this.state.last_IEP_date}
 	                  			onChange={this.handleChange}
@@ -108,7 +120,7 @@ export default React.createClass({
 	                </div>
 	                <div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Setting</strong></h4>
+	                		<h4 id="settingH">Setting</h4>
 	                		<input
 	                  			value={this.state.setting}
 	                  			onChange={this.handleChange}
@@ -121,7 +133,7 @@ export default React.createClass({
 
 	                <div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Active</strong></h4>
+	                		{/*<h4 className=""><strong>Active</strong></h4>*/}
 	                		{/* Chloe - leaving this one for you - maybe radio buttons? Default is true*/}
 	                		{/* <input
 	                  			value={this.state.setting}
@@ -132,21 +144,10 @@ export default React.createClass({
 	                		/>  */}
 	                	</div>
 	                </div>
-	                <div className="row">	
-	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Parent Email</strong></h4>
-	                		<input
-	                  			value={this.state.parent_email}
-	                  			onChange={this.handleChange}
-	                  			type="email"
-	                  			className="form-control text-left"
-	                  			id="parent_email"
-	                		/>  
-	                	</div>
-	                </div>	
+
 		                <div className="row">	
 	               		<div className="col-md-6">     
-	                		<h4 className=""><strong>Eligibility</strong></h4>
+	                		<h4 id="eligibilityH">Eligibility</h4>
 	                		<input
 	                  			value={this.state.eligibility}
 	                  			onChange={this.handleChange}
@@ -160,9 +161,11 @@ export default React.createClass({
 
 	              </div>  
 	              <br />
-	            
+	            <div id="addStudentBtns">
+				
+				<button type="cancel" id="cancelSchool"><Link to='/schools' id="cancelLink">Cancel</Link></button>
 				<button type="submit" id="saveSchool">Save</button>
-				<button type="cancel" id="cancelSchool"><Link to='/schools'>Cancel</Link></button>
+				</div>
 			</form>
 
 		  </div>
