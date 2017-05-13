@@ -107,11 +107,11 @@ var helpers = {
     return axios.post("/api/studentevaluation/" + task_id, evaluation).then(function(res){
         return res;
     });
-  }
+  },
 
-  // deleteArticle: function(article) {
-  //   return axios.post("/api/delete", article);
-  // }
+  deleteSchool: function(schoolName) {
+    return axios.post('/api/delete/' + schoolName);
+  }
 
 };
 

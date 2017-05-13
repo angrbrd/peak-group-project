@@ -371,17 +371,17 @@ app.post("/api/goal", function(req,res) {
 
 
 //   // delete an article from database
-//   app.post('/api/delete', function(req, res){
-//     console.log(req.body);
-//     Article.findOneAndRemove({'title': req.body.title}, function(err){
-//       if(err){
-//         console.log("DELETE ERROR", err)
-//       } else{
-//         res.redirect("/api");
+  app.post('/api/delete/:schoolName', function(req, res){
+    console.log(req.params.schoolName);
+    School.findOneAndRemove({'name': req.params.schoolName}, function(err){
+      if(err){
+        console.log("DELETE ERROR", err)
+      } else{
+        // res.redirect("/api");
 
-//       }
-//     });
+      }
+    });
 
-//   });
+  });
 
 };  //end of export
