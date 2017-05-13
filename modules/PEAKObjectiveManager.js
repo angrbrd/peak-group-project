@@ -3,14 +3,7 @@ import { Link } from 'react-router'
 var helpers = require("../app/utils/helpers");
 import {hashHistory} from 'react-router';
 
-/* This component will:
-	*Make ajax post UNLESS cancel is clicked.
-		**'Save' (onclick) {makes the ajax post} routes to GoalContainer
-		**'Cancel' (onclick) returns to StudentContainer
-		maybe   **'Add Goal' (onclick) will:
-			***{makes ajax post} to create the student (link to /:schoolName/studentId)
-			***Then route to AddGoal for that student
-*/
+
 
 export default React.createClass({
 

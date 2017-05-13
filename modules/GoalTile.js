@@ -64,7 +64,7 @@ export default React.createClass({
 			 			  					  <div id="taskContainer">
  			  									{goals.student_objectives.map(function(s_obj,k){
  			  										return (
- 			  										  <div>			 			  					   
+ 			  										  <div key={k}>			 			  					   
 		 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id} id="addTask">Add Task</Link>
 
 		 			  									<TaskTile tasks={s_obj.tasks} studentId={stdnt._id} studentName={stdnt.student_name} sObjId={s_obj._id}/>	
