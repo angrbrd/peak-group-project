@@ -69,6 +69,12 @@ export default React.createClass({
 
                 }// end k loop looking for a match in all of the objectives in the array of objectives for the given goal
             this.setState({objectives: tempObjectiveArr});
+            if (tempObjectiveArr.length>0){
+              this.setState({value: tempObjectiveArr[0]._id});
+            }
+            else {
+              this.setState({value: ""});
+            }
             } //end j loop for all of the objectives for the given goal already assigned to the student
           } //end i loop for all of the goals assigned to the student
   
