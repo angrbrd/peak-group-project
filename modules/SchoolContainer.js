@@ -30,8 +30,6 @@ export default React.createClass({
         // to actually mean the component itself and not the runQuery function.
       }.bind(this));
 
-
-    // helpers.deleteSchool('East Cary Middle');
   },
 
 	render() {
@@ -44,9 +42,9 @@ export default React.createClass({
           </div>
       </div>
       <div className="row" id="schoolSearchRow">
-        {/*<div className="col-sm-2">
-          <Link to="/goals"><button id="manageTemp">Manage goals(temp)</button></Link>
-        </div>*/}
+        <div className="col-sm-2">
+          <Link to="/goals"><button id="manageTemp">+Peak Goals</button></Link>
+        </div>
 
         <div className="col-sm-8 col-sm-offset-2">
 

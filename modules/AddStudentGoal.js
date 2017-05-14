@@ -19,7 +19,7 @@ export default React.createClass({
 
   componentDidMount: function(){
     // get all of the schools from the schools table
-    console.log("inside Goal Manager componentWillMount");
+    console.log("inside Goal Manager componentDidMount");
 
 
     helpers.getStudent(this.state.student_id).then(function(data) {
@@ -37,8 +37,11 @@ export default React.createClass({
 
         if (data.data !== this.state.goal_results) {
           this.setState({ goal_results: data.data });
-          console.log("goal_results in helpers.getGoals ")
-          this.setState({value: data.data[0]._id})
+          console.log("goal_results in helpers.getGoals ");
+          this.setState({value: data.data[0]._id});
+
+          console.log("value right after we load all of the goals");
+          console.log(this.state.value);
         }
 
 
@@ -60,11 +63,18 @@ export default React.createClass({
                 tempGoalArr.splice(j,1);
                 break;
                 
-              }
+              } //end if
 
-            }
+            } // end for j
             this.setState({goal_results: tempGoalArr});
-          }
+            if (tempGoalArr.length>0){ 
+              this.setState({value: tempGoalArr[0]._id});
+            }
+            else {
+              this.setState({value: ""});
+            }
+
+          } //end for i
   
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.
@@ -88,8 +98,10 @@ export default React.createClass({
   // },
 
     handleChange: function(event){
+      console.log("now we're in handleChange");
 
     this.setState({value: event.target.value});
+    console.log(this.state.value);
 
   },
 
