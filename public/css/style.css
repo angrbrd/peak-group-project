@@ -216,6 +216,8 @@ padding-top: 10px;
 }
 
 .studentInfo {
+	background: url(/images/info.svg);
+	border: none;
 	width: 40px;
 	height: 40px;
 	margin-top: 65px;
@@ -225,6 +227,21 @@ padding-top: 10px;
 
 .studentInfo:hover {
 	cursor: pointer;
+}
+
+.modalFooter {
+	margin-top: 50px;
+}
+
+.studentInfoClose {
+	color: #5cacee;
+	font-weight: 700;
+	border: 1px dashed;
+	width: 120px;
+	height: 40px;
+	margin-top: 0px;
+	margin-left: 150px;
+	background: transparent;
 }
 
 .studentName {
@@ -237,6 +254,21 @@ padding-top: 10px;
 	color: #444;
 }
 
+.infoLabel {
+	font-weight: 500;
+	float: left;
+	color: #5cacee;
+	margin: 5px 2px;
+}
+
+.infoContent {
+	float: left;
+	margin: 5px 2px;
+}
+
+.clearLabel {
+	clear: left;
+}
 
 /*student page*/
 /*aka GoalContainer*/
