@@ -30,8 +30,6 @@ export default React.createClass({
         // to actually mean the component itself and not the runQuery function.
       }.bind(this));
 
-
-    // helpers.deleteSchool('East Cary Middle');
   },
 
 	render() {
