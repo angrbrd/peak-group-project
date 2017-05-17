@@ -16,7 +16,7 @@ body {
 	font-family: "Gruppo";
 	font-size: 24px;
 	font-weight: bold;
-	color: #888;
+	color: #929292;
 }
 
 #logout {
@@ -58,14 +58,31 @@ a:active {
   background: #fff; 
 }
 
-
-#manageTemp {
-	position: absolute;
-	left: 10%;
-	border: #888 solid 1px;
-	background: none;
-	color: #777;
+#manageSchools {
+	border: none;
+	border-radius: 2%;
+	background: #ebebeb;
+	color: #929292;
 	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 18px; 
+}
+
+
+#manageSchoolsCol {
+	text-align: center;
+}
+
+#manageGoals {
+	border: none;
+	border-radius: 2%;
+	background: #ebebeb;
+	color: #929292;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 18px; 
 }
 
 #schoolSearchRow {
@@ -101,7 +118,7 @@ a:active {
 #addSchool {
 	background-color: transparent;
 	border: none;
-	background: url("../images/addschool.png") no-repeat;
+	background: url("../images/addSchool.png") no-repeat;
 	background-size: 45px;
 	background-position: right;
 	text-align: left;
@@ -294,11 +311,16 @@ padding-top: 10px;
 	margin-left: 30px;
 }
 
+#deleteGoal {
+	width: 50px;
+}
+
 #goalTitle {
 	
 	font-family: "Londrina Solid";
 	font-size: 50px;
 	color: #444;
+	margin-top: 0px;
 }
 
 #goalDesc {
@@ -317,6 +339,11 @@ padding-top: 10px;
 	margin-top: 10px;
 }
 
+#deleteObj {
+	float: left;
+	margin-left: 5px;
+	color: #f99;
+}
 #studentObjective {
 	font-family: "Londrina Solid";
 	margin-top: 20px;

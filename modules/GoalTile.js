@@ -32,6 +32,7 @@ export default React.createClass({
  			  						 <div id="goalContainer">
 	 			  						 <h2 id="goalTitle">{goals.goal.code}</h2> 
 	 			  						 <h3 id="goalDesc">{goals.goal.description}</h3>
+	 			  						 <img id="deleteGoal" src="/images/delete.png"/>
  			  						 </div>
  			  						</div>
 
@@ -48,7 +49,7 @@ export default React.createClass({
  			  										return (
  			  										<div>
  			  											<li key={k}>
- 			  													<h3 id="studentObjective">{s_obj.objective.code } - {s_obj.objective.description}</h3>
+ 			  													<h3 id="studentObjective"><span id="deleteObj">x</span>{s_obj.objective.code } - {s_obj.objective.description}</h3>
  			  											</li>
  			  								
  			  										</div>

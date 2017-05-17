@@ -48,7 +48,12 @@ export default React.createClass({
 		return (
 		  <div>
         <div className="row" id="userNav">
-          <div className="col-sm-4 col-sm-offset-8">
+
+          <div className="col-sm-2">
+            <Link to="/goals"><button id="manageGoals">Manage</button></Link>
+          </div>
+
+          <div className="col-sm-4 col-sm-offset-6">
           <p id="usernameDisplay">Kathleen McPeak</p>
           <Link to="/" id="logout">logout</Link>
           </div>
