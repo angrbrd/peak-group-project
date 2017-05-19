@@ -64,7 +64,7 @@ export default React.createClass({
           <div id="studentHeader" className="col-sm-12">
     				<h1 id="studentNameTitle">{this.state.student_name}</h1>
 
-               <img id="studentInfo" src="/images/info.svg"/>
+               <Link to={"/"+ this.state.school_name +"/manageStudent"}><img id="studentInfo" src="/images/info.svg"/></Link>
 
     						<Link to={"/studentGoal/" + this.state.school_name + "/" + this.state.student_id+ "/" + this.state.student_name} id="addGoalPlus">+<img id="addGoal" src="/images/goal.png"/></Link>
           </div>

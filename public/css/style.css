@@ -423,6 +423,11 @@ padding-top: 10px;
 	margin-right: 20px;
 }
 
+#deleteTask, #deleteEvaluation {
+	margin-top: 20px;
+	width: 45px;
+}
+
 #individualTasks {
 	padding-bottom: 10px;
 	margin-bottom: 10px;
@@ -609,6 +614,11 @@ padding-top: 10px;
 #addStudentBtns {
 	text-align: right;
 	margin-bottom: 20px;
+}
+
+#deleteStudent {
+	float: left;
+	width: 45px;
 }
 
 /*add goal form*/

@@ -84,6 +84,8 @@ export default React.createClass({
 				<button type="submit" id="saveTask">Save</button>
 			</form>
 
+			<img id="deleteTask" src="/images/deletered.png"/>
+
 		  </div>
 		)
 	}

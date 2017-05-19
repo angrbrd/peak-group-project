@@ -10,6 +10,10 @@ import { Link } from 'react-router'
 
 export default React.createClass({
 	render() {
+		var studentNAME = this.props.studentName
+		var studentID = this.props.studentId 
+		var sOBJID = this.props.sObjId 
+
 		return (
 			<div>
 				<div id="tasks">
@@ -21,16 +25,18 @@ export default React.createClass({
  			  			<div key={i} id="individualTasks">
 
  			  			{/*Link to add a new evaluation to a task- each task gets one of these links*/}
- 			  				<p id="taskDesc">{task.description}</p>
+ 			  				<Link to={"/studentTask/" + studentID + "/" + studentNAME + "/" + sOBJID}><p id="taskDesc">{task.description}</p></Link>
 		 			  			<ul >
 		 			  			{task.evaluations.map(function(evals,j){
 		 			  				return (
 
-		 			  					<li key={j} id="evaluation">
+		 			  					<Link to={"/studentEvaluation/" + task._id} id="manageEvaluation"><li key={j} id="evaluation">
 
 		 			  					<p id="evalDate">{evals.date}</p> 
 		 			  					<p id="evalComment"> {evals.comment}</p>
 		 			  					 <p id="evalScore">{evals.score}</p>
+
+
 		 			  										{/*
 		 			  										<Link to={schl.name + "/" + stds._id + "/" + stds.student_name}>
 		 			  										<h2 className="studentName">{stds.student_name}</h2>
@@ -39,6 +45,7 @@ export default React.createClass({
 		 			  										<br/>
 		 			  									*/}
 		 			  					</li>
+		 			  					 </Link>
 		 			  				);
 		 			  			})}
 		 			  			</ul>

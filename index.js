@@ -10,8 +10,8 @@ import GoalContainer from './modules/GoalContainer'
 import StudentManager from './modules/StudentManager'
 import AddStudentGoal from './modules/AddStudentGoal'
 import AddStudentObjective from './modules/AddStudentObjective'
-import AddStudentTask from './modules/AddStudentTask'
-import AddStudentEvaluation from './modules/AddStudentEvaluation'
+import ManageStudentTask from './modules/ManageStudentTask'
+import ManageStudentEvaluation from './modules/ManageStudentEvaluation'
 
 // import GoalManager from './modules/GoalManager'
 
@@ -26,8 +26,8 @@ render((
 
 	<Router history={hashHistory}>
 
-		<Route path="/studentEvaluation/:taskId" component={AddStudentEvaluation} />
-		<Route path="/studentTask/:studentId/:studentName/:studentObjectiveId" component={AddStudentTask} />
+		<Route path="/studentEvaluation/:taskId" component={ManageStudentEvaluation} />
+		<Route path="/studentTask/:studentId/:studentName/:studentObjectiveId" component={ManageStudentTask} />
 		<Route path="/studentGoal/:schoolName/:studentId/:studentName" component={AddStudentGoal}/>
 		<Route path="/studentObjective/:studentId/:studentName/:goalId" component={AddStudentObjective}/>
 		<Route path="/" component={LogIn}/>

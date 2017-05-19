@@ -161,12 +161,16 @@ export default React.createClass({
 
 	              </div>  
 	              <br />
+
+	            <img id="deleteStudent" src="/images/deletered.png"/>
+
 	            <div id="addStudentBtns">
 				
 				<button type="cancel" id="cancelSchool"><Link to='/schools' id="cancelLink">Cancel</Link></button>
 				<button type="submit" id="saveSchool">Save</button>
 				</div>
 			</form>
+
 
 		  </div>
 		)
