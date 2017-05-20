@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 var helpers = require("../app/utils/helpers");
-import {hashHistory} from 'react-router';
+import { hashHistory } from 'react-router';
 
 /* This component will:
 	*Make ajax post UNLESS cancel is clicked.
@@ -48,7 +48,7 @@ export default React.createClass({
 
     helpers.addStudentTask(task).then(function(data){
     	console.log(data);
-    	// hashHistory.push('/goals/' + this.state.goal_id);
+    	hashHistory.goBack();
     }.bind(this));
 
   },

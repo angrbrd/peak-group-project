@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 var helpers = require("../app/utils/helpers");
-import {hashHistory} from 'react-router';
+import { hashHistory } from 'react-router';
 
 
 export default React.createClass({
@@ -40,7 +40,7 @@ export default React.createClass({
 
     helpers.addStudentEvaluation(evaluation_record, this.props.params.taskId).then(function(data){
     	console.log(data);
-    	// hashHistory.push('/goals/' + this.state.goal_id);
+    	hashHistory.goBack();
     }.bind(this));
 
   },
