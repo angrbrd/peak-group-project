@@ -80,12 +80,17 @@ export default React.createClass({
 	               	<div className="row">
 	              		<div className="col-md-6">
 	                 		<h4 id="addEvalScore">Score</h4>
-	                    	<input
+	                    	<select
 	                      		onChange={this.handleChange}
 	                      		type="text"
 	                      		className="form-control text-left"
 	                      		id="score"
-	                    	/>
+	                    	>
+	                    	<option value="1 PC 60%">1 PC 60%</option>
+	                    	<option value="2 C 70%">2 C 70%</option>
+	                    	<option value="3 U 80%">3 U 80%</option>
+	                    	<option value="4 P 90%">4 P 90%</option>
+	                    	</select>
 	               		</div> 
 	               	</div>
 	               	
