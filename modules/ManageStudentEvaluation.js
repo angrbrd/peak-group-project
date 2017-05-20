@@ -86,6 +86,8 @@ export default React.createClass({
 	                      		className="form-control text-left"
 	                      		id="score"
 	                    	>
+	                    {/*'select score' must be here due to first option not being registered as a 'change'*/}
+	                    	<option value="select">select score</option>
 	                    	<option value="1 PC 60%">1 PC 60%</option>
 	                    	<option value="2 C 70%">2 C 70%</option>
 	                    	<option value="3 U 80%">3 U 80%</option>

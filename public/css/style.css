@@ -4,6 +4,34 @@ body {
 	overflow-x: hidden;
 }
 
+#loginForm {
+	text-align: center;
+	margin-top: 25%;
+}
+
+#welcome {
+	font-family: "Londrina Shadow";
+	background-color: white;
+	font-size: 100px;
+}
+
+#username, #password {
+	width: 420px;
+	height: 60px;
+	font-size: 30px;
+	margin-left: 23%;
+}
+
+#login {
+	width: 200px;
+	height: 70px;
+	background-color: white;
+	border: 1px solid #000;
+	font-family: "Londrina Solid";
+	font-size: 40px;
+	border-radius: 3%;
+}
+
 #userNav {
 	text-align: right;
 	margin-right: 5px;
