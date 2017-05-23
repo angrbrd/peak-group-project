@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 import TaskTile from './TaskTile'
+import {hashHistory} from 'react-router';
+var helpers = require("../app/utils/helpers");
 
 /*This child of GoalContainer will:
 	*Be representational ONLY (no ajax)
@@ -14,16 +16,39 @@ import TaskTile from './TaskTile'
 
 
 export default React.createClass({
+
+	deleteGoal(goals) {
+  		console.log('deleteGoal');
+
+  		var studentId = this.props.student[0]._id;
+  		var goalId = goals._id;
+
+  		console.log('deleteGoal this.props.student _id = ' + studentId);
+		console.log('deleteGoal _id = ' + goalId);
+
+		helpers.deleteStudentGoal(studentId, goalId).then(function(data) {
+      		console.log("after helpers.deleteStudentGoal");
+      		console.log(data.data);
+
+      		// Update the Student view
+      		window.location.reload();
+      	}.bind(this));
+  	},
+
+  	componentDidUpdate() {
+  		console.log('componentDidUpdate this.props.student = ' + JSON.stringify(this.props.student));
+  	},
+
 	render() {
 		return (
 			<div>
 
- 			  	{this.props.student.map(function(stdnt,i){
+ 			  	{this.props.student.map((stdnt,i) => {
  			  		return (
  			  			<div key={i}>
  			 
  			  			<ul >
- 			  			{stdnt.goals.map(function(goals,j){
+ 			  			{stdnt.goals.map((goals,j) => {
  			  				return (
  			  				 <div className="row">
  			  					<li key={j}>
@@ -32,7 +57,7 @@ export default React.createClass({
  			  						 <div id="goalContainer">
 	 			  						 <h2 id="goalTitle">{goals.goal.code}</h2> 
 	 			  						 <h3 id="goalDesc">{goals.goal.description}</h3>
-	 			  						 <img id="deleteGoal" src="/images/delete.png"/>
+	 			  						 <button className="deleteGoalTrashcan" onClick={() => {this.deleteGoal(goals)}} />
  			  						 </div>
  			  						</div>
 
@@ -45,7 +70,7 @@ export default React.createClass({
  			  									{/*Link to add a new task to an objective - each objective gets one of these links */}
  			  									<Link to={"/studentObjective/" + stdnt._id + "/" + stdnt.student_name + "/" + goals.goal._id} className="addObjective">Add Objective</Link>
  			  									
- 			  									{goals.student_objectives.map(function(s_obj,k){
+ 			  									{goals.student_objectives.map((s_obj,k) => {
  			  										return (
  			  										<div>
  			  											<li key={k}>
@@ -63,7 +88,7 @@ export default React.createClass({
 
 			 			  					<div className='col-sm-4' id="studentTaskCol">
 			 			  					  <div id="taskContainer">
- 			  									{goals.student_objectives.map(function(s_obj,k){
+ 			  									{goals.student_objectives.map((s_obj,k) => {
  			  										return (
  			  										  <div key={k}>			 			  					   
 		 			  									<Link to={"/studentTask/" + stdnt._id + "/" + stdnt.student_name + "/" + s_obj._id} id="addTask">Add Task</Link>
