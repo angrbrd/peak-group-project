@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 import TaskTile from './TaskTile'
+import {hashHistory} from 'react-router';
+var helpers = require("../app/utils/helpers");
 
 /*This child of GoalContainer will:
 	*Be representational ONLY (no ajax)
@@ -18,7 +20,23 @@ export default React.createClass({
 	deleteGoal(goals) {
   		console.log('deleteGoal');
 
-		console.log('deleteGoal goals = ' + JSON.stringify(goals));
+  		var studentId = this.props.student[0]._id;
+  		var goalId = goals._id;
+
+  		console.log('deleteGoal this.props.student _id = ' + studentId);
+		console.log('deleteGoal _id = ' + goalId);
+
+		helpers.deleteStudentGoal(studentId, goalId).then(function(data) {
+      		console.log("after helpers.deleteStudentGoal");
+      		console.log(data.data);
+
+      		// Update the Student view
+      		window.location.reload();
+      	}.bind(this));
+  	},
+
+  	componentDidUpdate() {
+  		console.log('componentDidUpdate this.props.student = ' + JSON.stringify(this.props.student));
   	},
 
 	render() {
