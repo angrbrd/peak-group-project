@@ -53,7 +53,7 @@ export default React.createClass({
             <Link to="/goals"><button id="manageGoals">Manage</button></Link>
           </div>*/}
 
-          <div className="col-sm-4 col-sm-offset-6">
+          <div className="col-sm-4 col-sm-offset-8">
           <p id="usernameDisplay">Kathleen McPeak</p>
           <Link to="/" id="logout">logout</Link>
           </div>
