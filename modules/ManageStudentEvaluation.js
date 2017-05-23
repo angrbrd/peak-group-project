@@ -101,7 +101,7 @@ export default React.createClass({
 	              <br />
 
 	            {/*THERE IS A BUG ON IOS - THIS GOBACK WILL NOT WORK ON IOS!!*/}
-				<button type="cancel" id="cancelObjective" onClick={hashHistory.goBack}>Cancel</button>
+				{/*<button type="cancel" id="cancelObjective" onClick={hashHistory.goBack}>Cancel</button>*/}
 				<button type="submit" id="saveObjective">Save</button>		
 			</form>
 

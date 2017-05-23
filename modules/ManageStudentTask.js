@@ -80,7 +80,7 @@ export default React.createClass({
 	              <br />
 	            
 				{/*<button type="cancel" id="cancel"><Link to='/goals'>Cancel</Link></button>*/}
-				<button type="cancel" id="cancelTask" onClick={hashHistory.goBack}>Cancel</button>
+				{/*<button type="cancel" id="cancelTask" onClick={hashHistory.goBack}>Cancel</button>*/}
 				<button type="submit" id="saveTask">Save</button>
 			</form>
 
