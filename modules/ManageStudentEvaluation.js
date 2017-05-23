@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 var helpers = require("../app/utils/helpers");
-import {hashHistory} from 'react-router';
+import { hashHistory } from 'react-router';
 
 
 export default React.createClass({
@@ -40,7 +40,7 @@ export default React.createClass({
 
     helpers.addStudentEvaluation(evaluation_record, this.props.params.taskId).then(function(data){
     	console.log(data);
-    	// hashHistory.push('/goals/' + this.state.goal_id);
+    	hashHistory.goBack();
     }.bind(this));
 
   },
@@ -86,6 +86,8 @@ export default React.createClass({
 	                      		className="form-control text-left"
 	                      		id="score"
 	                    	>
+	                    {/*'select score' must be here due to first option not being registered as a 'change'*/}
+	                    	<option value="select">select score</option>
 	                    	<option value="1 PC 60%">1 PC 60%</option>
 	                    	<option value="2 C 70%">2 C 70%</option>
 	                    	<option value="3 U 80%">3 U 80%</option>

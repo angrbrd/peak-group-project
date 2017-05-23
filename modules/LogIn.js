@@ -32,16 +32,16 @@ getInitialState: function() {
 
               		<div className="form-group">
 
-              			<h1> PEAK Login </h1>
+              			<h1 id="welcome"> Welcome. </h1>
 
               			<div className="row">
-	              			<div className="col-md-3">
+	              			<div className="col-sm-12" id="un">
 
 				                <input
 				                  type="text"
 				                  value={this.state.username}
 				                  onChange={this.handleChange}
-				                  className="form-control text-left"
+				                  className="form-control"
 				                  id="username"
 				                  placeholder="username"
 				                  required
@@ -50,12 +50,12 @@ getInitialState: function() {
 		                </div>
 		                <br />
               			<div className="row">
-	              			<div className="col-md-3">
+	              			<div className="col-sm-12" id="pw">
 			                    <input
 			                      value={this.state.password}
 			                      onChange={this.handleChange}
 			                      type="text"
-			                      className="form-control text-left"
+			                      className="form-control"
 			                      id="password"
 			                      placeholder="password"
 			                      required
@@ -64,7 +64,7 @@ getInitialState: function() {
 		                </div>
               			<br />
 
-						<Link to="/schools"><button id="login">Login</button></Link>
+						<Link to="/schools"><button id="login">login</button></Link>
 					</div>
 				</form>
 
