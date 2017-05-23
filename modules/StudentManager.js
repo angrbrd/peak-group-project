@@ -121,13 +121,16 @@ export default React.createClass({
 	                <div className="row">	
 	               		<div className="col-md-6">     
 	                		<h4 id="settingH">Setting</h4>
-	                		<input
-	                  			value={this.state.setting}
+	                		<select
 	                  			onChange={this.handleChange}
 	                  			type="text"
 	                  			className="form-control text-left"
-	                  			id="setting"
-	                		/>  
+	                  			id="setting">
+	                 		<option value="select">select setting</option>
+	                    	<option value="General Ed">General Ed</option>
+	                    	<option value="Modified">Modified</option>
+	                    	<option value="Self-Contained">Self-Contained</option>
+	                		</select>
 	                	</div>
 	                </div>	
 
@@ -148,13 +151,20 @@ export default React.createClass({
 		                <div className="row">	
 	               		<div className="col-md-6">     
 	                		<h4 id="eligibilityH">Eligibility</h4>
-	                		<input
+	                		<select
 	                  			value={this.state.eligibility}
 	                  			onChange={this.handleChange}
 	                  			type="text"
 	                  			className="form-control text-left"
 	                  			id="eligibility"
-	                		/>  
+	                		>
+	                		<option value="select">select eligibility</option>
+	                    	<option value="LD">LD</option>
+	                    	<option value="SD">SD</option>
+	                    	<option value="ID">ID Mild/Mod or IDSE</option>
+	                    	<option value="ED">ED</option>
+	                    	<option value="Autism">Autism</option>
+	                		</select>  
 	                	</div>
 	                </div>	                
 
