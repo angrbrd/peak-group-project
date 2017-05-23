@@ -133,7 +133,6 @@ a:active {
 	padding: 0px;
 	font-weight: normal;
 	font-family: "Londrina Sketch";
-	font-weight: bold;
 	background-color: white;
 }
 
@@ -215,7 +214,6 @@ padding-top: 10px;
 .schoolNameTitle {
 	font-family: "Londrina Shadow";
 	font-size: 80px;
-	font-weight: bold;
 	color: #484848;
 	margin-bottom: 0px;
 	background-color: white;
