@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import ManageStudentTask from './ManageStudentTask'
 
 /*This child of GoalTile (gc of GoalContainer) will:
 	*Be representational ONLY (no ajax)
@@ -10,6 +11,7 @@ import { Link } from 'react-router'
 
 export default React.createClass({
 	render() {
+		var taskS = this.props.tasks
 		var studentNAME = this.props.studentName
 		var studentID = this.props.studentId 
 		var sOBJID = this.props.sObjId 
@@ -50,14 +52,21 @@ export default React.createClass({
 		 			  			})}
 		 			  			</ul>
 		 			  			<Link to={"/studentEvaluation/" + task._id} id="addEval">add evaluation</Link>
+
+		 			  				
  			  			</div>
+ 			  			
+
 
  			  		);
- 			  	})}		
+ 			  		<ManageStudentTask taskInput={task.description}/>
+
+ 			  	})}	
 
 			  </div>
 
 			</div>
+
 		)
 
 	}

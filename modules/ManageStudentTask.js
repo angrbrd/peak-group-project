@@ -21,9 +21,6 @@ export default React.createClass({
   },
 
 
-
-
-
 	componentWillMount: function(){
   	//get the students at the school that has been selected by the user
 
@@ -34,6 +31,8 @@ export default React.createClass({
     var newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
+    console.log(this.props.taskInput);
+ 
   },
   
     // When a user submits...
@@ -52,7 +51,6 @@ export default React.createClass({
     }.bind(this));
 
   },
-
 
 	render() {
 		return (
