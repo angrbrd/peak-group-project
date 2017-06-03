@@ -38,11 +38,11 @@ export default React.createClass({
       <div className="row" id="userNav">
 
     {/*This can either link to SchoolManager where SchoolManager will be modified to include a list of schools in addition to being able to add one -- OR an entirely different page with the abilty to edit/delete schools only*/}
-       {/*} <div className="col-sm-3" id="manageSchoolsCol">
+       <div className="col-sm-3" id="manageSchoolsCol">
           <Link to="/goals"><button id="manageSchools">Manage Schools</button></Link>
-        </div>*/}
+        </div>
 
-          <div className="col-sm-4 col-sm-offset-8">
+          <div className="col-sm-4 col-sm-offset-5">
           <p id="usernameDisplay">Kathleen McPeak</p>
           <Link to="/" id="logout">logout</Link>
           </div>
