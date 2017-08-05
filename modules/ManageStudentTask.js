@@ -11,38 +11,41 @@ import { hashHistory } from 'react-router';
 
 */
 
-export default React.createClass({
+class ManageStudentTask extends React.Component {
 
-  getInitialState: function() {
-    return { 
-   	  description: "",
-      results: []
-    };
-  },
+	constructor(props) {
+		super(props);
+		this.state = {
+			value: 'test'
+		}
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleChange(event) {
+		this.setState({value:event.target.value})
+	}
+  
 
 
-	componentWillMount: function(){
-  	//get the students at the school that has been selected by the user
-
-  },
-
-
-  handleChange: function(event){
-    var newState = {};
-    newState[event.target.id] = event.target.value;
-    this.setState(newState);
-    console.log(this.props.taskInput);
+  // handleChange: function(event){
+  //   var newState = {};
+  //   console.log(event.target.value)
+  //   newState[event.target.id] = event.target.value;
+  //   console.log(this);
+  //   this.setState({value: event.target.value});
  
-  },
+  // },
   
     // When a user submits...
-  handleSubmit: function(event) {
+  handleSubmit(event) {
 
     event.preventDefault();
      var task = {
       studentId: this.props.params.studentId,
       studentObjectiveId: this.props.params.studentObjectiveId,
-      description: this.state.description
+      description: this.state.value
     }
 
     helpers.addStudentTask(task).then(function(data){
@@ -50,7 +53,7 @@ export default React.createClass({
     	hashHistory.goBack();
     }.bind(this));
 
-  },
+  }
 
 	render() {
 		return (
@@ -64,6 +67,7 @@ export default React.createClass({
 	              		<div className="col-md-6">
 	                 		<h4 id="taskDescription">Task Description</h4>
 	                    	<input
+	                    		value={this.state.value}
 	                      		onChange={this.handleChange}
 	                      		type="text"
 	                      		className="form-control text-left"
@@ -87,4 +91,6 @@ export default React.createClass({
 		  </div>
 		)
 	}
-})
+}
+
+export default ManageStudentTask;
