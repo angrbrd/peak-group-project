@@ -49,7 +49,7 @@ export default React.createClass({
 		  <div>
         <div className="row" id="userNav">
 
-          <div className="col-sm-2">
+         <div className="col-sm-2">
             <Link to="/goals"><button id="manageGoals">Manage</button></Link>
           </div>
 

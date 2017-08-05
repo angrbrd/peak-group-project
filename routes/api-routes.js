@@ -234,6 +234,51 @@ app.post("/api/goal", function(req,res) {
         });//end findOneAndUpdate       
   }); //end app.post
 
+  app.delete("/api/:studentId/:goalId", function(req, res) {
+    console.log("___DELETE /api/:studentId/:goalId___");
+
+    console.log("studentId = " + req.params.studentId);
+    console.log("goalId = " + req.params.goalId);
+
+    // Find the target student by Id passed in
+    Student.findById(req.params.studentId, function(err, student) {
+      if (err) {
+        console.log("ERROR: error retrieving student in DELETE /api/:studentId/:goalId");
+        res.send({"status": "Error", "message": err});
+
+      } else {
+        console.log("target student: " + JSON.stringify(student));
+
+        // Update the goals element
+        var newGoals = [];
+        for (var i = 0; i < student.goals.length; i++) {
+          console.log("goal = " + student.goals[i]);
+          console.log("goal _id = " + student.goals[i]._id);
+          console.log("req.params.goalId = " + req.params.goalId);
+
+          // If current goal id is not the target for deletion, keep that goal
+          if (student.goals[i]._id != req.params.goalId) {
+            console.log("keeping goal: " + student.goals[i]._id);
+            newGoals.push(student.goals[i]);
+          }
+        }
+
+        student.goals = newGoals;
+
+        // Save updated student data
+        student.save(function(err, updatedStudent) {
+          if (err) {
+            console.log("ERROR: error updating student in DELETE /api/:studentId/:goalId");
+            res.send({"status": "Error", "message": err});
+
+          } else {
+            res.send({"status": "OK", "message": "deleted goal"});
+          }
+        }); // end student.save
+      }
+    }); // end Student.findById
+  });
+
   //-------------------  End app.post "/api/studentgoal" ----------------------------
 
     app.post("/api/studentobjective", function(req, res) {

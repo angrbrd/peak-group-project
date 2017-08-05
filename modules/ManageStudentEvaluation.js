@@ -48,6 +48,7 @@ export default React.createClass({
 
 	render() {
 		return (
+
 		  <div id="addEvalCont">
 		 	<h1 id="manageEval"> Evaluation </h1>  		
  		
@@ -98,8 +99,9 @@ export default React.createClass({
 	               	
 	              </div>  
 	              <br />
-	            
-				<button type="cancel" id="cancelObjective"><Link to='/goals' id="cancelLink">Cancel</Link></button>
+
+	            {/*THERE IS A BUG ON IOS - THIS GOBACK WILL NOT WORK ON IOS!!*/}
+				{/*<button type="cancel" id="cancelObjective" onClick={hashHistory.goBack}>Cancel</button>*/}
 				<button type="submit" id="saveObjective">Save</button>		
 			</form>
 

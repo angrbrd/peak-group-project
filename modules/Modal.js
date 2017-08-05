@@ -49,6 +49,9 @@ class Modal extends React.Component {
             <p className="infoLabel">Parent E-mail:</p><p className="infoContent">{this.props.stds.parent_email}</p>
           </div>
           <div className="clearLabel">
+            <p className="infoLabel">Setting:</p><p className="infoContent">{this.props.stds.setting}</p>
+          </div>
+          <div className="clearLabel">
             <p className="infoLabel">Eligibility:</p><p className="infoContent">{this.props.stds.eligibility}</p>
           </div>
 

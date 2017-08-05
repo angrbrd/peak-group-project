@@ -79,6 +79,12 @@ var helpers = {
     });
   },
 
+  deleteStudentGoal: function(studentId, goalId) {
+    return axios.delete("/api/" + studentId + "/" + goalId).then(function(res) {
+        return res;
+    });
+  },
+
     addStudentObjective: function(stuff) {
     return axios.post("/api/studentobjective", stuff).then(function(res){
         return res;

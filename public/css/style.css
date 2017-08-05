@@ -19,7 +19,11 @@ body {
 	width: 420px;
 	height: 60px;
 	font-size: 30px;
+<<<<<<< HEAD
 	margin-left: 23%;
+=======
+	margin-left: 25%;
+>>>>>>> master
 }
 
 #login {
@@ -133,7 +137,6 @@ a:active {
 	padding: 0px;
 	font-weight: normal;
 	font-family: "Londrina Sketch";
-	font-weight: bold;
 	background-color: white;
 }
 
@@ -153,7 +156,7 @@ a:active {
 	text-align: left;
 	margin-top: 110%;
 	font-size: 25px;
-	width: 55px;
+	width: 85px;
 }
 
 #addSchoolLink {
@@ -215,7 +218,6 @@ padding-top: 10px;
 .schoolNameTitle {
 	font-family: "Londrina Shadow";
 	font-size: 80px;
-	font-weight: bold;
 	color: #484848;
 	margin-bottom: 0px;
 	background-color: white;
@@ -233,7 +235,6 @@ padding-top: 10px;
 	height: 45px;
 	width: 45px;
 	font-size: 20px;
-	font-weight: bold;
 	margin-left: 43%;
 	
 }
@@ -276,6 +277,20 @@ padding-top: 10px;
 	cursor: pointer;
 }
 
+.deleteGoalTrashcan {
+	background: url(/images/delete50x50.png);
+	border: none;
+	width: 50px;
+	height: 50px;
+	margin-top: 30px;
+	position: relative;
+	right: 0;
+}
+
+.deleteGoalTrashcan:hover {
+	cursor: pointer;
+}
+
 .modalFooter {
 	margin-top: 50px;
 }
@@ -294,7 +309,6 @@ padding-top: 10px;
 .studentName {
 	display: inline;
 	font-size: 30px;
-	font-weight: bold;
 	position: relative;
 	top: 35px;
 	left: 20px;
@@ -530,7 +544,6 @@ padding-top: 10px;
 
 .addSchoolLabel {
 	font-family: "Londrina Sketch";
-	font-weight: bold;
 	color: #606060;
 	margin: 0 auto;
 	font-size: 25px;
@@ -584,8 +597,7 @@ padding-top: 10px;
 	padding-left: -50px;
 	font-family: "Londrina Outline";
 	font-size: 40px;
-	color: #999;
-	font-weight: bold;
+	color: #888;
 
 }
 
@@ -603,7 +615,6 @@ padding-top: 10px;
 #studentName, #DOB {
 	font-family: "Londrina Outline";
 	color: #444;
-	font-weight: bold;
 	font-size: 30px;
 }
 
@@ -615,7 +626,6 @@ padding-top: 10px;
 	display: inline;
 	font-family: "Londrina Outline";
 	color: #444;
-	font-weight: bold;
 	font-size: 30px;
 
 }
@@ -665,17 +675,15 @@ padding-top: 10px;
 	width: 100%;
 	height: 100px;
 	font-family: "Londrina Outline";
-	font-weight: bold;
-	color: #999;
+	color: #888;
 	padding-top: 20px;
 	font-size: 55px;
 }
 
 #selectGoal {
 	font-family: "Londrina Outline";
-	color: #999;
+	color: #888;
 	font-size: 35px;
-	font-weight: bold;
 	margin: 0px;
 	letter-spacing: 0.05em;
 }
@@ -692,17 +700,15 @@ padding-top: 10px;
 	width: 100%;
 	height: 100px;
 	font-family: "Londrina Outline";
-	font-weight: bold;
-	color: #999;
+	color: #888;
 	padding-top: 20px;
 	font-size: 55px;
 }
 
 #selectObj {
 	font-family: "Londrina Outline";
-	color: #999;
+	color: #888;
 	font-size: 35px;
-	font-weight: bold;
 	margin: 0px;
 	letter-spacing: 0.05em;
 }
@@ -720,17 +726,15 @@ padding-top: 10px;
 	width: 100%;
 	height: 100px;
 	font-family: "Londrina Outline";
-	font-weight: bold;
-	color: #999;
+	color: #888;
 	padding-top: 20px;
 	font-size: 55px;
 }
 
 #taskDescription {
 	font-family: "Londrina Outline";
-	color: #999;
+	color: #888;
 	font-size: 35px;
-	font-weight: bold;
 	margin: 0px;
 	letter-spacing: 0.05em;
 }
@@ -759,8 +763,7 @@ padding-top: 10px;
 	width: 100%;
 	height: 100px;
 	font-family: "Londrina Outline";
-	font-weight: bold;
-	color: #999;
+	color: #888;
 	padding-top: 20px;
 	font-size: 55px;
 }
@@ -768,9 +771,8 @@ padding-top: 10px;
 
 #addEvalDate, #addEvalComment, #addEvalScore {
 	font-family: "Londrina Outline";
-	color: #999;
+	color: #888;
 	font-size: 30px;
-	font-weight: bold;
 	margin: 0px;
 	letter-spacing: 0.05em;
 	margin-top: 20px;
