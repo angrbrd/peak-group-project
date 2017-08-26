@@ -16,7 +16,8 @@ class ManageStudentTask extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: 'test'
+			//the param will be passed here to prefill the form
+			value: this.props.params.taskDescription
 		}
 
 		this.handleChange = this.handleChange.bind(this);

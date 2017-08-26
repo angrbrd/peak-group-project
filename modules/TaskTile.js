@@ -14,7 +14,7 @@ export default React.createClass({
 		var taskS = this.props.tasks
 		var studentNAME = this.props.studentName
 		var studentID = this.props.studentId 
-		var sOBJID = this.props.sObjId 
+		var sOBJID = this.props.sObjId
 
 		return (
 			<div>
@@ -27,7 +27,7 @@ export default React.createClass({
  			  			<div key={i} id="individualTasks">
 
  			  			{/*Link to add a new evaluation to a task- each task gets one of these links*/}
- 			  				<Link to={"/studentTask/" + studentID + "/" + studentNAME + "/" + sOBJID}><p id="taskDesc">{task.description}</p></Link>
+ 			  				<Link to={"/studentTask/" + studentID + "/" + studentNAME + "/" + sOBJID + "/" + task.description}><p id="taskDesc">{task.description}</p></Link>
 		 			  			<ul >
 		 			  			{task.evaluations.map(function(evals,j){
 		 			  				return (

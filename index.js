@@ -27,7 +27,7 @@ render((
 	<Router history={hashHistory}>
 
 		<Route path="/studentEvaluation/:taskId" component={ManageStudentEvaluation} />
-		<Route path="/studentTask/:studentId/:studentName/:studentObjectiveId" component={ManageStudentTask} />
+		<Route path="/studentTask/:studentId/:studentName/:studentObjectiveId(/:taskDescription)" component={ManageStudentTask} />
 		<Route path="/studentGoal/:schoolName/:studentId/:studentName" component={AddStudentGoal}/>
 		<Route path="/studentObjective/:studentId/:studentName/:goalId" component={AddStudentObjective}/>
 		<Route path="/" component={LogIn}/>
