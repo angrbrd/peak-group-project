@@ -8,7 +8,7 @@ export default React.createClass({
 
   getInitialState: function() {
     return { 
-   	  comment: "",
+   	  comment: "test",
       date: "",
       score: "",
     };

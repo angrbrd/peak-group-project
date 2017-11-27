@@ -32,7 +32,7 @@ export default React.createClass({
 		 			  			{task.evaluations.map(function(evals,j){
 		 			  				return (
 
-		 			  					<Link to={"/studentEvaluation/" + task._id} id="manageEvaluation"><li key={j} id="evaluation">
+		 			  					<Link to={"/studentEvaluation/" + task._id + "/" + evals.comment + "/" + evals.date} id="manageEvaluation"><li key={j} id="evaluation">
 
 		 			  					<p id="evalDate">{evals.date}</p> 
 		 			  					<p id="evalComment"> {evals.comment}</p>

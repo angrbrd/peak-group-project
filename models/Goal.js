@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var deepPopulate = require('mongoose-deep-populate')(mongoose);
 var Schema = mongoose.Schema;
 
+//This should stay the same, but will be referenced separately from the student.  These goals will be applicable to the lesson plan (confirm)
 var GoalSchema = new Schema({
 	code: { // e.g. K.MS.1
 		//not sure if this is necessary?

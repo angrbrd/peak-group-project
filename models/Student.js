@@ -18,6 +18,7 @@ var StudentSchema = new Schema({
 	last_eval_date:{
 		type: Date
 	},
+	//This will be changed to lesson plan, which will have a name, date, ID and description.
 	goals: [{
 		goal:{
 			type: Schema.Types.ObjectId,
